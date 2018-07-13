@@ -1,0 +1,283 @@
+/*Media Queries*/
+@media (max-width: 750px){
+    #info{
+        text-align: left;
+        columns: 1;
+        column-rule: none;        
+    }
+    #part1{
+        padding-left: 10px;
+    }
+    #part2{
+        padding-left: 10px;
+    }
+    #nav-links{
+        display: none;
+    }
+    #nav-personal{
+        display: block;
+    }
+}
+@media (min-width: 751px){
+    #info{
+        text-align: left;        
+        columns: 2;
+        column-rule: 1px solid black;
+    }
+    #part1{
+        padding-right: 25px;
+    }
+    #part2{
+        padding-left: 25px;
+    }
+    #nav-links{
+        float: right;
+        text-align: right;        
+    }
+    #nav-personal{
+        display: inline-block;
+    }
+}
+
+/*CSS Reuseable Rules*/
+.primaryColor{
+    color: #4286f4;
+}
+.secondaryColor{
+    color: #5D5D5D;
+}
+.styledButton{
+    font-family: 'Abhaya Libre';
+    margin: 0 auto;
+    background-color: #4286f4;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.3em;
+    transition: opacity .2s, font-size .2s;
+    width: 200px;
+    height: 75px;
+    margin: 0 10px;
+}
+.styledButton:hover{
+    background-color: white;
+    border: 1px solid #1B6CF1;
+    color: #4286f4;
+}
+
+/*Page Defaults*/
+body{
+    font-family: 'Abhaya Libre'; 
+}
+
+/*Nav*/
+nav{
+    margin-top: 0;
+    width: 100%;
+}
+#nav-personal{
+    text-align: left;
+    padding: 0px 10px;
+}
+#name{
+    font-size: 2.5em;
+}
+#name > span{
+    font-size: 1.8rem;
+    color: black;
+}
+#jobTitle{
+    font-size: 1.2em;
+}
+#jobTitle > span{
+    color: black;
+}
+#nav-links{
+    padding: 0px 10px;
+    font-size: 1.2em;
+}
+#myEmail > span{
+    color: black;
+}
+
+/*About Me*/
+.about-me{
+    background-color: #4286f4;
+    color: white;
+    text-align: center;
+    min-height: 800px;
+    margin-top: 0;
+    border-top: 2px solid #1B6CF1;
+    border-bottom: 2px solid #1B6CF1;
+}
+#aboutmeHead{
+    font-size: 3em;
+    color: white;
+    margin: 50px auto 60px auto;    
+}
+#intro{
+    background-color: white;
+    padding: 40px;
+    width: 80%;
+    margin: 50px auto 60px auto;
+    font-size: 1.4em;
+    border: 1px solid black;
+}
+.about-me label{
+    color: #4286f4;
+}
+#resume{
+    margin: 0 auto;
+}
+
+/*Div with close button*/
+.more-info{
+    width: 100%;
+    text-align: center;
+}
+#close{
+    float: right;
+    color: #FF6060;
+}
+#close:hover{
+    color: #282828;
+}
+.content{
+    display: none;
+    border: 1px solid #d3d3d3;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    color: #5D5D5D;
+    font-size: 18px;  
+    text-align: left;
+}
+.content p{
+    margin: 25px 5px 25px 5px;
+}
+
+/*Links*/
+.container{
+    width: 100%;
+    background-color: #E4E4E4;
+    text-align: center;
+    padding: 50px 0;
+    padding-bottom: 200px;
+}
+#linksHead{
+    text-align: center;
+    color: #282828;
+    font-size: 3em;
+    margin: 30px auto 40px auto;        
+}
+.card{
+    width: 250px;
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    margin: 0 auto;
+    margin: 20px;
+    display: inline-block;
+    box-shadow: 3px 3px 3px #939393;
+}
+.card-head{
+    width: 229px;
+    border: 1px solid black;
+    background-color: #282828;
+    color: white;
+    padding: 10px;
+    font-size: 32px;
+}
+.card i{
+    font-size: 84px;
+    color: #4286f4;
+    margin: 40px;
+}
+.card-desc{
+    width: 80%;
+    float: left;
+    font-size: 18px;
+    border-top: 1px solid #d3d3d3;
+    color: #5D5D5D;  
+}
+.card-button{
+    width: 20%;
+    float: right;
+    border-top: 1px solid #d3d3d3;
+}
+.card-button i{
+    font-size: 22px;
+    color: #282828;
+    margin: 0 auto;
+    margin-top: 12px;
+    padding: 5px;
+    border: 1px solid white;
+    transition: background-color .2s, color .2s, border .2s;
+}
+.card-button i:hover{
+    background-color: #4286f4;
+    color: white;
+    border: 1px solid #1B6CF1;
+}
+
+/*Projects*/
+.projects{
+    background-color: #282828;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    padding-bottom: 200px;    
+}
+#projectsHead{
+    color: white;
+    font-size: 3em;
+    margin: 30px auto 50px auto;
+}
+.proj{
+    text-align: left;
+    width: 80%;
+    background-color: white;
+    border: 1px solid #4286f4;
+    padding: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.projHead{
+    font-size: 2em;
+}
+.projDesc{
+    width: 100%;  
+    display: inline-block; 
+    font-size: 1.2em;
+    color: #5d5d5d;
+}
+.projDesc > a{
+    color: #4286f4;
+    text-decoration: none;    
+}
+.projDesc > a:hover{
+    text-decoration: underline;
+}
+.projDesc > span{
+    color: black;
+}
+
+/*Footer*/
+footer{
+    background-color: white;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px;
+    color: black;
+}
+footer > div > span{
+    font-size: 1.8rem;
+    color: #4286f4;
+    padding: 0 5px;
+}
+footer a{
+    color: black;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #4286f4;
+    text-decoration: underline;
+}
