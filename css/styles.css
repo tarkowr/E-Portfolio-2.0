@@ -1,57 +1,29 @@
 /*Media Queries*/
-@media (max-width: 750px){
-    #info{
-        text-align: left;
-        columns: 1;
-        column-rule: none;        
-    }
-    #part1{
-        padding-left: 10px;
-    }
-    #part2{
-        padding-left: 10px;
-    }
+@media (max-width: 850px){
     #nav-links{
         display: none;
     }
-    #nav-personal{
-        display: block;
-    }
 }
-@media (min-width: 751px){
-    #info{
-        text-align: left;        
-        columns: 2;
-        column-rule: 1px solid black;
-    }
-    #part1{
-        padding-right: 25px;
-    }
-    #part2{
-        padding-left: 25px;
-    }
+@media (min-width: 851px){
     #nav-links{
         float: right;
         text-align: right;        
-    }
-    #nav-personal{
-        display: inline-block;
     }
 }
 
 /*CSS Reuseable Rules*/
 .primaryColor{
-    color: #4286f4;
+    color: white;
 }
 .secondaryColor{
-    color: #5D5D5D;
+    color: black;
 }
 .styledButton{
     font-family: 'Abhaya Libre';
     margin: 0 auto;
-    background-color: #4286f4;
-    border: 1px solid white;
-    color: white;
+    background-color: white;
+    border: 2px solid white;
+    color: #4286f4;
     font-size: 1.3em;
     transition: opacity .2s, font-size .2s;
     width: 200px;
@@ -59,68 +31,78 @@
     margin: 0 10px;
 }
 .styledButton:hover{
-    background-color: white;
-    border: 1px solid #1B6CF1;
-    color: #4286f4;
+    background-color: #4286f4;
+    border: 2px solid #1B6CF1;
+    color: white;
+    transition: background-color .5s, border .5s, color .5s;
 }
 
 /*Page Defaults*/
+html, body{
+    height:100%;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
 body{
     font-family: 'Abhaya Libre'; 
 }
 
 /*Nav*/
 nav{
-    margin-top: 0;
+    margin: auto;
     width: 100%;
+    height: 100%;
+    background: url("../media/background-image2.jpg") no-repeat;
+    background-size: cover;
 }
 #nav-personal{
-    text-align: left;
-    padding: 0px 10px;
+    text-align: center;
+    display: inline-block;
+    padding-top: 16%;
+    width: 100%;
 }
 #name{
-    font-size: 2.5em;
+    font-size: 3.5em;
+    font-family: monospace;
+    letter-spacing: 10px;
 }
-#name > span{
-    font-size: 1.8rem;
-    color: black;
+#read-more{
+    font-size: 2em;
+    font-family: monospace;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    padding: 15px;
 }
-#jobTitle{
-    font-size: 1.2em;
-}
-#jobTitle > span{
-    color: black;
-}
-#nav-links{
-    padding: 0px 10px;
-    font-size: 1.2em;
-}
-#myEmail > span{
-    color: black;
+#read-more:hover{
+    background-color: rgba(255, 255, 255, .2);
 }
 
 /*About Me*/
 .about-me{
-    background-color: #4286f4;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
-    min-height: 800px;
+    padding: 75px 0;
     margin-top: 0;
-    border-top: 2px solid #1B6CF1;
-    border-bottom: 2px solid #1B6CF1;
-}
-#aboutmeHead{
-    font-size: 3em;
-    color: white;
-    margin: 50px auto 60px auto;    
 }
 #intro{
     background-color: white;
     padding: 40px;
-    width: 80%;
+    width: 60%;
     margin: 50px auto 60px auto;
     font-size: 1.4em;
     border: 1px solid black;
+}
+#info{
+    text-align: left;      
 }
 .about-me label{
     color: #4286f4;
@@ -174,7 +156,7 @@ nav{
     background-color: white;
     border: 1px solid #d3d3d3;
     margin: 0 auto;
-    margin: 20px;
+    margin: 20px 40px;
     display: inline-block;
     box-shadow: 3px 3px 3px #939393;
 }
@@ -190,6 +172,10 @@ nav{
     font-size: 84px;
     color: #4286f4;
     margin: 40px;
+}
+.card >.lrg-image > i:hover{
+    opacity: .7;
+    transition: opacity .5s;
 }
 .card-desc{
     width: 80%;
@@ -210,7 +196,6 @@ nav{
     margin-top: 12px;
     padding: 5px;
     border: 1px solid white;
-    transition: background-color .2s, color .2s, border .2s;
 }
 .card-button i:hover{
     background-color: #4286f4;
@@ -235,7 +220,6 @@ nav{
     text-align: left;
     width: 80%;
     background-color: white;
-    border: 1px solid #4286f4;
     padding: 30px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -247,7 +231,7 @@ nav{
     width: 100%;  
     display: inline-block; 
     font-size: 1.2em;
-    color: #5d5d5d;
+    color: black;
 }
 .projDesc > a{
     color: #4286f4;
@@ -257,7 +241,7 @@ nav{
     text-decoration: underline;
 }
 .projDesc > span{
-    color: black;
+    font-weight: bold;
 }
 
 /*Footer*/
@@ -265,13 +249,11 @@ footer{
     background-color: white;
     text-align: center;
     font-size: 1.5em;
-    padding: 20px;
+    padding: 50px;
     color: black;
 }
 footer > div > span{
-    font-size: 1.8rem;
     color: #4286f4;
-    padding: 0 5px;
 }
 footer a{
     color: black;

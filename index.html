@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Richie Tarkowski</title>
+    <link rel = "icon" href = "media/icon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Abhaya Libre' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -17,32 +18,20 @@
     <nav>
         <div id="nav-personal">
             <p>
-                <div id="name" class="primaryColor" ng-controller="personalInfo"> {{name}} <span>&mdash; Developer</span></div>
-                <div id="jobTitle" class="secondaryColor">IT Applications Intern at <span>Hagerty Insurance</span></div>
+                <div id="name" class="primaryColor" ng-controller="personalInfo"> {{name}} </div>
             </p>
         </div>
-        <div id="nav-links">
-            <p>
-                <div id="myEmail" class="secondaryColor" ng-controller="personalInfo"><span>Email:</span> {{email}} </div>
-            </p>
-        </div>
+        <a href = "#about-me"><div id = "read-more">
+            About Me
+        </div></a>
     </nav>
 
     <main>
-        <section class="about-me">
+        <section class="about-me" id = "about-me">
             <br>
-            <div id="aboutmeHead">&mdash; About Me &mdash;</div>
             <div id="intro" class="secondaryColor">
                 <div id="info">
-                    <div id="part1">My name is Richie Tarkowski, I am 18 years old, and I am a Software Developer. <br><br> I study Computer
-                        Information Systems (CIS) at Northwestern Michigan College and Ferris State University and I am entering
-                        my Sophomore year. <br><br> I work for Hagerty Insurance as an IT Applications intern and Walgreens
-                        as a cashier.</div>
-                    <div id="part2">I have experience with HTML5, CSS3, JavaScript, PHP, C#, SQL, and Salesforce Development.<br><br> I enjoy
-                        running, playing or watching basketball, and living a healthy life. I also have a passion for learning
-                        and I find computer science compelling! <br><br> Computer Science is a perfect fit for me because
-                        I have great problem solving skills, patience, and a strong work ethic.
-                    </div>
+                    <div id="part1">My name is Richie Tarkowski, and I am a second year Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty Insurance as an IT Applications Intern during the school year.</div>
                 </div>
             </div>
 
@@ -57,7 +46,7 @@
                 <header class="card-head">
                     GitHub
                 </header>
-                <i class="fa fa-github"> </i>
+                <a class = "lrg-image" target="_blank" href="{{gitHub.domain}}"><i class="fa fa-github"> </i></a>
 
                 <div class="card-desc">
                     <p>Visit my GitHub</p>
@@ -66,29 +55,29 @@
                     <a target="_blank" href="{{gitHub.domain}}"><i class = "fa fa-info-circle"> </i></a>
                 </div>
             </section>
-            <section class="card">
+            <section class="card" ng-controller="links">
                 <header class="card-head">
                     Salesforce
                 </header>
-                <i class="fa fa-cloud"> </i>
+                <a class = "lrg-image" target="_blank" href="{{trailHead}}"><i class="fa fa-cloud"> </i></a>
 
                 <div class="card-desc">
                     <p>Track my Trailhead</p>
                 </div>
-                <div class="card-button" ng-controller="links">
+                <div class="card-button">
                     <a target="_blank" href="{{trailHead}}"><span><i class = "fa fa-bar-chart"> </i></span></a>
                 </div>
             </section>
-            <section class="card">
+            <section class="card" ng-controller="links">
                 <header class="card-head">
                     LinkedIn
                 </header>
-                <i class="fa fa-linkedin-square"> </i>
+                <a class = "lrg-image" target="_blank" href="{{linkedIn}}"><i class="fa fa-linkedin-square"> </i></a>
 
                 <div class="card-desc">
                     <p>Follow me on LinkedIn</p>
                 </div>
-                <div class="card-button" ng-controller="links">
+                <div class="card-button">
                     <a target="_blank" href="{{linkedIn}}"><span><i class = "fa fa-user"> </i></span></a>
                 </div>
             </section>
@@ -97,26 +86,25 @@
         <section class="projects">
             <div id="projectsHead">&mdash; Projects &mdash;</div>
             <div class="proj">
-                <div class="projHead primaryColor">
-                    Test Automation
+                <div class="projHead secondaryColor">
+                    Test Automation at Hagerty
                 </div>
                 <hr><br>
                 <div class="projDesc">
-                    <span>Overview:</span> I automated tests for Hagerty to ensure Salesforce functionality and verify that
-                    Salesforce had correct data from the source system. <br><br>
+                    <span>Overview:</span> Responsible for designing, building, and managing a testing automation application to ensure that Hagerty's Salesforce apps and web processes were fully functional in multiple environments. <br><br>
                     <span>Purpose:</span> To quicken the testing process at Hagerty and provide tests that could easily be
                     executed on a daily basis. <br><br>
-                    <span>Technologies Used:</span> Nightwatch.js, Selenium Server, SQL
+                    <span>Technologies Used:</span> Nightwatch.js, Typescript, SQL
                 </div>
             </div>
 
             <div class="proj">
-                <div class="projHead primaryColor">
+                <div class="projHead secondaryColor">
                     CIT 195 Final Project
                 </div>
                 <hr><br>
                 <div class="projDesc" ng-controller="links">
-                    <span>Overview:</span> I developed a Text-Based Quest Game (with some Sound) using concepts and techniques
+                    <span>Overview:</span> I developed a Text-Based Quest Game using concepts and techniques
                     such as: Object-Oriented programming, interfaces, and events. This application adheres to the MVC Design
                     Pattern.
                     <br><br>
@@ -128,13 +116,12 @@
             </div>
 
             <div class="proj">
-                <div class="projHead primaryColor">
+                <div class="projHead secondaryColor">
                     CIT 228 Final Project
                 </div>
                 <hr><br>
                 <div class="projDesc" ng-controller="links">
-                    <span>Overview:</span> I created an online Discussion Forum, which has user authentication, add/edit/delete
-                    post, reply to post, and like post functionality. <br><br>
+                    <span>Overview:</span> I created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
                     <span>Purpose:</span> For a Final Project in the Data Sources course at NMC. <br><br>
                     <span>Technologies Used:</span> PHP, HTML5, CSS
                     <br><br>
@@ -146,8 +133,7 @@
 
     <footer>
         <div id="footerLinks" ng-controller="personalInfo">
-            &copy; {{name}} {{getCurrentYear()}} <span>|</span> {{email}} <span>|</span> <a target="_blank" ng-controller="links"
-                href="{{linkedIn}}">LinkedIn</a>
+            You can reach me at <span> {{email}} </span>
         </div>
     </footer>
 
@@ -158,9 +144,9 @@
 
 </html>
 
-<!--<section class = "more-info">
-<div id = "hiddenContent" class = "content">
-<i id = "close" class = "fa fa-close"> </i>
-<p></p>
-</div>
-</section>-->
+
+<!--<div id="nav-links">
+    <p>
+        <div id="myEmail" class="secondaryColor" ng-controller="personalInfo"><span>Email:</span> {{email}} </div>
+    </p>
+</div>-->
