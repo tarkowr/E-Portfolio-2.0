@@ -9,9 +9,9 @@
     <link rel = "icon" href = "media/icon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Abhaya Libre' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="javascript/controller.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             <br>
             <div id="intro" class="secondaryColor">
                 <div id="info">
-                    <div id="part1">My name is Richie Tarkowski, and I am a second year Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty Insurance as an IT Applications Intern during the school year.</div>
+                    <div id="part1">My name is Richie Tarkowski, and I am a second year Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty Insurance as an IT Applications Intern during the school year. Post-education, my goal is to create business solutions by applying my software knowledge to develop and design applications. I have experience with C#, SQL, git, and Web design—I built this website myself.</div>
                 </div>
             </div>
 
@@ -132,8 +132,13 @@
     </main>
 
     <footer>
-        <div id="footerLinks" ng-controller="personalInfo">
-            You can reach me at <span> {{email}} </span>
+        <div id="footer-links" ng-controller="links">
+            <p id = "footer-icons">
+                <a class = "footer-icon" target="_blank" href="{{instagram}}"><i class="fa fa-instagram"> </i></a>
+                <a class = "footer-icon" target="_blank" href="{{gitHub.domain}}"><i class="fa fa-github"> </i></a>
+                <a class = "footer-icon" target="_blank" href="{{linkedIn}}"><i class="fa fa-linkedin-square"> </i></a>
+            </p>
+            <p id = "footer-email" ng-controller="personalInfo">You can reach me at <span> {{email}} </span></p>
         </div>
     </footer>
 
@@ -141,12 +146,4 @@
 
     </script>
 </body>
-
 </html>
-
-
-<!--<div id="nav-links">
-    <p>
-        <div id="myEmail" class="secondaryColor" ng-controller="personalInfo"><span>Email:</span> {{email}} </div>
-    </p>
-</div>-->

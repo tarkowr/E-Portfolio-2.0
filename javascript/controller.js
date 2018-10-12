@@ -17,4 +17,5 @@ app.controller('links', function ($scope) {
     };
     $scope.linkedIn = "https://www.linkedin.com/in/richie-tarkowski-273238155";
     $scope.trailHead = "https://trailhead.salesforce.com/en/me/0055000000875A3AAI";
+    $scope.instagram = "https://www.instagram.com/richie_tarkowski/";
 });
