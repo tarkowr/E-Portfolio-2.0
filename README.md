@@ -1,7 +1,9 @@
 # ePortfolio
 
-**Created By:** Richie Tarkowski
+**Created By:** Richie Tarkowski 
+
 **Institution:** Northwestern Michigan College
+
 **Date Last Modified:** October 11, 2018
 
 ### Purpose of this portfolio

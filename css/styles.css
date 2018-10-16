@@ -18,37 +18,40 @@
 .secondaryColor{
     color: black;
 }
+.thirdColor{
+    color: #4286f4;
+}
 .styledButton{
-    font-family: 'Abhaya Libre';
+    font-family: 'Abhaya Libre', Arial, Helvetica, sans-serif;
     margin: 0 auto;
     background-color: white;
-    border: 2px solid white;
+    border: 1px solid white;
     color: #4286f4;
     font-size: 1.3em;
-    transition: opacity .2s, font-size .2s;
     width: 200px;
     height: 75px;
     margin: 0 10px;
 }
 .styledButton:hover{
-    background-color: #4286f4;
-    border: 2px solid #1B6CF1;
-    color: white;
-    transition: background-color .5s, border .5s, color .5s;
+    border: 1px solid #4286f4;
+    transition: border .8s;
+}
+.disabled{
+    display: none;
 }
 
 /*Page Defaults*/
 html, body{
     height:100%;
     scroll-behavior: smooth;
+    font-family: 'Abhaya Libre'; 
+    padding: 0;
+    margin: 0;
 }
 
 a{
+    color: black;
     text-decoration: none;
-}
-
-body{
-    font-family: 'Abhaya Libre'; 
 }
 
 /*Nav*/
@@ -59,6 +62,42 @@ nav{
     background: url("../media/background-image2.jpg") no-repeat;
     background-size: cover;
 }
+#navigation{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+#navigation a{
+    width: 200px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 1.3em;
+}
+.default-navigation{
+    background-color: transparent;
+    top: 15px;
+    border-bottom: 1px solid transparent;
+}
+.default-navigation > a{
+    color: white;
+    transition: background-color .8s;
+}
+.default-navigation > a:hover{
+    background-color: rgba(255, 255, 255, .15);
+}
+.scrolled-navigation{
+    background-color: white;
+    top: 0;
+    border-bottom: 1px solid black;
+}
+.scrolled-navigation > a{
+    color: black;
+}
+.scrolled-navigation >a:hover{
+    color: #4286f4;
+}
 #nav-personal{
     text-align: center;
     display: inline-block;
@@ -66,13 +105,13 @@ nav{
     width: 100%;
 }
 #name{
-    font-size: 3.5em;
-    font-family: monospace;
+    font-size: 3em;
+    font-family: 'Asap', monospace;
     letter-spacing: 10px;
 }
 #read-more{
-    font-size: 2em;
-    font-family: monospace;
+    font-size: 1.6em;
+    font-family: 'Asap', monospace;
     width: 200px;
     margin: 0 auto;
     margin-top: 10%;
@@ -197,10 +236,12 @@ nav{
     margin-top: 12px;
     padding: 5px;
     width: 30px;
-    transition: background-color .8s;
+    border: 1px solid white;
+    transition: background-color .8s, border .8s;
 }
 .card-button i:hover{
     background-color: #eaeaea;
+    border: 1px solid #d3d3d3;
 }
 
 /*Projects*/

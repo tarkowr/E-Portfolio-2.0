@@ -14,6 +14,7 @@ app.controller('links', function ($scope) {
         domain: "https://github.com/tarkowr",
         cit195: "/CIT195-Final-Project",
         cit190: "/CIT-228-Discussion-Forum",
+        eportfolio: "/ePortfolio"
     };
     $scope.linkedIn = "https://www.linkedin.com/in/richie-tarkowski-273238155";
     $scope.trailHead = "https://trailhead.salesforce.com/en/me/0055000000875A3AAI";
