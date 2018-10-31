@@ -1,16 +1,53 @@
+const maxSmallScreen = 649;
+const maxScroll = 100;
+
 $(function() {
     let nav = $("#navigation");
-  
-    $(window).scroll(function() {    
+    let ToggleNavBar = function(){
         var scroll = $(window).scrollTop();
-        if (scroll > 100) {
+        if(!($(window).innerWidth() + 17 <= maxSmallScreen)){
+            if (scroll > maxScroll) {
+                nav.addClass("scrolled-navigation");
+                nav.removeClass("default-navigation");
+            }
+            else{
+                nav.addClass("default-navigation");
+                nav.removeClass("scrolled-navigation");
+            }
+        }
+    }
+
+    if ($(window).innerWidth() + 17 <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
+  
+    $(window).scroll(function(){
+        ToggleNavBar();
+    });
+
+    $(window).on('resize', function(){
+        if ($(window).innerWidth() + 17 <= maxSmallScreen) { 
+            $('#navigation a').css('display', 'none');
             nav.addClass("scrolled-navigation");
-            nav.removeClass("default-navigation");
         }
         else{
-            nav.addClass("default-navigation");
-            nav.removeClass("scrolled-navigation");
+            $('#navigation a').css('display', 'inline-block');
+            ToggleNavBar();
         }
     });
 });
+
+document.getElementById("nav-bars").addEventListener("click", function(){
+    let links = document.getElementsByClassName('nav-links');
+
+    if(links[0].style.display == "inline-block"){
+        for(var i = 0; i < links.length; i++){
+            links[i].style.display = "none";
+        }
+    }
+    else{
+        for(var i = 0; i < links.length; i++){
+            links[i].style.display = "inline-block";
+        }
+    }
+});
+
   

@@ -13,16 +13,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="javascript/script.js"></script>
     <script src="javascript/controller.js"></script>
 </head>
 
 <body>
     <nav>
         <div id = "navigation" class = "default-navigation">
-            <a href="#about-me">About Me</a>
-            <a href="#links-top">Links</a>
-            <a href="#projects-top">Projects</a>
+            <i class = "fa fa-align-justify" id = "nav-bars"> </i>
+            <a href="#about-me" class = "nav-links">About Me</a>
+            <a href="#links-top" class = "nav-links">Links</a>
+            <a href="#projects-top" class = "nav-links">Projects</a>
         </div>
         <div id="nav-personal">
             <p>
@@ -93,7 +93,7 @@
 
         <section class="projects" id = "projects-top">
             <div id="projectsHead">&mdash; Projects &mdash;</div>
-            <div class="proj">
+            <div class="proj" id = "hagerty">
                 <div class="projHead secondaryColor">
                     Test Automation at Hagerty
                 </div>
@@ -162,5 +162,8 @@
             <p id = "footer-email" ng-controller="personalInfo">You can reach me at <span> {{email}} </span></p>
         </div>
     </footer>
+
+    <script src="javascript/script.js"></script>
+    
 </body>
 </html>
