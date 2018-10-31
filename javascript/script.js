@@ -1,11 +1,12 @@
 const maxSmallScreen = 649;
 const maxScroll = 100;
+const scrollBarWidth = 17;
 
 $(function() {
     let nav = $("#navigation");
     let ToggleNavBar = function(){
         var scroll = $(window).scrollTop();
-        if(!($(window).innerWidth() + 17 <= maxSmallScreen)){
+        if(!($(window).innerWidth() + scrollBarWidth <= maxSmallScreen)){
             if (scroll > maxScroll) {
                 nav.addClass("scrolled-navigation");
                 nav.removeClass("default-navigation");
@@ -17,14 +18,14 @@ $(function() {
         }
     }
 
-    if ($(window).innerWidth() + 17 <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
+    if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
   
     $(window).scroll(function(){
         ToggleNavBar();
     });
 
     $(window).on('resize', function(){
-        if ($(window).innerWidth() + 17 <= maxSmallScreen) { 
+        if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { 
             $('#navigation a').css('display', 'none');
             nav.addClass("scrolled-navigation");
         }
