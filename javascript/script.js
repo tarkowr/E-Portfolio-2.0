@@ -1,12 +1,16 @@
 const maxSmallScreen = 649;
 const maxScroll = 100;
 const scrollBarWidth = 17;
+const githubApiUrl = "https://api.github.com/users/tarkowr/repos";
 
 $(function() {
     let nav = $("#navigation");
+    let windowWidth = $(window).innerWidth() + scrollBarWidth;
 
+    //Check if window is scrolled past a certain point
+    //Handle navbar classes
     let ToggleNavBar = function(){
-        var scroll = $(window).scrollTop();
+        let scroll = $(window).scrollTop();
         if(!($(window).innerWidth() + scrollBarWidth <= maxSmallScreen)){
             if (scroll > maxScroll) {
                 nav.addClass("scrolled-navigation");
@@ -19,14 +23,17 @@ $(function() {
         }
     }
 
-    if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
+    //Check window width on page load to determine navbar class
+    if (windowWidth <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
   
+    //On window scroll, check if it has passed a certain point
     $(window).scroll(function(){
         ToggleNavBar();
     });
 
+    //On window resize, check if the navbar needs to switch to mobile or desktop
     $(window).on('resize', function(){
-        if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { 
+        if (windowWidth <= maxSmallScreen) { 
             $('#navigation a').css('display', 'none');
             nav.addClass("scrolled-navigation");
         }
@@ -37,25 +44,28 @@ $(function() {
     });
 });
 
+//Hide or unhide nav bar options when the navbar is in mobile upon icon click
 document.getElementById("nav-bars").addEventListener("click", function(){
     let links = document.getElementsByClassName('nav-links');
 
     if(links[0].style.display == "inline-block"){
-        for(var i = 0; i < links.length; i++){
+        for(let i = 0; i < links.length; i++){
             links[i].style.display = "none";
         }
     }
     else{
-        for(var i = 0; i < links.length; i++){
+        for(let i = 0; i < links.length; i++){
             links[i].style.display = "inline-block";
         }
     }
 });
 
 window.onload = function() {
-    ApiService("https://api.github.com/users/tarkowr/repos");
+    ApiService(githubApiUrl);
 };
 
+//Load in my github json file via web api
+//Update projects with last updated dates from github
 function ApiService(url){
     const eportfolioDate = document.getElementById("eportfolio-date");
     const cit228Date = document.getElementById("cit228-date");
@@ -73,18 +83,21 @@ function ApiService(url){
     }
 }
 
+//Convert a json string to a javascript object
 function ConvertJsonToObject(json){
     return JSON.parse(json);
 }
 
+//Parse GitHub object for last updated date
+//Return a custom formatted date
 function GetDateFromGithubApi(obj, name){
-    var repo = obj.find(function(element) {
+    let repo = obj.find(function(element) {
         return element.name == name;
     });
-    var repoLastUpdated = new Date(repo.updated_at);
-    var date = repoLastUpdated.getDate();
-    var month = repoLastUpdated.getMonth();
-    var year = repoLastUpdated.getFullYear();
+    let repoLastUpdated = new Date(repo.updated_at);
+    let date = repoLastUpdated.getDate();
+    let month = repoLastUpdated.getMonth();
+    let year = repoLastUpdated.getFullYear();
 
     return  (month + 1) + "-" + date + "-" + year;
 }
