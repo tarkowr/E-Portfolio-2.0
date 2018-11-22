@@ -5,7 +5,6 @@ const githubApiUrl = "https://api.github.com/users/tarkowr/repos";
 
 $(function() {
     let nav = $("#navigation");
-    let windowWidth = $(window).innerWidth() + scrollBarWidth;
 
     //Check if window is scrolled past a certain point
     //Handle navbar classes
@@ -24,7 +23,7 @@ $(function() {
     }
 
     //Check window width on page load to determine navbar class
-    if (windowWidth <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
+    if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { nav.addClass("scrolled-navigation") }
   
     //On window scroll, check if it has passed a certain point
     $(window).scroll(function(){
@@ -33,7 +32,7 @@ $(function() {
 
     //On window resize, check if the navbar needs to switch to mobile or desktop
     $(window).on('resize', function(){
-        if (windowWidth <= maxSmallScreen) { 
+        if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { 
             $('#navigation a').css('display', 'none');
             nav.addClass("scrolled-navigation");
         }
