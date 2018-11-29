@@ -91,22 +91,27 @@
             </section>
         </section>
 
-        <section class="projects" id = "projects-top">
+        <section class="projects" id = "projects-top" ng-controller="projects">
             <div id="projectsHead">&mdash; Projects &mdash;</div>
-            <div class="proj" id = "hagerty">
+            <div id="filter">
+                <select ng-model = "selected_type"  ng-change="ProjectFilter()">
+                    <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
+                </select>
+            </div>
+            <div class="proj" id = "hagerty" data-tags="js,sql">
                 <div class="projHead secondaryColor">
                     Test Automation
                 </div>
                 <hr><br>
                 <div class="projDesc">
-                    <span>Overview:</span> Responsible for designing, building, and managing a test automation application to ensure that Hagerty's Salesforce apps and web processes were fully functional in multiple environments. <br><br>
-                    <span>Purpose:</span> To quicken the testing process at Hagerty and provide tests that could easily be
-                    executed on a daily basis. <br><br>
+                    <span>Overview:</span> Responsible for designing, building, and managing a test automation application at Hagerty Insurance to ensure that Salesforce apps and web processes were fully functional in multiple environments. <br><br>
+                    <span>Purpose:</span> To eliminate manual testing and provide tests that the QA Team could easily
+                    execute at anytime. <br><br>
                     <span>Technologies Used:</span> Nightwatch.js, Typescript, SQL
                 </div>
             </div>
 
-            <div class="proj">
+            <div class="proj" data-tags="c#">
                 <div class="projHead secondaryColor">
                     CIT 195 Final Project
                 </div>
@@ -117,13 +122,13 @@
                     <br><br>
                     <span>Purpose:</span> For the Final Project in the .NET Applications course at NMC. <br><br>
                     <span>Technologies Used:</span> C# <br><br>
-                    <span>Last Updated:</span> <label id = "cit195-date"> </label>
+                    <span class = "last-updated">Last Updated:</span> <label id = "cit195-date"> </label>
                     <br><br>
                     <a target="_blank" href="{{gitHub.domain + gitHub.cit195}}">GitHub</a>
                 </div>
             </div>
 
-            <div class="proj">
+            <div class="proj" data-tags="php,sql,html/css">
                 <div class="projHead secondaryColor">
                     CIT 228 Final Project
                 </div>
@@ -131,14 +136,14 @@
                 <div class="projDesc" ng-controller="links">
                     <span>Overview:</span> Created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
                     <span>Purpose:</span> For the Final Project in the Data Sources course at NMC. <br><br>
-                    <span>Technologies Used:</span> PHP, HTML5, CSS <br><br>
-                    <span>Last Updated:</span> <label id = "cit228-date"> </label>
+                    <span>Technologies Used:</span> PHP, SQL, HTML5, CSS <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "cit228-date"> </label>
                     <br><br>
                     <a target="_blank" href="{{gitHub.domain + gitHub.cit190}}">GitHub</a>
                 </div>
             </div>
 
-            <div class="proj">
+            <div class="proj" data-tags="html/css,js,angular">
                 <div class="projHead secondaryColor">
                     E-Portfolio Website
                 </div>
@@ -146,8 +151,8 @@
                 <div class="projDesc" ng-controller="links">
                     <span>Overview:</span> I built this website from scratch using a repsonsive and dynamic web design. <br><br>
                     <span>Purpose:</span> To highlight some of my software development for potential employers and others who are interested in what I have created. <br><br>
-                    <span>Technologies Used:</span> HTML5, CSS, JavaScript <br><br>
-                    <span>Last Updated:</span> <label id = "eportfolio-date"> </label>
+                    <span>Technologies Used:</span> HTML5, CSS, JavaScript, Angular.js <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "eportfolio-date"> </label>
                     <br><br>
                     <a target="_blank" href="{{gitHub.domain + gitHub.eportfolio}}">GitHub</a>
                 </div>
@@ -166,7 +171,9 @@
         </div>
     </footer>
 
+    <script src="javascript/dataService.js"></script>
     <script src="javascript/script.js"></script>
+    <script src="javascript/jquery.js"></script>
     
 </body>
 </html>

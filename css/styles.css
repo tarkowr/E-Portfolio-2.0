@@ -261,14 +261,30 @@ nav{
     width: 100%;
     text-align: center;
     padding: 50px 0;
-    padding-bottom: 200px;    
+    padding-bottom: 160px;    
 }
 #projectsHead{
     color: white;
     font-size: 3em;
-    margin: 30px auto 50px auto;
+    margin: 30px auto 40px auto;
+}
+#filter{
+    text-align: left;
+    margin: 0 auto;
+    width: 80%;
+    padding: 0, 0, 0, 30px;
+}
+#filter>select{
+    height: 30px;
+    margin-left: -30px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    background-color: #282828;
+    color: white;
+    border: 1px solid white;
 }
 .proj{
+    display: block;
     text-align: left;
     width: 80%;
     background-color: white;
