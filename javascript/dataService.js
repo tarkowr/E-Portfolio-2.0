@@ -8,6 +8,9 @@ function ApiService(url){
             if(Http.readyState === 4 && Http.status === 200) {
                 resolve(Http.responseText);
             }
+            else if(Http.status >= 400){
+                reject("Could not retrieve data from GitHub");
+            }
         }
     });
 }
