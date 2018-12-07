@@ -120,6 +120,13 @@ nav{
     font-family: 'Asap', monospace;
     letter-spacing: 10px;
 }
+
+@media (max-width: 649px){
+    #name{
+        font-size: 2.5em;
+    }
+}
+
 #read-more{
     font-size: 1.6em;
     font-family: 'Asap', monospace;
@@ -283,6 +290,14 @@ nav{
     color: white;
     border: 1px solid white;
 }
+
+@media (max-width: 649px){
+    #filter>select{
+        background-color: white;
+        color: #282828;
+    }
+}
+
 .proj{
     display: block;
     text-align: left;
