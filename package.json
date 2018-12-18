@@ -1,0 +1,25 @@
+{
+  "name": "e-portfolio",
+  "version": "1.0.0",
+  "description": "**Created By:** Richie Tarkowski",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarkowr/ePortfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarkowr/ePortfolio/issues"
+  },
+  "homepage": "https://github.com/tarkowr/ePortfolio#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "sass": "^1.15.2"
+  }
+}

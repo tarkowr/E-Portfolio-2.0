@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <% include ../partials/header %>
+</head>
+
+<body>
+    <nav>   
+        <% include ../partials/navbar %>
+    </nav>
+
+    <main>
+        <section class="about-me" id = "about-me">
+            <div id="linksHead">&mdash; About Me &mdash;</div>
+            <div id="intro">
+                <div id="info">
+                    <div id="part1">My name is Richie Tarkowski, and I am a second year Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty Insurance as an IT Applications Intern. Post-education, my goal is to create business solutions by applying my software knowledge to develop and design applications. I have experience with C#, SQL, Git, and Web design—as I have built this website myself.</div>
+                </div>
+            </div>
+
+            <div class="resume">
+                <a href="../../media/Tarkowski_Resume.pdf" target="_blank"><button id = "resumeDownload" class = "styledButton">View My Resume</button></a>
+            </div>
+        </section>
+
+        <section class="container" id = "links-top">
+            <div id="linksHead">&mdash; Links &mdash;</div>
+            <section class="card" ng-controller="links">
+                <header class="card-head">
+                    GitHub
+                </header>
+                <a class = "lrg-image" target="_blank" href="{{gitHub.domain}}"><i class="fa fa-github"> </i></a>
+
+                <div class="card-desc">
+                    <p>Visit my GitHub</p>
+                </div>
+                <div class="card-button">
+                    <a target="_blank" href="{{gitHub.domain}}"><i class = "fa fa-code"> </i></a>
+                </div>
+            </section>
+            <section class="card" ng-controller="links">
+                <header class="card-head">
+                    Salesforce
+                </header>
+                <a class = "lrg-image" target="_blank" href="{{trailHead}}"><i class="fa fa-cloud"> </i></a>
+
+                <div class="card-desc">
+                    <p>Track my Trailhead</p>
+                </div>
+                <div class="card-button">
+                    <a target="_blank" href="{{trailHead}}"><span><i class = "fa fa-bar-chart"> </i></span></a>
+                </div>
+            </section>
+            <section class="card" ng-controller="links">
+                <header class="card-head">
+                    LinkedIn
+                </header>
+                <a class = "lrg-image" target="_blank" href="{{linkedIn}}"><i class="fa fa-linkedin-square"> </i></a>
+
+                <div class="card-desc">
+                    <p>Follow me on LinkedIn</p>
+                </div>
+                <div class="card-button">
+                    <a target="_blank" href="{{linkedIn}}"><span><i class = "fa fa-user"> </i></span></a>
+                </div>
+            </section>
+        </section>
+
+        <section class="projects" id = "projects-top" ng-controller="projects">
+            <div id="projectsHead">&mdash; Projects &mdash;</div>
+            <div id="filter" class="disabled">
+                <select ng-model = "selected_type"  ng-change="ProjectFilter()">
+                    <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
+                </select>
+            </div>
+            <div class="proj" id = "hagerty" data-tags="js,sql">
+                <div class="projHead secondaryColor">
+                    Test Automation
+                </div>
+                <hr><br>
+                <div class="projDesc">
+                    <span>Overview:</span> Responsible for designing, building, and managing a test automation application at Hagerty Insurance to ensure that Salesforce apps and web processes were fully functional in multiple environments. <br><br>
+                    <span>Purpose:</span> To eliminate manual testing and provide automation that the QA Team could easily execute. <br><br>
+                    <span>Technologies Used:</span> Nightwatch.js, Typescript, SQL
+                </div>
+            </div>
+
+            <div class="proj" data-tags="c#">
+                <div class="projHead secondaryColor">
+                    CIT 195 Final Project
+                </div>
+                <hr><br>
+                <div class="projDesc" ng-controller="links">
+                    <span>Overview:</span> Developed a Text-Based Quest Game using programming concepts
+                    such as: Polymorphism, Inheritance, Encapsulation, Interfaces, and Events. This application adheres to the MVC Design Pattern and the Dependicy Injection Principle.
+                    <br><br>
+                    <span>Purpose:</span> For the Final Project in the .NET Applications course at NMC. <br><br>
+                    <span>Technologies Used:</span> C# <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "cit195-date"> </label>
+                    <br><br>
+                    <a target="_blank" href="{{gitHub.domain + gitHub.cit195}}">GitHub</a>
+                </div>
+            </div>
+
+            <div class="proj" data-tags="php,sql,html/css">
+                <div class="projHead secondaryColor">
+                    CIT 228 Final Project
+                </div>
+                <hr><br>
+                <div class="projDesc" ng-controller="links">
+                    <span>Overview:</span> Created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
+                    <span>Purpose:</span> For the Final Project in the Data Sources course at NMC. <br><br>
+                    <span>Technologies Used:</span> PHP, SQL, HTML5, CSS <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "cit228-date"> </label>
+                    <br><br>
+                    <a target="_blank" href="{{gitHub.domain + gitHub.cit190}}">GitHub</a>
+                </div>
+            </div>
+
+            <div class="proj" data-tags="wpf,mongodb,api">
+                <div class="projHead secondaryColor">
+                    CIT 255 Final Project &mdash; Stock Insight
+                </div>
+                <hr><br>
+                <div class="projDesc" ng-controller="links">
+                    <span>Overview:</span> Developed a simple, responsive WPF stock application that includes persistence and real-time stock data. <br><br>
+                    <span>Purpose:</span> For the Final Project in the CIT 255 course at NMC. <br><br>
+                    <span>Technologies Used:</span> Windows Presentation Foundation (WPF), MongoDB, Web API <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "cit255-date"> </label>
+                    <br><br>
+                    <a target="_blank" href="{{gitHub.domain + gitHub.cit255}}">GitHub</a>
+                </div>
+            </div>
+
+            <div class="proj" data-tags="html/css,js,angular">
+                <div class="projHead secondaryColor">
+                    E-Portfolio Website
+                </div>
+                <hr><br>
+                <div class="projDesc" ng-controller="links">
+                    <span>Overview:</span> Built this website from scratch using several web technologies. <br><br>
+                    <span>Purpose:</span> To highlight my skills for potential employers and others who are interested in what I have created. <br><br>
+                    <span>Technologies Used:</span> HTML5, CSS, JavaScript, Angular.js <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "eportfolio-date"> </label>
+                    <br><br>
+                    <a target="_blank" href="{{gitHub.domain + gitHub.eportfolio}}">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %> 
+    </footer>
+
+    <% include ../partials/jsIncludes %> 
+</body>
+</html>
