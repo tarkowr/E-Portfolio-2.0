@@ -2,6 +2,7 @@ $primary: #4286f4;
 $secondary: #282828;
 $default: white;
 $light: #d3d3d3;
+$extra-light: #f2f2f2;
 $dark: #828282;
 $font: 'Abhaya Libre', Arial, Helvetica, sans-serif;
 $margin: 0 auto;
@@ -261,18 +262,10 @@ nav{
     margin-left: -30px;
     font-size: 1em;
     margin-bottom: 20px;
-    background-color: $secondary;
-    color: $default;
-    border: 1px solid $default;
+    background-color: $extra-light;
+    color: $secondary;
+    border: 1.2px solid $primary;
 }
-
-@media (max-width: $breakpoint){
-    #filter>select{
-        background-color: $default;
-        color: $secondary;
-    }
-}
-
 .proj{
     display: block;
     text-align: left;
@@ -338,11 +331,12 @@ footer a:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 50px 5px;
-    background: #f2f2f2;
+    background: $extra-light;
     border: 1px solid $light;
 }
 @media (max-width: $breakpoint){
     .error{
+        width: 100%;
         top: 20%;
         transform: translate(-50%, -20%);
     }

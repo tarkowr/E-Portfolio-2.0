@@ -284,17 +284,11 @@ nav {
   margin-left: -30px;
   font-size: 1em;
   margin-bottom: 20px;
-  background-color: #282828;
-  color: white;
-  border: 1px solid white;
+  background-color: #f2f2f2;
+  color: #282828;
+  border: 1.2px solid #4286f4;
 }
 
-@media (max-width: 649px) {
-  #filter > select {
-    background-color: white;
-    color: #282828;
-  }
-}
 .proj {
   display: block;
   text-align: left;
@@ -376,6 +370,7 @@ footer a:hover {
 
 @media (max-width: 649px) {
   .error {
+    width: 100%;
     top: 20%;
     transform: translate(-50%, -20%);
   }
