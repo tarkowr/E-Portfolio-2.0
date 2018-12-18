@@ -33,7 +33,7 @@ app.controller('projects', function ($scope){
         label: 'API'
     }, {
         value: 'angular',
-        label: 'Angular.js'
+        label: 'AngularJS'
     }, {
         value: 'c#',
         label: 'C#'
@@ -46,6 +46,9 @@ app.controller('projects', function ($scope){
     }, {
         value: 'mongodb',
         label: 'MongoDB'
+    }, {
+        value: 'node',
+        label: 'NodeJS'
     }, {
         value: 'php',
         label: 'PHP'
