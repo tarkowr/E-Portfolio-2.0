@@ -1,18 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="/static/stylesheets/css/main.css">
+    <% include ../partials/error-header %>
 </head>
-<div class = "error">
-    <span class = "error-title">
-        <%= title %>
-    </span>
-    <br><br>
-    <span class = "error-msg">
-        <%= msg %>
-    </span>
-    <br><br>
-    <span class = "error-desc">
-        <%= desc %>
-    </span>
-    <br><br><br>
-    <a href="/"><button class = "styledButton" id = "error-btn">Home Page</button></a>
-</div>
+
+<body class = "error-body">
+    <div class = "error">
+        <span class = "error-title">
+            <%= title %>
+        </span>
+        <br><br><br><br>
+        <span class = "error-msg">
+            <%= msg %>
+        </span>
+        <br><br>
+        <span class = "error-desc">
+            <%= desc %>
+        </span>
+        <br><br><br><br><br>
+        <a href="/"><button class = "styledButton" id = "error-btn">Home Page</button></a>
+    </div>
+</body>
+</html>

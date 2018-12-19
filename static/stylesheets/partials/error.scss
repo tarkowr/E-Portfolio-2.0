@@ -1,0 +1,81 @@
+@import "./_variables.scss";
+
+/*Page Defaults and Custom Styles*/
+html, body{
+    height:100%;
+    scroll-behavior: smooth;
+    font-family: $font; 
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.styledButton{
+    font-family: $font;
+    margin: $margin;
+    background-color: $default;
+    border: 1px solid $default;
+    color: $primary;
+    font-size: 1.3em;
+    width: 200px;
+    height: 75px;
+    margin: 0 10px;
+}
+.styledButton:hover{
+    border: 1px solid $primary;
+    transition: border .8s;
+}
+.disabled{
+    display: none;
+}
+
+/*Error Pages*/
+.error-body{
+    background-color: $secondary;
+}
+.error{
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 5px;
+}
+@media (max-width: $breakpoint){
+    .error{
+        width: 100%;
+        top: 20%;
+        transform: translate(-50%, -20%);
+    }
+}
+.error-title{
+    font-weight: bold;
+    font-size: 8em;
+    color: $secondary;
+    color: $default;
+}
+.error-msg{
+    font-size: 1.4em;
+    color: $dark;
+    color: $extra-light;
+}
+.error-desc{
+    color: $light;
+}
+#error-btn{
+    height: 50px;
+    width: 150px;
+    border: 1px solid $primary;
+    font-size: 1.1em;
+    background: $primary;
+    color: $default;
+}
+#error-btn:hover{
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid $default;
+    transition: border 0s;
+}

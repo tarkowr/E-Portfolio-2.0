@@ -1,13 +1,17 @@
-$primary: #4286f4;
-$secondary: #282828;
-$default: white;
-$light: #d3d3d3;
-$extra-light: #f2f2f2;
-$dark: #828282;
-$font: 'Abhaya Libre', Arial, Helvetica, sans-serif;
-$margin: 0 auto;
-$breakpoint: 649px;
+@import "./_variables.scss";
 
+/*Page Defaults and Custom Styles*/
+html, body{
+    height:100%;
+    scroll-behavior: smooth;
+    font-family: $font; 
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
 .styledButton{
     font-family: $font;
     margin: $margin;
@@ -25,19 +29,6 @@ $breakpoint: 649px;
 }
 .disabled{
     display: none;
-}
-
-/*Page Defaults*/
-html, body{
-    height:100%;
-    scroll-behavior: smooth;
-    font-family: $font; 
-    padding: 0;
-    margin: 0;
-}
-a{
-    color: black;
-    text-decoration: none;
 }
 
 /*Nav*/
@@ -319,47 +310,4 @@ footer a:hover{
 }
 .footer-icon{
     margin: 0 5px;
-}
-
-/*Error Pages*/
-.error{
-    margin: 0 auto;
-    text-align: center;
-    width: 60%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 50px 5px;
-    background: $extra-light;
-    border: 1px solid $light;
-}
-@media (max-width: $breakpoint){
-    .error{
-        width: 100%;
-        top: 20%;
-        transform: translate(-50%, -20%);
-    }
-}
-.error-title{
-    font-weight: bold;
-    font-size: 4em;
-    color: $secondary;
-}
-.error-msg{
-    font-size: 1.4em;
-    color: $dark;
-}
-.error-desc{
-    color: $secondary;
-}
-#error-btn{
-    height: 50px;
-    width: 150px;
-    border: 1px solid $primary;
-    font-size: 1.1em;
-}
-#error-btn:hover{
-    background: $primary;
-    color: $default;
 }
