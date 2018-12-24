@@ -1,24 +1,13 @@
-const maxSmallScreen = 649;
+const maxSmallScreen = 1020;
 const maxScroll = 100;
 const scrollBarWidth = 17;
 const numberOfProjectToShow = 2;
 const githubApiUrl = "https://api.github.com/users/tarkowr/repos";
 
-//Hide or unhide nav bar options when the navbar is in mobile upon icon click
-document.getElementById("nav-bars").addEventListener("click", function(){
-    let links = document.getElementsByClassName('nav-links');
-
-    if(links[0].style.display == "inline-block"){
-        for(let i = 0; i < links.length; i++){
-            links[i].style.display = "none";
-        }
-    }
-    else{
-        for(let i = 0; i < links.length; i++){
-            links[i].style.display = "inline-block";
-        }
-    }
-});
+window.onload = function() {
+    MobileNavBar();
+    HandleApiService(DisplayLastUpdatedValues);
+};
 
 async function HandleApiService(callback){
     let data = new Object();
@@ -26,9 +15,23 @@ async function HandleApiService(callback){
     callback(data);
 }
 
-window.onload = function() {
-    HandleApiService(DisplayLastUpdatedValues);
-};
+//Hide or unhide nav bar options when the navbar is in mobile upon icon click
+function MobileNavBar(){
+    document.getElementById("nav-bars").addEventListener("click", function(){
+        let links = document.getElementsByClassName('nav-links');
+    
+        if(links[0].style.display == "inline-block"){
+            for(let i = 0; i < links.length; i++){
+                links[i].style.display = "none";
+            }
+        }
+        else{
+            for(let i = 0; i < links.length; i++){
+                links[i].style.display = "inline-block";
+            }
+        }
+    });
+}
 
 function DisplayLastUpdatedValues(data){
     const eportfolioDate = document.getElementById("eportfolio-date");

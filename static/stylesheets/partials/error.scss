@@ -57,14 +57,20 @@ a{
     font-size: 8em;
     color: $secondary;
     color: $default;
+    margin-bottom: 5%;
+    width: 100%;
 }
 .error-msg{
     font-size: 1.4em;
     color: $dark;
     color: $extra-light;
+    margin-bottom: 3%;
+    width: 100%;
 }
 .error-desc{
     color: $light;
+    margin-bottom: 5%;
+    width: 100%;
 }
 #error-btn{
     height: 50px;

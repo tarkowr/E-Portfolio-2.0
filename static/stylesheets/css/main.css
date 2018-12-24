@@ -81,7 +81,7 @@ nav {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-@media (max-width: 649px) {
+@media (max-width: 1020px) {
   .nav-links {
     display: none;
     width: 100%;
@@ -128,7 +128,7 @@ nav {
   color: white;
 }
 
-@media (max-width: 649px) {
+@media (max-width: 1020px) {
   #name {
     font-size: 2.5em;
   }
@@ -150,6 +150,11 @@ nav {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 1020px) {
+  #read-more {
+    margin-top: 20%;
+  }
+}
 /*About Me*/
 .about-me {
   background-color: white;
@@ -208,11 +213,11 @@ nav {
 }
 
 .card-head {
-  width: 229px;
+  width: 249px;
   border: 1px solid black;
   background-color: #282828;
   color: white;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 32px;
 }
 
@@ -257,6 +262,23 @@ nav {
   border: 1px solid #d3d3d3;
 }
 
+@media (max-width: 1020px) {
+  .card {
+    width: 80%;
+  }
+
+  .card-head {
+    width: 100%;
+  }
+
+  .card-button {
+    display: none;
+  }
+
+  .card-desc {
+    width: 100%;
+  }
+}
 /*Projects*/
 .projects {
   background-color: #282828;
