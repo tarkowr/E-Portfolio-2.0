@@ -57,7 +57,6 @@ nav{
     text-align: center;
     margin: $margin;
     padding: 15px 0;
-    font-size: 1.1em;
 }
 .default-navigation{
     background-color: transparent;
@@ -118,37 +117,46 @@ nav{
     text-align: center;
     color: $default;
     font-size: 1.3em;
-    padding-top: 10px;
+    padding-top: 20px;
+}
+#full-degree{
+    display: inline-block;
+}
+#abbr-degree{
+    display: none;
 }
 @media (max-width: $breakpoint){
     #name{
         font-size: 2.5em;
     }
-    #nav-title{
-        font-size: 1.1em;
+    #full-degree{
+        display: none;
+    }
+    #abbr-degree{
+        display: inline-block;
     }
 }
 
 #read-more{
-    font-size: 1.6em;
-    font-family: 'Asap', monospace;
-    width: 200px;
     margin: $margin;
-    margin-top: 10%;
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+}
+#read-more > a > button{
+    font-size: 1.2em;
+    font-family: 'Asap', monospace;
+    width: 160px;
+    margin: $margin;
     text-align: center;
     color: $default;
-    border: 2px solid $default;
+    background-color: $primary;
+    border: 1px solid white;
     padding: 15px;
     transition: background-color .8s;
 }
-#read-more:hover{
-    background-color: rgba(255, 255, 255, .2);
-}
-
-@media (max-width: $breakpoint){
-    #read-more{
-        margin-top: 20%;
-    }
+#read-more > a > button:hover{
+    background-color: rgba(0, 0, 0, .6);
 }
 
 /*About Me*/
@@ -322,7 +330,7 @@ footer{
     background-color: $default;
     text-align: center;
     font-size: 1.5em;
-    padding: 50px;
+    padding: 50px 0;
     color: black;
 }
 #footer-email > span{

@@ -9,6 +9,11 @@ app.get('/', function(req, res) {
     res.render('pages/index');
 });
 
+// Alyssa page
+app.get('/alyssa', function(req, res) {
+    res.render('pages/alyssa');
+});
+
 app.use(express.static(__dirname));
 
 // Handle 404 Error
