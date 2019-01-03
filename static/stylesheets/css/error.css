@@ -49,7 +49,7 @@ a {
   padding: 50px 5px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
   .error {
     width: 100%;
     top: 20%;
