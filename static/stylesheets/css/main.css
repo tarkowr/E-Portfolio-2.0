@@ -170,14 +170,14 @@ nav {
   margin: 0 auto;
   text-align: center;
   color: white;
-  background-color: #4286f4;
+  background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid white;
   padding: 15px;
   transition: background-color 0.8s;
 }
 
 #read-more > a > button:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(66, 134, 244, 0.8);
 }
 
 /*About Me*/
