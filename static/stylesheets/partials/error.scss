@@ -24,7 +24,7 @@
 }
 .error-title{
     font-weight: bold;
-    font-size: 8em;
+    font-size: 7em;
     color: $secondary;
     color: $default;
     margin-bottom: 5%;
@@ -43,15 +43,13 @@
     width: 100%;
 }
 #error-btn{
-    height: 50px;
-    width: 150px;
+    background-color: $primary;
     border: 1px solid $primary;
-    font-size: 1.1em;
-    background: $primary;
-    color: $default;
+    font: $font;
+    border-radius: 30px;
+    height: 50px;
 }
 #error-btn:hover{
-    background: rgba(255, 255, 255, .10);
-    border: 1px solid $default;
-    transition: border 0s;
+    background-color: $balance;
+    border: 1px solid $balance;
 }

@@ -54,7 +54,7 @@ nav{
         text-align: left;
         display: block;
         font-size: 1.2em;
-        width: 100%;
+        width: 80%;
         margin-left: 15px;
     }
 }
@@ -114,25 +114,18 @@ nav{
     text-align: center;
 }
 #read-more > a > button{
-    font-size: 1.2em;
-    font-family: 'Asap', monospace;
-    width: 160px;
-    margin: $margin;
-    text-align: center;
-    color: $default;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .5);
     border: 1px solid white;
-    padding: 15px;
     transition: background-color .8s;
+    font-family: $spaced;
 }
 #read-more > a > button:hover{
-    background-color: rgba(66, 134, 244, .8);
+    background-color: $hover;
 }
 
 /*About Me*/
 .about-me{
-    background-color: $default;
-    color: black;
+    background-color: $light;
     text-align: center;
     padding: 75px 0;
     margin-top: 0;
@@ -144,6 +137,7 @@ nav{
     margin: 50px auto 60px auto;
     font-size: 1.4em;
     border: 1px solid black;
+    box-shadow: 0px 0px 10px $dark;
 }
 #info{
     text-align: left;   
@@ -155,14 +149,17 @@ nav{
 #resume{
     margin: $margin;
 }
+#resumeDownload{
+    font-family: $spaced;
+}
 
 /*Links*/
 .container{
     width: 100%;
-    background-color: #E4E4E4;
+    background-color: $default;
     text-align: center;
     padding: 50px 0;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
 }
 #linksHead{
     text-align: center;
@@ -171,70 +168,90 @@ nav{
     margin: 30px auto 40px auto;        
 }
 .card{
-    width: 250px;
+    width: 25%;
     background-color: $default;
-    border: 1px solid $light;
     margin: $margin;
-    margin: 20px 40px;
+    margin: auto 40px;
     display: inline-block;
-    box-shadow: 0px 0px 6px #939393;
+    vertical-align: top;
 }
-.card-head{
-    width: 249px;
-    border: 1px solid black;
-    background-color: $secondary;
+.hover-effect{
+    height: 100%;
+    color: transparent;
+    border-radius: 20px;
+}
+.hover-effect:hover{
+    background: rgba(0, 0, 0, .6);
     color: $default;
-    padding: 10px 0;
-    font-size: 32px;
+    transition: background 1s, color 1s;
 }
-.card i{
-    font-size: 84px;
-    color: $primary;
-    margin: 40px;
+.hover-effect > span{
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-family: $spaced;
+    position: relative;
+    top: 40%;
 }
-.card >.lrg-image > i:hover{
-    opacity: .7;
-    transition: opacity .8s;
+.card-image{
+    margin: $margin;
+    width: 100%;
+    max-width: 380px;
+    height: 250px;
+    border: 1px solid $light;
+    border-radius: 20px;
+    background-size: cover;
+    z-index: 1;
+}
+#card-github{
+    background: url("../../media/computer.jpg") no-repeat;
+    background-size: cover;
+}
+#card-linkedin{
+    background: url("../../media/social.jpeg") no-repeat;
+    background-size: cover;
+}
+#card-trailhead{
+    background: url("../../media/trailhead.jpeg") no-repeat;
+    background-size: cover;
 }
 .card-desc{
-    width: 80%;
-    float: left;
+    margin: $margin;
+    width: 100%;
+    max-width: 380px;
     font-size: 18px;
-    border-top: 1px solid $light;
-    color: #4C4C4C;  
+    color: $dark;  
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.card-desc > p > a{
+    color: $primary;
+}
+.card-desc > p > a:hover{
+    text-decoration: underline;
 }
 .card-button{
-    width: 20%;
-    float: right;
-    border-top: 1px solid $light;
+    width: 100%;
+    margin-bottom: 30px;
 }
-.card-button i{
-    font-size: 22px;
-    color: $secondary;
-    margin: $margin;
-    margin-top: 12px;
-    padding: 5px;
-    width: 30px;
-    border: 1px solid $default;
-    transition: background-color .8s, border .8s;
+.card-link{
+    width: 140px;
+    color: $default;
+    background-color: $balance;
+    border: 1px solid $balance;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 1.1em;
 }
-.card-button i:hover{
-    background-color: #eaeaea;
-    border: 1px solid $light;
+.card-link:hover{
+    background-color: $balanceHover;
+    border: 1px solid $balanceHover;
 }
 
 @media (max-width: $breakpoint){
     .card{
         width: 80%;
-    }
-    .card-head{
-        width: 100%;
-    }
-    .card-button{
-        display: none;
-    }
-    .card-desc{
-        width: 100%;
+        margin: 0 auto;
     }
 }
 
@@ -258,13 +275,14 @@ nav{
     padding: 0, 0, 0, 30px;
 }
 #filter>select{
-    height: 30px;
     margin-left: -30px;
     font-size: 1em;
     margin-bottom: 20px;
     background-color: $extra-light;
     color: $secondary;
-    border: 1.2px solid $primary;
+    border: 1px solid $balance;
+    border-radius: 10px;
+    padding: 10px;
 }
 .proj{
     display: block;
