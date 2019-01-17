@@ -151,6 +151,8 @@ nav{
 }
 #resumeDownload{
     font-family: $spaced;
+    border-radius: 30px;
+    width: 200px;
 }
 
 /*Links*/
@@ -233,6 +235,10 @@ nav{
 .card-button{
     width: 100%;
     margin-bottom: 30px;
+}
+.card-button > a > button > i{
+    margin: 0;
+    padding: 0;
 }
 .card-link{
     width: 140px;

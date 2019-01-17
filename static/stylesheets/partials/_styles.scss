@@ -22,6 +22,7 @@ a{
 }
 .styledButton:hover{
     background-color: $balanceHover;
+    border: 1px solid $balanceHover;
 }
 .disabled{
     display: none;
