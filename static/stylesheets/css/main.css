@@ -130,7 +130,7 @@ nav {
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 1.3em;
+  font-size: 1.4em;
   padding-top: 20px;
 }
 
@@ -187,15 +187,20 @@ nav {
   width: 60%;
   margin: 50px auto 60px auto;
   font-size: 1.4em;
-  border: 1px solid black;
-  box-shadow: 0px 0px 10px #828282;
+  border: 1px solid #828282;
+  box-shadow: 0px 0px 20px #828282;
 }
 
 #info {
-  text-align: left;
+  text-align: justify;
   color: #282828;
 }
 
+@media (max-width: 1020px) {
+  #info {
+    text-align: left;
+  }
+}
 .about-me label {
   color: #4286f4;
 }
@@ -285,7 +290,7 @@ nav {
   margin: 0 auto;
   width: 100%;
   max-width: 380px;
-  font-size: 18px;
+  font-size: 20px;
   color: #828282;
   height: auto;
   margin-top: 30px;
