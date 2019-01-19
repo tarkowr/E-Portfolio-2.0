@@ -1,4 +1,4 @@
-const maxSmallScreen = 1020;
+const maxSmallScreen = 1024;
 const maxScroll = 100;
 const scrollBarWidth = 17;
 const numberOfProjectToShow = 2;
