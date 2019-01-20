@@ -9,7 +9,7 @@ html, body {
 }
 
 a {
-  color: black;
+  color: #282828;
   text-decoration: none;
 }
 
@@ -25,6 +25,7 @@ a {
 
 .styledButton:hover {
   background-color: rgba(102, 119, 136, 0.85);
+  border: 1px solid rgba(102, 119, 136, 0.85);
 }
 
 .disabled {
@@ -47,7 +48,7 @@ a {
   padding: 50px 5px;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
   .error {
     width: 100%;
     top: 20%;
@@ -65,8 +66,8 @@ a {
 
 .error-msg {
   font-size: 1.4em;
-  color: #828282;
-  color: #f2f2f2;
+  color: #282828;
+  color: #eee;
   margin-bottom: 3%;
   width: 100%;
 }

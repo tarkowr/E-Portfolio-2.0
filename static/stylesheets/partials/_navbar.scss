@@ -1,0 +1,61 @@
+/*Nav Bar*/
+#navigation{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    font-family: $spacedFont, $defaultFont;
+}
+.nav-links{
+    width: 200px;
+    display: inline-block;       
+}
+#navigation > i{
+    display: none;
+}
+#navigation a, i{
+    text-align: center;
+    margin: $margin;
+    padding: 15px 0;
+}
+.default-navigation{
+    background-color: transparent;
+    top: 20px;
+    border-bottom: 1px solid transparent;
+}
+.default-navigation > a{
+    color: $default;
+    transition: background-color .8s;
+}
+.default-navigation > a:hover{
+    background-color: rgba(255, 255, 255, .15);
+}
+
+@media (max-width: $breakpoint){
+    .nav-links{
+        display: none;
+        width: 100%;
+    }
+    #navigation > a{
+        text-align: left;
+        padding: 15px;
+    }
+    #navigation > i{
+        text-align: left;
+        display: block;
+        font-size: 1.2em;
+        width: 80%;
+        margin-left: 15px;
+    }
+}
+.scrolled-navigation{
+    background-color: $default;
+    top: 0;
+    border-bottom: 1px solid $offBlack;
+}
+.scrolled-navigation > a{
+    color: $offBlack;
+}
+.scrolled-navigation >a:hover{
+    color: $primary;
+}

@@ -1,7 +1,9 @@
 @import "./_variables.scss";
 @import "./_styles";
+@import "./navbar";
+@import "./footer";
 
-/*Nav*/
+/*Header*/
 nav{
     margin: auto;
     width: 100%;
@@ -17,66 +19,6 @@ nav{
     nav{
         background-attachment: scroll;
     }
-}
-#navigation{
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    z-index: 2;
-    font-family: 'Asap', $font;
-}
-.nav-links{
-    width: 200px;
-    display: inline-block;       
-}
-#navigation > i{
-    display: none;
-}
-#navigation a, i{
-    text-align: center;
-    margin: $margin;
-    padding: 15px 0;
-}
-.default-navigation{
-    background-color: transparent;
-    top: 20px;
-    border-bottom: 1px solid transparent;
-}
-.default-navigation > a{
-    color: $default;
-    transition: background-color .8s;
-}
-.default-navigation > a:hover{
-    background-color: rgba(255, 255, 255, .15);
-}
-
-@media (max-width: $breakpoint){
-    .nav-links{
-        display: none;
-        width: 100%;
-    }
-    #navigation > a{
-        text-align: left;
-        padding: 15px;
-    }
-    #navigation > i{
-        text-align: left;
-        display: block;
-        font-size: 1.2em;
-        width: 80%;
-        margin-left: 15px;
-    }
-}
-.scrolled-navigation{
-    background-color: $default;
-    top: 0;
-    border-bottom: 1px solid black;
-}
-.scrolled-navigation > a{
-    color: black;
-}
-.scrolled-navigation >a:hover{
-    color: $primary;
 }
 #nav-personal{
     text-align: center;
@@ -126,10 +68,10 @@ nav{
     background-color: rgba(0, 0, 0, .5);
     border: 1px solid white;
     transition: background-color .8s;
-    font-family: $spaced;
+    font-family: $spacedFont;
 }
 #read-more > a > button:hover{
-    background-color: $hover;
+    background-color: transparent;
 }
 
 /*About Me*/
@@ -140,19 +82,22 @@ nav{
     margin-top: 0;
 }
 #intro{
-    background-color: $default;
+    background-color: transparent;
     padding: 40px;
     width: 60%;
-    margin: 50px auto 60px auto;
+    margin: auto;
+    margin-bottom: 40px;
     font-size: 1.4em;
-    border: 1px solid $dark;
-    box-shadow: 0px 0px 20px $dark;
 }
 #info{
     text-align: justify;  
-    color: $secondary;   
+    color: $offBlack; 
 }
 @media (max-width: $breakpoint){
+    #intro{
+        width: 80%;
+        padding: 20px;
+    }
     #info{
         text-align: left;
     }
@@ -164,7 +109,7 @@ nav{
     margin: $margin;
 }
 #resumeDownload{
-    font-family: $spaced;
+    font-family: $spacedFont;
     border-radius: 30px;
     width: 200px;
 }
@@ -179,7 +124,7 @@ nav{
 }
 #linksHead{
     text-align: center;
-    color: $secondary;
+    color: $offBlack;
     font-size: 3em;
     margin: 30px auto 40px auto;        
 }
@@ -204,7 +149,7 @@ nav{
 .hover-effect > span{
     font-size: 2em;
     letter-spacing: 1px;
-    font-family: $spaced;
+    font-family: $spacedFont;
     position: relative;
     top: 40%;
 }
@@ -235,7 +180,7 @@ nav{
     width: 100%;
     max-width: 380px;
     font-size: 20px;
-    color: $dark;  
+    color: $offBlack;  
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -247,7 +192,7 @@ nav{
 }
 .card-button{
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .card-button > a > button > i{
     margin: 0;
@@ -276,7 +221,7 @@ nav{
 
 /*Projects*/
 .projects{
-    background-color: $secondary;
+    background-color: $offBlack;
     width: 100%;
     text-align: center;
     padding: 50px 0;
@@ -297,8 +242,8 @@ nav{
     margin-left: -30px;
     font-size: 1em;
     margin-bottom: 20px;
-    background-color: $extra-light;
-    color: $secondary;
+    background-color: $light;
+    color: $offBlack;
     border: 1px solid $balance;
     border-radius: 10px;
     padding: 10px;
@@ -319,7 +264,7 @@ nav{
     width: 100%;  
     display: inline-block; 
     font-size: 1.2em;
-    color: black;
+    color: $offBlack;
 }
 .projDesc > a{
     color: $primary;
@@ -330,30 +275,4 @@ nav{
 }
 .projDesc > span{
     font-weight: bold;
-}
-
-/*Footer*/
-footer{
-    background-color: $default;
-    text-align: center;
-    font-size: 1.5em;
-    padding: 50px 0;
-    color: black;
-}
-#footer-email > span{
-    color: $primary;
-}
-footer a{
-    color: black;
-    text-decoration: none;
-}
-footer a:hover{
-    color: $primary;
-    text-decoration: underline;
-}
-#footer-icons{
-    font-size: 1.8em;
-}
-.footer-icon{
-    margin: 0 5px;
 }

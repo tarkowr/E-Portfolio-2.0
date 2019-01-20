@@ -3,7 +3,7 @@ $(function() {
     let filter = $("#filter");
 
     nav.addClass("default-navigation");
-    nav.removeClass("scrolled-navigation");
+    nav.removeClass("disabled");
 
     filter.removeClass("disabled");
 
