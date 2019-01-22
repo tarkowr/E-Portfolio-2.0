@@ -3,6 +3,7 @@ const maxScroll = 100;
 const scrollBarWidth = 17;
 const numberOfProjectToShow = 2;
 const githubApiUrl = "https://api.github.com/users/tarkowr/repos";
+let mobile = false;
 
 window.onload = function() {
     MobileNavBar();
@@ -17,9 +18,10 @@ async function HandleApiService(callback){
 
 //Hide or unhide nav bar options when the navbar is in mobile upon icon click
 function MobileNavBar(){
-    document.getElementById("nav-bars").addEventListener("click", function(){
-        let links = document.getElementsByClassName('nav-links');
-    
+    let links = document.getElementsByClassName('nav-links');
+    let navIcon = document.getElementById("nav-bars");
+
+    let toggleNavLinks = function(){
         if(links[0].style.display == "inline-block"){
             for(let i = 0; i < links.length; i++){
                 links[i].style.display = "none";
@@ -30,6 +32,20 @@ function MobileNavBar(){
                 links[i].style.display = "inline-block";
             }
         }
+    };
+
+    navIcon.addEventListener("click", function(){
+        mobile = true;
+        toggleNavLinks();
+    });
+
+    Array.prototype.forEach.call(links, function(elem){
+        elem.addEventListener("click", function(){
+            if(mobile){
+                mobile = false;
+                toggleNavLinks();
+            }
+        });
     });
 }
 

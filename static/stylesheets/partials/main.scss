@@ -1,7 +1,5 @@
 @import "./_variables.scss";
 @import "./_styles";
-@import "./navbar";
-@import "./footer";
 
 /*Header*/
 nav{
@@ -20,6 +18,9 @@ nav{
         background-attachment: scroll;
     }
 }
+
+@import "./navbar";
+
 #nav-personal{
     text-align: center;
     display: inline-block;
@@ -108,7 +109,7 @@ nav{
 #resume{
     margin: $margin;
 }
-#resumeDownload{
+#resume-download{
     font-family: $spacedFont;
     border-radius: 30px;
     width: 200px;
@@ -122,7 +123,7 @@ nav{
     padding: 50px 0;
     padding-bottom: 150px;
 }
-#linksHead{
+#links-head{
     text-align: center;
     color: $offBlack;
     font-size: 3em;
@@ -227,7 +228,7 @@ nav{
     padding: 50px 0;
     padding-bottom: 160px;    
 }
-#projectsHead{
+#projects-header{
     color: $default;
     font-size: 3em;
     margin: 30px auto 40px auto;
@@ -238,7 +239,7 @@ nav{
     width: 80%;
     padding: 0, 0, 0, 30px;
 }
-#filter>select{
+#filter > select{
     margin-left: -30px;
     font-size: 1em;
     margin-bottom: 20px;
@@ -257,22 +258,24 @@ nav{
     margin: $margin;
     margin-bottom: 30px;
 }
-.projHead{
+.proj-head{
     font-size: 2em;
 }
-.projDesc{
+.proj-desc{
     width: 100%;  
     display: inline-block; 
     font-size: 1.2em;
     color: $offBlack;
 }
-.projDesc > a{
+.proj-desc > a{
     color: $primary;
     text-decoration: none;    
 }
-.projDesc > a:hover{
+.proj-desc > a:hover{
     text-decoration: underline;
 }
-.projDesc > span{
+.proj-desc > span{
     font-weight: bold;
 }
+
+@import "./footer";

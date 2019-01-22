@@ -2,9 +2,7 @@ $(function() {
     let nav = $("#navigation");
     let filter = $("#filter");
 
-    nav.addClass("default-navigation");
     nav.removeClass("disabled");
-
     filter.removeClass("disabled");
 
     //Check if window is scrolled past a certain point and handle navbar classes
@@ -37,6 +35,8 @@ $(function() {
 
     //On window resize, check if the navbar needs to switch to mobile or desktop
     $(window).on('resize', function(){
+        mobile = false;
+        
         if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { 
             $('#navigation a').css('display', 'none');
             nav.addClass("scrolled-navigation");

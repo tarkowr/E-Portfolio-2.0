@@ -10,7 +10,7 @@
     width: 200px;
     display: inline-block;       
 }
-#navigation > i{
+#nav-bars{
     display: none;
 }
 #navigation a, i{
@@ -40,7 +40,7 @@
         text-align: left;
         padding: 15px;
     }
-    #navigation > i{
+    #nav-bars{
         text-align: left;
         display: block;
         font-size: 1.2em;

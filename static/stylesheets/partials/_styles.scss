@@ -11,7 +11,7 @@ a{
     color: $offBlack;
     text-decoration: none;
 }
-.styledButton{
+.styled-btn{
     margin: $margin;
     background-color: $balance;
     border: 1px solid $balance;
@@ -20,7 +20,7 @@ a{
     width: 180px;
     height: 60px;
 }
-.styledButton:hover{
+.styled-btn:hover{
     background-color: $balanceHover;
     border: 1px solid $balanceHover;
 }

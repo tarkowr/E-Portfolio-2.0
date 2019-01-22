@@ -13,7 +13,7 @@ a {
   text-decoration: none;
 }
 
-.styledButton {
+.styled-btn {
   margin: 0 auto;
   background-color: #678;
   border: 1px solid #678;
@@ -23,7 +23,7 @@ a {
   height: 60px;
 }
 
-.styledButton:hover {
+.styled-btn:hover {
   background-color: rgba(102, 119, 136, 0.85);
   border: 1px solid rgba(102, 119, 136, 0.85);
 }
@@ -32,6 +32,24 @@ a {
   display: none;
 }
 
+/*Header*/
+nav {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: url("../../media/mountain-background.jpg") no-repeat center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  nav {
+    background-attachment: scroll;
+  }
+}
 /*Nav Bar*/
 #navigation {
   position: fixed;
@@ -46,7 +64,7 @@ a {
   display: inline-block;
 }
 
-#navigation > i {
+#nav-bars {
   display: none;
 }
 
@@ -82,7 +100,7 @@ a {
     padding: 15px;
   }
 
-  #navigation > i {
+  #nav-bars {
     text-align: left;
     display: block;
     font-size: 1.2em;
@@ -104,60 +122,6 @@ a {
   color: #4286f4;
 }
 
-/*Footer*/
-footer {
-  background-color: white;
-  text-align: center;
-  font-size: 1.5em;
-  padding: 50px 0;
-  color: #282828;
-}
-
-#footer-email a {
-  color: #4286f4;
-}
-
-#footer-email a:hover {
-  color: #678;
-  text-decoration: none;
-}
-
-footer a {
-  color: #282828;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #4286f4;
-  text-decoration: underline;
-}
-
-#footer-icons {
-  font-size: 1.8em;
-}
-
-.footer-icon {
-  margin: 0 5px;
-}
-
-/*Header*/
-nav {
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  background: url("../../media/mountain-background.jpg") no-repeat center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-@media (max-width: 1024px) {
-  nav {
-    background-attachment: scroll;
-  }
-}
 #nav-personal {
   text-align: center;
   display: inline-block;
@@ -259,7 +223,7 @@ nav {
   margin: 0 auto;
 }
 
-#resumeDownload {
+#resume-download {
   font-family: "Asap", monospace;
   border-radius: 30px;
   width: 200px;
@@ -274,7 +238,7 @@ nav {
   padding-bottom: 150px;
 }
 
-#linksHead {
+#links-head {
   text-align: center;
   color: #282828;
   font-size: 3em;
@@ -394,7 +358,7 @@ nav {
   padding-bottom: 160px;
 }
 
-#projectsHead {
+#projects-header {
   color: white;
   font-size: 3em;
   margin: 30px auto 40px auto;
@@ -428,28 +392,64 @@ nav {
   margin-bottom: 30px;
 }
 
-.projHead {
+.proj-head {
   font-size: 2em;
 }
 
-.projDesc {
+.proj-desc {
   width: 100%;
   display: inline-block;
   font-size: 1.2em;
   color: #282828;
 }
 
-.projDesc > a {
+.proj-desc > a {
   color: #4286f4;
   text-decoration: none;
 }
 
-.projDesc > a:hover {
+.proj-desc > a:hover {
   text-decoration: underline;
 }
 
-.projDesc > span {
+.proj-desc > span {
   font-weight: bold;
+}
+
+/*Footer*/
+footer {
+  background-color: white;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 50px 0;
+  color: #282828;
+}
+
+#footer-email a {
+  color: #4286f4;
+}
+
+#footer-email a:hover {
+  color: #678;
+  text-decoration: none;
+}
+
+footer a {
+  color: #282828;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #4286f4;
+  text-decoration: underline;
+}
+
+#footer-icons {
+  font-size: 1.8em;
+}
+
+.footer-icon {
+  margin: 0 5px;
 }
 
 /*# sourceMappingURL=main.css.map */

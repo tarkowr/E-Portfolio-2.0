@@ -18,13 +18,13 @@
             &mdash; <span id = "full-degree">Computer Information Systems</span><span id = "abbr-degree">CIS</span> Major at FSU &mdash;
         </div>
         <div id = "read-more">
-            <a href = "#about-me"><button class = "styledButton">CONTINUE</button></a>
+            <a href = "#about-me"><button class = "styled-btn">CONTINUE</button></a>
         </div>
     </nav>
 
     <main>
         <section class="about-me" id = "about-me">
-            <div id="linksHead">&mdash; About Me &mdash;</div>
+            <div id="links-head">&mdash; About Me &mdash;</div>
             <div id="intro">
                 <div id="info">
                     <div>My name is Richie Tarkowski, and I am a second year Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty as an IT Applications Intern. Post-education, my goal is to apply my knowledge of software to develop and design applications. I have experience in building .NET applications with C# and WPF, creating SQL/MySQL databases and performing DML/DDL statements, using Git and GitHub for version control, developing responsive and mobile websites, and writing server-side scripts. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes.</div>
@@ -32,12 +32,12 @@
             </div>
 
             <div class="resume">
-                <a href="../../static/media/Tarkowski_Resume.pdf" target="_blank"><button id = "resumeDownload" class = "styledButton">View My Resume</button></a>
+                <a href="../../static/media/Tarkowski_Resume.pdf" target="_blank"><button id = "resume-download" class = "styled-btn">View My Resume</button></a>
             </div>
         </section>
 
         <section class="container" id = "links-top">
-            <div id="linksHead">&mdash; Connect &mdash;</div>
+            <div id="links-head">&mdash; Connect &mdash;</div>
             <section class="card" ng-controller="links">
                 <div class = "card-image" id = "card-github">
                     <a target="_blank" href="{{gitHub.domain}}"><div class = "hover-effect">
@@ -88,29 +88,29 @@
         </section>
 
         <section class="projects" id = "projects-top" ng-controller="projects">
-            <div id="projectsHead">&mdash; Projects &mdash;</div>
+            <div id="projects-header">&mdash; Projects &mdash;</div>
             <div id="filter" class="disabled">
                 <select ng-model = "selected_type"  ng-change="ProjectFilter()">
                     <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
                 </select>
             </div>
             <div class="proj" id = "hagerty" data-tags="js,sql,node">
-                <div class="projHead secondaryColor">
+                <div class="proj-head off-black">
                     Test Automation
                 </div>
                 <hr><br>
-                <div class="projDesc">
+                <div class="proj-desc">
                     <span>Overview:</span> Responsible for designing, building, and managing a test automation application at Hagerty to ensure that Salesforce apps and web processes were fully functional in multiple environments. <br><br>
                     <span>Technologies Used:</span> NightwatchJS, Typescript, SQL, NodeJS
                 </div>
             </div>
 
             <div class="proj, disabled" data-tags="c#">
-                <div class="projHead secondaryColor">
+                <div class="proj-head off-black">
                     Despair
                 </div>
                 <hr><br>
-                <div class="projDesc" ng-controller="links">
+                <div class="proj-desc" ng-controller="links">
                     <span>Overview:</span> Developed a Text-Based Quest Game using programming concepts
                     such as: Polymorphism, Inheritance, Encapsulation, Interfaces, and Events. This application adheres to the MVC Design Pattern and the Dependicy Injection Principle.
                     <br><br>
@@ -122,11 +122,11 @@
             </div>
 
             <div class="proj" data-tags="php,sql,html/css">
-                <div class="projHead secondaryColor">
+                <div class="proj-head off-black">
                     March Madness Discussion Forum
                 </div>
                 <hr><br>
-                <div class="projDesc" ng-controller="links">
+                <div class="proj-desc" ng-controller="links">
                     <span>Overview:</span> Created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
                     <span>Technologies Used:</span> PHP, SQL, HTML5, CSS <br><br>
                     <span class = "last-updated">Last Updated:</span> <label id = "cit228-date"> </label>
@@ -136,11 +136,11 @@
             </div>
 
             <div class="proj" data-tags="wpf,mongodb,api,c#">
-                <div class="projHead secondaryColor">
+                <div class="proj-head off-black">
                     Stock Insight
                 </div>
                 <hr><br>
-                <div class="projDesc" ng-controller="links">
+                <div class="proj-desc" ng-controller="links">
                     <span>Overview:</span> Developed a simple, responsive WPF stock application that includes persistence and real-time stock data. <br><br>
                     <span>Technologies Used:</span> Windows Presentation Foundation (WPF), C#, MongoDB, Web API <br><br>
                     <span class = "last-updated">Last Updated:</span> <label id = "cit255-date"> </label>
@@ -150,11 +150,11 @@
             </div>
 
             <div class="proj" data-tags="html/css,js,angular,node">
-                <div class="projHead secondaryColor">
+                <div class="proj-head off-black">
                     E-Portfolio Website
                 </div>
                 <hr><br>
-                <div class="projDesc" ng-controller="links">
+                <div class="proj-desc" ng-controller="links">
                     <span>Overview:</span> Built this website from scratch using several web technologies. <br><br>
                     <span>Technologies Used:</span> HTML5, CSS, JavaScript, AngularJS, NodeJS <br><br>
                     <span class = "last-updated">Last Updated:</span> <label id = "eportfolio-date"> </label>
