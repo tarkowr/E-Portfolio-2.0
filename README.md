@@ -12,7 +12,6 @@ Visit Noah's [GitHub](https://github.com/NoahFlowa).
 * AngularJS
 * Basic Routing in NodeJS
 * HTML Templating in Embedded JavaScript (.ejs)
-* Custom Navigation Bar
 * Custom Error Pages
 
 ## Installation
