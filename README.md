@@ -8,13 +8,13 @@
 Visit Noah's [GitHub](https://github.com/NoahFlowa).
 
 ## What I Learned
-* Create a mobile and responsive website
-* Build a custom Navbar
+* Mobile and Responsive Web Design
 * Sass/Scss
-* Access GitHub's API through JavaScript
+* JavaScript API Calls
 * AngularJS
-* NodeJS for basic routing
-* Use Embedded JavaScript (.ejs) for HTML templating
+* Basic Routing in NodeJS
+* HTML Templating in Embedded JavaScript (.ejs)
+* Custom Navigation Bar
 * Custom Error Pages
 
 ## Contributing
