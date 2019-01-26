@@ -1,7 +1,5 @@
 # E-Portfolio
 
-**Created By:** Richie Tarkowski 
-
 **[Visit my website!](https://richietarkowski.com)**
 
 **Special thanks to Noah Osterhout for hosting this website!**
