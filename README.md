@@ -5,6 +5,17 @@
 **Special thanks to Noah Osterhout for hosting this website!**
 Visit Noah's [GitHub](https://github.com/NoahFlowa).
 
+### What I Learned
+* Create a mobile and responsive website
+* Build a custom Navbar
+* Sass/Scss
+* Access GitHub's API through JavaScript
+* AngularJS
+* NodeJS for basic routing
+* Use Embedded JavaScript (.ejs) for HTML templating
+* Custom Error Pages
+* NPM
+
 ### Contributing
 1. Install Node.JS
 2. Run ```npm install``` in the root directory for project dependencies.
