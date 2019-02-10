@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <!--Blog CSS-->
+    <link rel="stylesheet" href="/static/stylesheets/css/blog.css">
+    <title>Richie Tarkowski | Blog</title>
+    
+    <% include ../partials/header %>
+    
+    <!--TypedJS-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+</head>
+<body>
+    <nav>
+        <div id="navbar">
+            <a href="/" class="home-link">Richie Tarkowski</a>
+            <a href="/" class="link">Home</a>
+            <a href="/blog" class="link">Blog</a>
+        </div>
+
+        <div id="title">
+            <div id="typed-strings">
+                <p>Welcome to my Blog!</p>
+            </div>
+            <p id="title-container">
+                <span id="typed"></span> <br>
+            </p>
+        </div>
+
+        <a href = "#blog-section"><button class="styled-btn" id="read-more">Read More</button></a>
+    </nav>
+
+    <main id = "blog-section">
+        <div class = "blog-post">
+            <div class = "blog-header">
+                Sprint <span> [1] </span>
+            </div>
+
+            <div class = "blog-content">
+                <p>In the first sprint, our team made significant progress. We finished the Training Module assignment—our primary focus of the sprint—with each member contributing towards one or parts of the project. As a team, we wrote the training module proposal, created an extensive and complete tutorial, build a demo website, and delivered a presentation to the class. Leading up to the presentation, our team had an issue with communication as we did not set expectations for the presentation and live demonstration. However, after reflecting upon the quality of our presentation, our team discussed each mistake and agreed to work towards improving in those areas. At the time I am writing this blog, we are currently writing our proposal for the Client Project. During this sprint, I spent over fifteen hours working on the Training Module. From the presentation, to the documentation, I put forth my best efforts towards helping the team. Overall, the first sprint went well. The five of us worked together to complete the training module, despite the two classes that were canceled due to snow, and we still stepped up and presented early. One criticism that I have for our team is our tendency groupthink. I want and would encourage members on this team to ask questions and think critically about what others are saying, rather than accepting everything at face value. This is something that we can improve upon in future sprints. </p>
+            </div>
+
+            <div class = "blog-footer">
+                9-Feb-2019
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %> 
+    </footer>
+
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--Site JS-->
+    <script src="/static/scripts/controller.js"></script>
+
+    <script>
+        var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings',
+            typeSpeed: 25,
+            startDelay: 500,
+            autoInsertCss: true,
+            fadeOut: true
+        });
+    </script>
+</body>
+</html>

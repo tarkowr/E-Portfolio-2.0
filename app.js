@@ -1,13 +1,17 @@
 var express = require('express');
 var app = express();
 
-// set the view engine to ejs
+// Set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// index page 
+// Index page 
 app.get('/', function(req, res) {
     res.render('pages/index');
 });
+
+app.get('/blog', function(req, res){
+    res.render('pages/blog');
+})
 
 // Alyssa page
 app.get('/alyssa', function(req, res) {
@@ -24,7 +28,7 @@ app.use(function(req, res) {
 });
 
 // Handle 500 Error
-app.use(function(error, req, res, next) {
+app.use(function(req, res) {
     res.status(500);
     res.render('pages/500', {title: "500", msg:'Internal Server Error', desc: 'Could not load the requested page. Please try again later.'});
     console.log('500 Error Handled.');

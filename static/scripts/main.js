@@ -10,6 +10,7 @@ window.onload = function() {
     HandleApiService(DisplayLastUpdatedValues);
 };
 
+//Get GitHub API data from dataService
 async function HandleApiService(callback){
     let data = new Object();
     data = await ApiService(githubApiUrl);
@@ -49,6 +50,7 @@ function MobileNavBar(){
     });
 }
 
+//Display GitHub API values
 function DisplayLastUpdatedValues(data){
     const eportfolioDate = document.getElementById("eportfolio-date");
     const cit228Date = document.getElementById("cit228-date");

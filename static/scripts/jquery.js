@@ -2,6 +2,7 @@ $(function() {
     let nav = $("#navigation");
     let filter = $("#filter");
 
+    //If JS is enabled, display elements that use JS
     nav.removeClass("disabled");
     filter.removeClass("disabled");
 

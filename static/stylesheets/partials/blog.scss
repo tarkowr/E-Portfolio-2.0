@@ -1,0 +1,129 @@
+@import "./_variables.scss";
+@import "./_styles";
+
+/*NavBar*/
+nav{
+    width: 100%;
+    height: 100%;
+}
+#navbar{
+    width: 100%;
+    position: fixed;
+    color: $default;
+    z-index: 2;
+    font-family: $spacedFont, $defaultFont;
+    font-size: 1.2em;
+    background-color: $offBlack;
+    border-bottom: 2px solid $blogTheme;
+}
+#navbar > a{
+    margin: 20px 0px 20px 30px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+}
+@media (max-width: $breakpoint){
+    #navbar > a{
+        margin: 20px 10px;
+    }
+}
+#navbar > a:hover{
+    color: $default;
+}
+.link{
+    color: $fadedBlack;
+}
+.home-link{
+    color: $default;
+}
+#title{
+    text-align: center;
+    display: inline-block;
+    margin-top: 14%;
+    width: 100%;
+    font-size: 2em;
+}
+#title-container{
+    margin: $margin;
+    width: 50%;
+    padding-top: 8%;
+    padding-bottom: 7%;
+    background-color: $offBlack;
+    color: $default;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+.typed-cursor {
+    color: $blogTheme;
+}
+@media (max-width: $breakpoint){
+    #title{
+        margin-top: 25%;
+        font-size: 1.5em;
+    }
+    #title-container{
+        width: 80%;
+    }
+}
+
+#read-more{
+    font-size: 18px;
+    margin: $margin;
+    margin-top: 50px;
+    display: block;
+    //border-radius: 30px;
+    border: 1px solid $blogTheme;
+    background-color: transparent;
+    color: $blogTheme;
+}
+
+#read-more:hover{
+    background-color: $blogTheme;
+    color: $default;
+    transition: background-color .5s, color .5s;
+}
+
+/*Blogs*/
+main{
+    background-color: $offBlack;
+    width: 100%;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+.blog-post{
+    width: 60%;
+    margin: $margin;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: $default;
+    color: $offBlack;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 10px;
+    border: 2px solid $default;
+}
+.blog-post:hover{
+    border: 2px solid $blogTheme;
+    transition: border .5s;
+}
+
+.blog-header{
+    font-size: 2em;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0,0,0,.75);
+}
+.blog-header span{
+    color: $blogTheme;
+}
+.blog-content{
+    text-align: justify;
+    padding: 10px;
+}
+.blog-footer{
+    font-size: 0.8em;
+    color: $balance;
+}
+
+@import "./_footer";
