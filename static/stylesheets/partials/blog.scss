@@ -8,6 +8,7 @@ nav{
 }
 #navbar{
     width: 100%;
+    height: 75px;//
     position: fixed;
     color: $default;
     z-index: 2;
@@ -16,25 +17,53 @@ nav{
     background-color: $offBlack;
     border-bottom: 2px solid $blogTheme;
 }
-#navbar > a{
+.link{
     margin: 20px 0px 20px 30px;
     display: inline-block;
     text-decoration: none;
     padding: 5px;
+    color: $fadedBlack;
+    width: auto;
+}
+.home{
+    color: $default;
+}
+#navbar > i{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    border: 1px solid rgba(255,255,255,.75);
+    color: rgba(255,255,255,.75);
+    padding: 8px;
+    border-radius: 8px;
+    display: none;
 }
 @media (max-width: $breakpoint){
-    #navbar > a{
-        margin: 20px 10px;
+    #navbar{
+        transition: height 1s;
+        transition-timing-function: ease;
+    }
+    .link{
+        display: none;
+        width: 80%;
+        margin: 5px 10px;
+        margin-top: 0px;
+    }
+    .home{
+        margin: 20px 0px 20px 10px;
+        display: block;
+        transition: margin 1s;
+    }
+    #navbar > i{
+        display: block;
     }
 }
 #navbar > a:hover{
     color: $default;
 }
-.link{
-    color: $fadedBlack;
-}
-.home-link{
+#navbar > i:hover{
     color: $default;
+    border: 1px solid $default;
 }
 #title{
     text-align: center;
@@ -56,22 +85,12 @@ nav{
 .typed-cursor {
     color: $blogTheme;
 }
-@media (max-width: $breakpoint){
-    #title{
-        margin-top: 25%;
-        font-size: 1.5em;
-    }
-    #title-container{
-        width: 80%;
-    }
-}
 
 #read-more{
     font-size: 18px;
     margin: $margin;
     margin-top: 50px;
     display: block;
-    //border-radius: 30px;
     border: 1px solid $blogTheme;
     background-color: transparent;
     color: $blogTheme;
@@ -83,12 +102,43 @@ nav{
     transition: background-color .5s, color .5s;
 }
 
+@media (min-width : 481px) and (max-width: $breakpoint){
+    #title{
+        margin-top: 25%;
+        font-size: 1.5em;
+    }
+    #title-container{
+        width: 80%;
+    }
+}
+
+@media (max-width : $mobileBreakpoint){
+    #title{
+        margin-top: 45%;
+        font-size: 1.2em;
+    }
+    #title-container{
+        width: 80%;
+    }
+    #read-more{
+        width: 140px;
+        height: 45px;
+    }
+}
+
 /*Blogs*/
 main{
     background-color: $offBlack;
     width: 100%;
-    padding-top: 200px;
+    padding-top: 75px;
     padding-bottom: 200px;
+}
+.blog-top{
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    color: $default;
+    margin-bottom: 100px;
 }
 .blog-post{
     width: 60%;
@@ -124,6 +174,12 @@ main{
 .blog-footer{
     font-size: 0.8em;
     color: $balance;
+}
+
+@media (max-width : $mobileBreakpoint){
+    .blog-content{
+        text-align: left;
+    }
 }
 
 @import "./_footer";

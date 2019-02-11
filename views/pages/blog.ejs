@@ -14,9 +14,10 @@
 <body>
     <nav>
         <div id="navbar">
-            <a href="/" class="home-link">Richie Tarkowski</a>
+            <a href="/" class="link home">Richie Tarkowski</a>
             <a href="/" class="link">Home</a>
             <a href="/blog" class="link">Blog</a>
+            <i class="fa fa-bars" id="nav-bar"></i>
         </div>
 
         <div id="title">
@@ -32,6 +33,10 @@
     </nav>
 
     <main id = "blog-section">
+        <div class = "blog-top">
+            <p>&mdash; Blog Posts &mdash;</p>
+        </div>
+
         <div class = "blog-post">
             <div class = "blog-header">
                 Sprint <span> [1] </span>
@@ -55,6 +60,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!--Site JS-->
     <script src="/static/scripts/controller.js"></script>
+    <script src="/static/scripts/blog.js"></script>
 
     <script>
         var typed = new Typed('#typed', {
