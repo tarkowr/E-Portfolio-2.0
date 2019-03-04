@@ -8,7 +8,7 @@ nav{
 }
 #navbar{
     width: 100%;
-    height: 75px;//
+    height: 75px;
     position: fixed;
     color: $default;
     z-index: 2;
@@ -34,13 +34,13 @@ nav{
     right: 15px;
     border: 1px solid rgba(255,255,255,.75);
     color: rgba(255,255,255,.75);
-    padding: 8px;
+    padding: 8px 12px;
     border-radius: 8px;
     display: none;
 }
 @media (max-width: $breakpoint){
     #navbar{
-        transition: height 1s;
+        transition: height .5s;
         transition-timing-function: ease;
     }
     .link{
@@ -114,7 +114,7 @@ nav{
 
 @media (max-width : $mobileBreakpoint){
     #title{
-        margin-top: 45%;
+        margin-top: 60%;
         font-size: 1.2em;
     }
     #title-container{
@@ -124,6 +124,23 @@ nav{
         width: 140px;
         height: 45px;
     }
+}
+
+#nav-arrows{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 1.3em;
+    background-color: $offBlack;
+    border: 2px solid $blogTheme;
+}
+#nav-arrows > a{
+    display: block;
+    color: $default;
+    padding: 5px 10px 5px 10px;
+}
+#nav-arrows > a:hover{
+    background-color: $blogTheme;
 }
 
 /*Blogs*/
@@ -148,6 +165,7 @@ main{
     text-align: center;
     background-color: $default;
     color: $offBlack;
+    margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
     padding: 20px;
@@ -175,10 +193,19 @@ main{
     font-size: 0.8em;
     color: $balance;
 }
+.blog-line{
+    width: 60%;
+}
 
 @media (max-width : $mobileBreakpoint){
     .blog-content{
         text-align: left;
+    }
+}
+
+@media (max-width: $breakpoint){
+    .blog-post{
+        width: 85%;
     }
 }
 

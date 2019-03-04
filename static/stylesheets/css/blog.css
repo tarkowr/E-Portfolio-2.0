@@ -69,14 +69,14 @@ nav {
   right: 15px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   color: rgba(255, 255, 255, 0.75);
-  padding: 8px;
+  padding: 8px 12px;
   border-radius: 8px;
   display: none;
 }
 
 @media (max-width: 1024px) {
   #navbar {
-    transition: height 1s;
+    transition: height 0.5s;
     transition-timing-function: ease;
   }
 
@@ -157,7 +157,7 @@ nav {
 }
 @media (max-width: 480px) {
   #title {
-    margin-top: 45%;
+    margin-top: 60%;
     font-size: 1.2em;
   }
 
@@ -170,6 +170,25 @@ nav {
     height: 45px;
   }
 }
+#nav-arrows {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.3em;
+  background-color: #282828;
+  border: 2px solid #f4425f;
+}
+
+#nav-arrows > a {
+  display: block;
+  color: white;
+  padding: 5px 10px 5px 10px;
+}
+
+#nav-arrows > a:hover {
+  background-color: #f4425f;
+}
+
 /*Blogs*/
 main {
   background-color: #282828;
@@ -194,6 +213,7 @@ main {
   text-align: center;
   background-color: white;
   color: #282828;
+  margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 10px;
   padding: 20px;
@@ -226,9 +246,18 @@ main {
   color: #678;
 }
 
+.blog-line {
+  width: 60%;
+}
+
 @media (max-width: 480px) {
   .blog-content {
     text-align: left;
+  }
+}
+@media (max-width: 1024px) {
+  .blog-post {
+    width: 85%;
   }
 }
 /*Footer*/

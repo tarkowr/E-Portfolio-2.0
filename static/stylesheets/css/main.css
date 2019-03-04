@@ -57,6 +57,8 @@ nav {
   text-align: center;
   z-index: 2;
   font-family: "Asap", monospace, "Abhaya Libre", Arial, Helvetica, sans-serif;
+  transition: padding-top 0.5s;
+  transition-timing-function: ease;
 }
 
 .nav-links {
@@ -72,17 +74,19 @@ nav {
   text-align: center;
   margin: 0 auto;
   padding: 15px 0;
+  font-size: 17px;
 }
 
 .default-navigation {
   background-color: transparent;
-  top: 20px;
+  top: 0;
+  padding-top: 30px;
   border-bottom: 1px solid transparent;
 }
 
 .default-navigation > a {
   color: white;
-  transition: background-color 0.8s;
+  transition: background-color 0.5s;
 }
 
 .default-navigation > a:hover {
@@ -110,7 +114,7 @@ nav {
 }
 .scrolled-navigation {
   background-color: white;
-  top: 0;
+  padding-top: 0px;
   border-bottom: 1px solid #282828;
 }
 
@@ -119,7 +123,7 @@ nav {
 }
 
 .scrolled-navigation > a:hover {
-  color: #4286f4;
+  background-color: #eee;
 }
 
 #nav-personal {

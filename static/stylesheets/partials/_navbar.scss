@@ -5,6 +5,8 @@
     text-align: center;
     z-index: 2;
     font-family: $spacedFont, $defaultFont;
+    transition: padding-top .5s;
+    transition-timing-function: ease;
 }
 .nav-links{
     width: 200px;
@@ -17,15 +19,17 @@
     text-align: center;
     margin: $margin;
     padding: 15px 0;
+    font-size: 17px;
 }
 .default-navigation{
     background-color: transparent;
-    top: 20px;
+    top: 0;
+    padding-top: 30px;
     border-bottom: 1px solid transparent;
 }
 .default-navigation > a{
     color: $default;
-    transition: background-color .8s;
+    transition: background-color .5s;
 }
 .default-navigation > a:hover{
     background-color: rgba(255, 255, 255, .15);
@@ -50,12 +54,12 @@
 }
 .scrolled-navigation{
     background-color: $default;
-    top: 0;
+    padding-top: 0px;
     border-bottom: 1px solid $offBlack;
 }
 .scrolled-navigation > a{
     color: $offBlack;
 }
 .scrolled-navigation >a:hover{
-    color: $primary;
+    background-color: #eee;
 }
