@@ -18,7 +18,7 @@ app.controller('links', function ($scope) {
         eportfolio: "/ePortfolio"
     };
     $scope.linkedIn = "https://www.linkedin.com/in/richie-tarkowski-273238155";
-    $scope.trailHead = "https://trailhead.salesforce.com/en/me/0055000000875A3AAI";
+    $scope.trailHead = "https://trailhead.com/me/rtarkowski";
     $scope.instagram = "https://www.instagram.com/richie_tarkowski/";
     $scope.facebook = "https://www.facebook.com/richie.tarkowski";
 });
