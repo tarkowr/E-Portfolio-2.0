@@ -34,7 +34,7 @@ app.controller('projects', function ($scope){
         label: 'API'
     }, {
         value: 'angular',
-        label: 'AngularJS'
+        label: 'Angular 7'
     }, {
         value: 'c#',
         label: 'C#'
