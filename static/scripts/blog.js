@@ -58,10 +58,13 @@ function SetupMobileNavBar(){
 
         //Display each navbar item
         else{
-            for(let i = 1; i < links.length; i++){
-                links[i].style.display = "block";
-            }
             navbar.style.height = "150px";
+
+            for(let i = 1; i < links.length; i++){
+                setTimeout(function() {
+                    links[i].style.display = "block";
+                }, 300);
+            }
         }
     };
 
