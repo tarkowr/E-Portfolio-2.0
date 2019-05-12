@@ -61,7 +61,7 @@ function DisplayLastUpdatedValues(data){
     eportfolioDate.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "ePortfolio");
     cit228Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT-228-Discussion-Forum");
     cit195Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT195-Final-Project");
-    cit255Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT255FinalApplication");
+    cit255Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "Stock-Insight");
     pycsv.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "PyCsv");
 }
 
