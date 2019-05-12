@@ -4,6 +4,8 @@ html, body{
     height: 100%;
     scroll-behavior: smooth;
     font-family: $defaultFont; 
+    font-weight: 200;
+    font-size: 1em;
     padding: 0;
     margin: 0;
 }
@@ -16,13 +18,16 @@ a{
     background-color: $balance;
     border: 1px solid $balance;
     color: $default;
-    font-size: 1.2em;
+    font-size: 1.1em;
     width: 180px;
     height: 60px;
 }
 .styled-btn:hover{
     background-color: $balanceHover;
     border: 1px solid $balanceHover;
+}
+button{
+    font-size: 1.1em;
 }
 .disabled{
     display: none;

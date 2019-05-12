@@ -25,14 +25,12 @@
 .error-title{
     font-weight: bold;
     font-size: 7em;
-    color: $offBlack;
     color: $default;
     margin-bottom: 5%;
     width: 100%;
 }
 .error-msg{
     font-size: 1.4em;
-    color: $offBlack;
     color: $light;
     margin-bottom: 3%;
     width: 100%;
@@ -45,7 +43,7 @@
 #error-btn{
     background-color: $primary;
     border: 1px solid $primary;
-    font: $defaultFont;
+    font-family: $defaultFont;
     border-radius: 30px;
     height: 50px;
 }

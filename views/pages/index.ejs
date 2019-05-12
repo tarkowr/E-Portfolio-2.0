@@ -17,7 +17,7 @@
 
         <div id="nav-personal">
             <p>
-                <div id="name" ng-controller="personalInfo"> RICHIE TARKOWSKI </div>
+                <div id="name"> RICHIE TARKOWSKI </div>
             </p>
         </div>
         <div id="nav-title">
@@ -33,7 +33,7 @@
             <div id="links-head">&mdash; About Me &mdash;</div>
             <div id="intro">
                 <div id="info">
-                    <div>My name is Richie Tarkowski, and I am a Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty as an IT Applications Intern. Post-education, my goal is to apply my knowledge of software engineering to design and develop applications. I have experience in building .NET applications with C# and WPF, creating SQL/MySQL databases and performing DML/DDL statements, using Git and GitHub for version control, developing responsive and mobile websites, and writing server-side scripts. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes.</div>
+                    <div>My name is Richie Tarkowski, and I am a Computer Information Systems student at Northwestern Michigan College and Ferris State University. I currently work part-time at Hagerty as an IT Applications Intern. Post-education, my goal is to apply my knowledge of software engineering to design and develop applications. I have experience in building .NET applications with C#, WPF, and ASP.NET, creating SQL/MySQL databases and performing DML/DDL statements, using Git and GitHub for version control, developing responsive and mobile websites with various front-end frameworks, and writing server-side scripts. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes.</div>
                 </div>
             </div>
 
@@ -52,11 +52,11 @@
                 </div>
 
                 <div class="card-desc">
-                    <p>CIS is more than just my major, it's a personal interest. I enjoy applying what I've learned to my own projects. Visit my GitHub to see these applications!</p>
+                    <p>CIS is more than just my major, it's a personal interest. I enjoy applying what I've learned to my own projects. Visit my GitHub to see some of these applications!</p>
                 </div>
 
                 <div class = "card-button">
-                    <a target="_blank" href="{{gitHub.domain}}"> <button class="card-link">GitHub <i class="fa fa-angle-double-right"></i></button></a>
+                    <a target="_blank" href="{{gitHub.domain}}"> <button class="card-link">GitHub <i class="fa fa-chevron-circle-right"></i></button></a>
                 </div>
             </section>
 
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="card-button">
-                    <a target="_blank" href="{{trailHead}}"> <button class="card-link">Trailhead <i class="fa fa-angle-double-right"></i></button> </a>
+                    <a target="_blank" href="{{trailHead}}"> <button class="card-link">Trailhead <i class="fa fa-chevron-circle-right"></i></button> </a>
                 </div>
             </section>
 
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class = "card-button">
-                    <a target="_blank" href="{{linkedIn}}"> <button class="card-link">LinkedIn <i class="fa fa-angle-double-right"></i></button> </a>
+                    <a target="_blank" href="{{linkedIn}}"> <button class="card-link">LinkedIn <i class="fa fa-chevron-circle-right"></i></button> </a>
                 </div>
             </section>
         </section>
@@ -127,6 +127,20 @@
                 </div>
             </div>
 
+            <div class="proj" data-tags="python">
+                <div class="proj-head off-black">
+                    PyCsv
+                </div>
+                <hr><br>
+                <div class="proj-desc" ng-controller="links">
+                    <span>Overview:</span> Wrote a simple, modular Python class that allows users to work with CSV files in Python. <br><br>
+                    <span>Technologies Used:</span> Python <br><br>
+                    <span class = "last-updated">Last Updated:</span> <label id = "pycsv-date"> </label>
+                    <br><br>
+                    <a target="_blank" href="{{gitHub.domain + gitHub.pycsv}}">GitHub</a>
+                </div>
+            </div>
+
             <div class="proj" data-tags="php,sql,html/css">
                 <div class="proj-head off-black">
                     March Madness Discussion Forum
@@ -141,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="wpf,mongodb,api,c#">
+            <div class="proj" data-tags="api,c#">
                 <div class="proj-head off-black">
                     Stock Insight
                 </div>
@@ -155,26 +169,26 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="angular,node">
+            <div class="proj" data-tags="angular,node,api,html/css">
                 <div class="proj-head off-black">
                     Chatversity
                 </div>
                 <hr><br>
                 <div class="proj-desc" ng-controller="links">
                     <span>Overview:</span> Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app. <a target="_blank" href="https://chatversityapp.com">Visit the static site.</a> <br><br>
-                    <span>Technologies Used:</span> Angular 7, NodeJS <br><br>
+                    <span>Technologies Used:</span> Angular 7, HTML5, CSS, NodeJS, Okta, Pusher Chatkit <br><br>
                     <a target="_blank" href="https://www.chatversity.app">Visit the Web App!</a>
                 </div>
             </div>
 
-            <div class="proj" data-tags="html/css,js,node">
+            <div class="proj" data-tags="html/css,js,api,node">
                 <div class="proj-head off-black">
                     E-Portfolio Website
                 </div>
                 <hr><br>
                 <div class="proj-desc" ng-controller="links">
                     <span>Overview:</span> Built this website from scratch using several web technologies. <br><br>
-                    <span>Technologies Used:</span> HTML5, CSS, JavaScript, AngularJS, NodeJS <br><br>
+                    <span>Technologies Used:</span> HTML5, CSS, JavaScript, NodeJS <br><br>
                     <span class = "last-updated">Last Updated:</span> <label id = "eportfolio-date"> </label>
                     <br><br>
                     <a target="_blank" href="{{gitHub.domain + gitHub.eportfolio}}">GitHub</a>

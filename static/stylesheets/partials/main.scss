@@ -19,8 +19,73 @@ nav{
     }
 }
 
-@import "./navbar";
+/*Nav Bar*/
+#navigation{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    font-family: $defaultFont;
+    transition: padding-top .5s;
+    transition-timing-function: ease;
+}
+.nav-links{
+    width: 200px;
+    display: inline-block;       
+}
+#nav-bars{
+    display: none;
+}
+#navigation a, i{
+    text-align: center;
+    margin: $margin;
+    padding: 15px 0;
+    font-size: 17px;
+}
+.default-navigation{
+    background-color: transparent;
+    top: 0;
+    padding-top: 30px;
+    border-bottom: 1px solid transparent;
+}
+.default-navigation > a{
+    color: $default;
+    transition: background-color .5s;
+}
+.default-navigation > a:hover{
+    background-color: rgba(255, 255, 255, .1);
+}
 
+@media (max-width: $breakpoint){
+    .nav-links{
+        display: none;
+        width: 100%;
+    }
+    #navigation > a{
+        text-align: left;
+        padding: 15px;
+    }
+    #nav-bars{
+        text-align: left;
+        display: block;
+        font-size: 1.2em;
+        width: 80%;
+        margin-left: 15px;
+    }
+}
+.scrolled-navigation{
+    background-color: $default;
+    padding-top: 0px;
+    border-bottom: 1px solid $offBlack;
+}
+.scrolled-navigation > a{
+    color: $offBlack;
+}
+.scrolled-navigation >a:hover{
+    background-color: #f9f9f9;
+}
+
+/*Top of Page*/
 #nav-personal{
     text-align: center;
     display: inline-block;
@@ -29,16 +94,17 @@ nav{
 }
 #name{
     font-size: 3em;
-    font-family: 'Asap', monospace;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
+    font-weight: 600;
     color: $default;
 }
 
 #nav-title{
     width:100%;
     text-align: center;
+    font-size: 1.2em;
+    font-weight: 400;
     color: $default;
-    font-size: 1.4em;
     padding-top: 20px;
 }
 #full-degree{
@@ -69,7 +135,6 @@ nav{
     background-color: rgba(0, 0, 0, .5);
     border: 1px solid white;
     transition: background-color .8s;
-    font-family: $spacedFont;
 }
 #read-more > a > button:hover{
     background-color: transparent;
@@ -88,10 +153,11 @@ nav{
     width: 60%;
     margin: auto;
     margin-bottom: 40px;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 #info{
     text-align: justify;  
+    line-height: 1.4em;
     color: $offBlack; 
 }
 @media (max-width: $breakpoint){
@@ -110,7 +176,6 @@ nav{
     margin: $margin;
 }
 #resume-download{
-    font-family: $spacedFont;
     border-radius: 30px;
     width: 200px;
 }
@@ -126,8 +191,8 @@ nav{
 #links-head{
     text-align: center;
     color: $offBlack;
-    font-size: 3em;
-    margin: 30px auto 40px auto;        
+    font-size: 2.5em;
+    margin: 30px auto 40px auto;    
 }
 .card{
     width: 25%;
@@ -150,7 +215,6 @@ nav{
 .hover-effect > span{
     font-size: 2em;
     letter-spacing: 1px;
-    font-family: $spacedFont;
     position: relative;
     top: 40%;
 }
@@ -180,10 +244,10 @@ nav{
     margin: $margin;
     width: 100%;
     max-width: 380px;
-    font-size: 20px;
     color: $offBlack;  
     margin-top: 30px;
     margin-bottom: 30px;
+    font-size: 1.1em;
 }
 .card-desc > p > a{
     color: $primary;
@@ -206,7 +270,6 @@ nav{
     border: 1px solid $balance;
     height: 40px;
     border-radius: 40px;
-    font-size: 1.1em;
 }
 .card-link:hover{
     background-color: $balanceHover;
@@ -230,7 +293,7 @@ nav{
 }
 #projects-header{
     color: $default;
-    font-size: 3em;
+    font-size: 2.5em;
     margin: 30px auto 40px auto;
 }
 #filter{
@@ -241,16 +304,16 @@ nav{
 }
 #filter > select{
     margin-left: -30px;
-    font-size: 1em;
     margin-bottom: 20px;
     background-color: $light;
     color: $offBlack;
     border: 1px solid $balance;
     border-radius: 10px;
     padding: 10px;
+    font-size: 1.1em;
 }
 .proj{
-    display: block;
+    display: inline-block;
     text-align: left;
     width: 80%;
     background-color: $default;
@@ -259,13 +322,13 @@ nav{
     margin-bottom: 30px;
 }
 .proj-head{
-    font-size: 2em;
+    font-size: 1.8em;
 }
 .proj-desc{
     width: 100%;  
     display: inline-block; 
-    font-size: 1.2em;
     color: $offBlack;
+    font-size: 1.1em;
 }
 .proj-desc > a{
     color: $primary;

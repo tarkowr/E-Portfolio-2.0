@@ -5,6 +5,8 @@
     <!--Blog CSS-->
     <link rel="stylesheet" href="/static/stylesheets/css/blog.css">
     <title>Richie Tarkowski | Blog</title>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <% include ../partials/header %>
     
@@ -14,9 +16,9 @@
 <body>
 
     <div id="nav-arrows">
-        <a href="#" id="top-arrow"><i class="fa fa-caret-up"></i></a>
+        <a id="top-arrow"><i class="fa fa-caret-up"></i></a>
         <div></div>
-        <a href="#sprint-five" id="bottom-arrow"><i class="fa fa-caret-down"></i></a>
+        <a id="bottom-arrow"><i class="fa fa-caret-down"></i></a>
     </div>
 
     <nav>
@@ -41,6 +43,8 @@
             <p>&mdash; Blog Posts &mdash;</p>
         </div>
 
+        <hr class="blog-line" style="color: transparent;" id="s1-target">
+
         <!--SPRINT ONE-->
         <div class = "blog-post" id="sprint-one">
             <div class = "blog-header">
@@ -58,7 +62,7 @@
             </div>
         </div>
 
-        <hr class="blog-line">
+        <hr class="blog-line" id="s2-target">
 
         <!--SPRINT TWO-->
         <div class = "blog-post" id="sprint-two">
@@ -79,7 +83,7 @@
             </div>
         </div>
 
-        <hr class="blog-line">
+        <hr class="blog-line" id="s3-target">
 
         <!--SPRINT THREE-->
         <div class = "blog-post" id="sprint-three">
@@ -99,7 +103,7 @@
             </div>
         </div>
 
-        <hr class="blog-line">
+        <hr class="blog-line" id="s4-target">
 
         <!--SPRINT FOUR-->
         <div class = "blog-post" id="sprint-four">
@@ -119,7 +123,7 @@
             </div>
         </div>
 
-        <hr class="blog-line">
+        <hr class="blog-line" id="s5-target">
 
         <!--SPRINT FIVE-->
         <div class = "blog-post" id="sprint-five">
@@ -144,15 +148,13 @@
         <% include ../partials/footer %> 
     </footer>
 
-    <!--AngularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!--Site JS-->
-    <script src="/static/scripts/controller.js"></script>
-    <script src="/static/scripts/blog.js"></script>
+    <script src="/static/scripts/navbar.js"></script>
+    <script src="/static/scripts/arrowNav.js"></script>
 
     <script>
         var typed = new Typed('#typed', {
-            strings: ["Welcome to my Blog!", "Systems Analysis and Design Blog."],
+            strings: ["Welcome to my Blog!", "Sprints 1 - 5"],
             typeSpeed: 25,
             startDelay: 500,
             autoInsertCss: true,

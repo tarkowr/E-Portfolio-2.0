@@ -1,21 +1,13 @@
 var app = angular.module('myApp', []);
 
-app.controller('personalInfo', function ($scope) {
-    $scope.name = "RICHIE TARKOWSKI";
-    $scope.email = "tarkowr@gmail.com";
-    $scope.getCurrentYear = function () {
-        var currentdate = new Date();
-        return currentdate.getFullYear();
-    }
-});
-
 app.controller('links', function ($scope) {
     $scope.gitHub = {
         domain: "https://github.com/tarkowr",
         cit195: "/CIT195-Final-Project",
         cit190: "/CIT-228-Discussion-Forum",
         cit255: "/CIT255FinalApplication",
-        eportfolio: "/ePortfolio"
+        eportfolio: "/ePortfolio",
+        pycsv: "/PyCsv"
     };
     $scope.linkedIn = "https://www.linkedin.com/in/richie-tarkowski-273238155";
     $scope.trailHead = "https://trailhead.com/me/rtarkowski";
@@ -44,21 +36,18 @@ app.controller('projects', function ($scope){
     }, {
         value: 'js',
         label: 'JavaScript'
-    }, {
-        value: 'mongodb',
-        label: 'MongoDB'
-    }, {
+    },{
         value: 'node',
         label: 'NodeJS'
     }, {
         value: 'php',
         label: 'PHP'
+    },{
+        value: 'python',
+        label: 'Python'
     }, {
         value: 'sql',
         label: 'SQL'
-    }, {
-        value: 'wpf',
-        label: 'WPF'
     }];  
 
     $scope.selected_type = $scope.types[0].value;

@@ -56,11 +56,13 @@ function DisplayLastUpdatedValues(data){
     const cit228Date = document.getElementById("cit228-date");
     const cit195Date = document.getElementById("cit195-date");
     const cit255Date = document.getElementById("cit255-date");
+    const pycsv = document.getElementById("pycsv-date");
 
     eportfolioDate.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "ePortfolio");
     cit228Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT-228-Discussion-Forum");
     cit195Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT195-Final-Project");
     cit255Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT255FinalApplication");
+    pycsv.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "PyCsv");
 }
 
 

@@ -3,7 +3,9 @@ html, body {
   width: 100%;
   height: 100%;
   scroll-behavior: smooth;
-  font-family: "Abhaya Libre", Arial, Helvetica, sans-serif;
+  font-family: "Muli", sans-serif;
+  font-weight: 200;
+  font-size: 1em;
   padding: 0;
   margin: 0;
 }
@@ -18,7 +20,7 @@ a {
   background-color: #678;
   border: 1px solid #678;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.1em;
   width: 180px;
   height: 60px;
 }
@@ -26,6 +28,10 @@ a {
 .styled-btn:hover {
   background-color: rgba(102, 119, 136, 0.85);
   border: 1px solid rgba(102, 119, 136, 0.85);
+}
+
+button {
+  font-size: 1.1em;
 }
 
 .disabled {
@@ -56,7 +62,7 @@ nav {
   width: 100%;
   text-align: center;
   z-index: 2;
-  font-family: "Asap", monospace, "Abhaya Libre", Arial, Helvetica, sans-serif;
+  font-family: "Muli", sans-serif;
   transition: padding-top 0.5s;
   transition-timing-function: ease;
 }
@@ -90,7 +96,7 @@ nav {
 }
 
 .default-navigation > a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 1024px) {
@@ -123,9 +129,10 @@ nav {
 }
 
 .scrolled-navigation > a:hover {
-  background-color: #eee;
+  background-color: #f9f9f9;
 }
 
+/*Top of Page*/
 #nav-personal {
   text-align: center;
   display: inline-block;
@@ -135,16 +142,17 @@ nav {
 
 #name {
   font-size: 3em;
-  font-family: "Asap", monospace;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
+  font-weight: 600;
   color: white;
 }
 
 #nav-title {
   width: 100%;
   text-align: center;
+  font-size: 1.2em;
+  font-weight: 400;
   color: white;
-  font-size: 1.4em;
   padding-top: 20px;
 }
 
@@ -180,7 +188,6 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid white;
   transition: background-color 0.8s;
-  font-family: "Asap", monospace;
 }
 
 #read-more > a > button:hover {
@@ -201,11 +208,12 @@ nav {
   width: 60%;
   margin: auto;
   margin-bottom: 40px;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 #info {
   text-align: justify;
+  line-height: 1.4em;
   color: #282828;
 }
 
@@ -228,7 +236,6 @@ nav {
 }
 
 #resume-download {
-  font-family: "Asap", monospace;
   border-radius: 30px;
   width: 200px;
 }
@@ -245,7 +252,7 @@ nav {
 #links-head {
   text-align: center;
   color: #282828;
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 30px auto 40px auto;
 }
 
@@ -273,7 +280,6 @@ nav {
 .hover-effect > span {
   font-size: 2em;
   letter-spacing: 1px;
-  font-family: "Asap", monospace;
   position: relative;
   top: 40%;
 }
@@ -308,10 +314,10 @@ nav {
   margin: 0 auto;
   width: 100%;
   max-width: 380px;
-  font-size: 20px;
   color: #282828;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-size: 1.1em;
 }
 
 .card-desc > p > a {
@@ -339,7 +345,6 @@ nav {
   border: 1px solid #678;
   height: 40px;
   border-radius: 40px;
-  font-size: 1.1em;
 }
 
 .card-link:hover {
@@ -364,7 +369,7 @@ nav {
 
 #projects-header {
   color: white;
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 30px auto 40px auto;
 }
 
@@ -377,17 +382,17 @@ nav {
 
 #filter > select {
   margin-left: -30px;
-  font-size: 1em;
   margin-bottom: 20px;
   background-color: #eee;
   color: #282828;
   border: 1px solid #678;
   border-radius: 10px;
   padding: 10px;
+  font-size: 1.1em;
 }
 
 .proj {
-  display: block;
+  display: inline-block;
   text-align: left;
   width: 80%;
   background-color: white;
@@ -397,14 +402,14 @@ nav {
 }
 
 .proj-head {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .proj-desc {
   width: 100%;
   display: inline-block;
-  font-size: 1.2em;
   color: #282828;
+  font-size: 1.1em;
 }
 
 .proj-desc > a {
