@@ -3,8 +3,15 @@
 
 /*NavBar*/
 nav{
+    margin: auto;
     width: 100%;
     height: 100%;
+    background: url("../../media/blog-design.png") no-repeat center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @import "./navbar.scss";
@@ -25,6 +32,7 @@ nav{
     color: $default;
     border-radius: 10px;
     font-size: 1.2em;
+    box-shadow: 0px 0px 6px $offBlack;
 }
 .typed-cursor {
     color: $blogTheme;
@@ -36,7 +44,7 @@ nav{
     margin-top: 50px;
     display: block;
     border: 1px solid $blogTheme;
-    background-color: transparent;
+    background-color: white;
     color: $blogTheme;
 }
 
