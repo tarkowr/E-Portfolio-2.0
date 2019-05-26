@@ -51,6 +51,11 @@ nav {
   background-size: cover;
 }
 
+@media (max-width: 1024px) {
+  nav {
+    background: none;
+  }
+}
 #navbar {
   width: 100%;
   height: 75px;

@@ -1,12 +1,15 @@
 const maxSmallScreen = 1024;
 const scrollBarWidth = 17;
 const AppState = Object.freeze({"MOBILE":"MOBILE", "DESKTOP":"DESKTOP"});
+const DisplayTypes = ["block", "inline-block"];
+const NavbarDefaultHeight = "75px";
 
 let currentState = AppState.DESKTOP;
 let mobileToggle = false;
 let links = document.getElementsByClassName('link');
 let navIcon = document.getElementById("nav-bar");
 let navbar = document.getElementById("navbar");
+let navbarClickedHeight = CalculateNavbarHeight();
 
 window.onload = function() {
     // Get user screen width and guess which device they are using
@@ -27,7 +30,7 @@ window.onresize = function(){
             for(let i = 0; i < links.length; i++){
                 links[i].style.display = "inline-block";
             }
-            navbar.style.height = "75px";
+            navbar.style.height = NavbarDefaultHeight;
         }
         currentState = AppState.DESKTOP;
     }
@@ -49,16 +52,16 @@ window.onresize = function(){
 function SetupMobileNavBar(){
     let toggleLinks = function(){
         //Check if navbar items are displayed and hide them if true
-        if(links[1].style.display == "block" || links[1].style.display == "inline-block"){
+        if(DisplayTypes.includes(links[1].style.display)){
             for(let i = 1; i < links.length; i++){
                 links[i].style.display = "none";
             }
-            navbar.style.height = "75px";
+            navbar.style.height = NavbarDefaultHeight;
         }
 
         //Display each navbar item
         else{
-            navbar.style.height = "150px";
+            navbar.style.height = navbarClickedHeight;
 
             for(let i = 1; i < links.length; i++){
                 setTimeout(function() {
@@ -83,4 +86,13 @@ function SetupMobileNavBar(){
             }
         });
     });
+}
+
+// Calculate the height of the navbar in mobile when clicked
+function CalculateNavbarHeight(){
+    let base = 74;
+    let bottomPadding = 5;
+    let linkHeight = 39;
+
+    return (base + bottomPadding + ((links.length - 1) * linkHeight)).toString() + "px";
 }

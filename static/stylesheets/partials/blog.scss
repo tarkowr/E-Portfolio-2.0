@@ -13,6 +13,11 @@ nav{
     -o-background-size: cover;
     background-size: cover;
 }
+@media (max-width : $breakpoint){
+    nav{
+        background: none;
+    }
+}
 
 @import "./navbar.scss";
 
