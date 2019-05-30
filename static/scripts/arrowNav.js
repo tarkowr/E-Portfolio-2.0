@@ -69,8 +69,8 @@ $(function() {
             if(scroll>sprints[i-1]+offset && scroll<sprints[i]+offset){
                 up.attr('href',"#"+sprintIds[i-1].toString());
             }
-            else if(scroll>sprints[4]+offset){
-                up.attr('href',"#"+sprintIds[4].toString());
+            else if(scroll>sprints[sprints.length-1]+offset){
+                up.attr('href',"#"+sprintIds[sprints.length-1].toString());
             }
             else if(scroll<sprints[0]+offset){
                 up.attr('href',"#");

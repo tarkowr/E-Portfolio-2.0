@@ -1,20 +1,5 @@
 var app = angular.module('myApp', []);
 
-app.controller('links', function ($scope) {
-    $scope.gitHub = {
-        domain: "https://github.com/tarkowr",
-        cit195: "/CIT195-Final-Project",
-        cit190: "/CIT-228-Discussion-Forum",
-        cit255: "/CIT255FinalApplication",
-        eportfolio: "/ePortfolio",
-        pycsv: "/PyCsv"
-    };
-    $scope.linkedIn = "https://www.linkedin.com/in/richie-tarkowski-273238155";
-    $scope.trailHead = "https://trailhead.com/me/rtarkowski";
-    $scope.instagram = "https://www.instagram.com/richie_tarkowski/";
-    $scope.facebook = "https://www.facebook.com/richie.tarkowski";
-});
-
 app.controller('projects', function ($scope){
     $scope.projects = angular.element(document.getElementsByClassName('proj'));
     $scope.types = 

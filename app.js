@@ -1,16 +1,31 @@
 var express = require('express');
 var app = express();
 
+var urls = {
+    "linkedin":"https://www.linkedin.com/in/richie-tarkowski-273238155",
+    "trailhead":"https://trailhead.com/me/rtarkowski",
+    "github":"https://github.com/tarkowr",
+    "facebook":"https://www.facebook.com/richie.tarkowski",
+    "instagram":"https://www.instagram.com/richie_tarkowski/",
+    "phpDiscussion":"https://github.com/tarkowr/PHP-Discussion-Forum",
+    "despair":"https://github.com/tarkowr/Despair",
+    "stockInsight":"https://github.com/tarkowr/Stock-Insight",
+    "pycsv":"https://github.com/tarkowr/PyCsv",
+    "eportfolio":"https://github.com/tarkowr/ePortfolio",
+    "chatversityApp":"https://www.chatversity.app",
+    "chatversitySite":"https://chatversityapp.com"
+}
+
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // Index page 
 app.get('/', function(req, res) {
-    res.render('pages/index');
+    res.render('pages/index', {links: urls});
 });
 
 app.get('/blog', function(req, res){
-    res.render('pages/blog');
+    res.render('pages/blog', {links: urls});
 })
 
 // Alyssa page

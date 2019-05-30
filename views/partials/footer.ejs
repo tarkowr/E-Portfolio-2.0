@@ -1,11 +1,12 @@
 <!--Footer-->
-<div id="footer-links" ng-controller="links">
-    <p id = "footer-icons">
-        <a class = "footer-icon" target="_blank" href="{{instagram}}"><i class="fa fa-instagram"> </i></a>
-        <a class = "footer-icon" target="_blank" href="{{facebook}}"><i class="fa fa-facebook-square"></i></a>
-        <a class = "footer-icon" target="_blank" href="{{gitHub.domain}}"><i class="fa fa-github"> </i></a>
-        <a class = "footer-icon" target="_blank" href="{{linkedIn}}"><i class="fa fa-linkedin-square"> </i></a>
-        <a class = "footer-icon" target="_blank" href="{{trailHead}}"><i class="fa fa-cloud"> </i></a>
+<div id="footer-links">
+    <p id="footer-icons">
+        <a class="footer-icon" target="_blank" href="<%= links.instagram %>"><i class="fa fa-instagram"> </i></a>
+        <a class="footer-icon" target="_blank" href="<%= links.facebook %>"><i class="fa fa-facebook-square"></i></a>
+        <a class="footer-icon" target="_blank" href="<%= links.github %>"><i class="fa fa-github"> </i></a>
+        <a class="footer-icon" target="_blank" href="<%= links.linkedin %>"><i class="fa fa-linkedin-square"> </i></a>
+        <a class="footer-icon" target="_blank" href="<%= links.trailhead %>"><i class="fa fa-cloud"> </i></a>
+        <a class="footer-icon" target="_blank" href="/blog"><i class="fa fa-edit"> </i></a>
     </p>
-    <p id = "footer-email">You can reach me at <span> <a href="mailto:tarkowr@gmail.com">tarkowr@gmail.com</a> </span></p>
+    <p id="footer-email">You can reach me at <span> <a href="mailto:tarkowr@gmail.com">tarkowr@gmail.com</a> </span></p>
 </div>
