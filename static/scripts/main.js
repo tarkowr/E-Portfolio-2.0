@@ -59,8 +59,8 @@ function DisplayLastUpdatedValues(data){
     const pycsv = document.getElementById("pycsv-date");
 
     eportfolioDate.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "ePortfolio");
-    cit228Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT-228-Discussion-Forum");
-    cit195Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "CIT195-Final-Project");
+    cit228Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "PHP-Discussion-Forum");
+    cit195Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "Despair");
     cit255Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "Stock-Insight");
     pycsv.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "PyCsv");
 }
