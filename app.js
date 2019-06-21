@@ -19,7 +19,6 @@ var urls = {
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// Index page 
 app.get('/', function(req, res) {
     res.render('pages/index', {links: urls});
 });
@@ -28,9 +27,33 @@ app.get('/blog', function(req, res){
     res.render('pages/blog', {links: urls});
 })
 
-// Alyssa page
 app.get('/alyssa', function(req, res) {
     res.render('pages/alyssa');
+});
+
+app.get('/alyssa/instagram', function(req, res){
+    res.redirect("https://www.instagram.com/alyssa_tark");
+});
+
+// URL Routing
+app.get('/github', function(req, res){
+    res.redirect(urls.github);
+});
+
+app.get('/linkedin', function(req, res){
+    res.redirect(urls.linkedin);
+});
+
+app.get('/trailhead', function(req, res){
+    res.redirect(urls.trailhead);
+});
+
+app.get('/facebook', function(req, res){
+    res.redirect(urls.facebook);
+});
+
+app.get('/instagram', function(req, res){
+    res.redirect(urls.instagram);
 });
 
 app.use(express.static(__dirname));
