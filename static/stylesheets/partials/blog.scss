@@ -6,12 +6,6 @@ nav{
     margin: auto;
     width: 100%;
     height: 100%;
-    background: url("../../media/blog-design.png") no-repeat center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 @media (max-width : $breakpoint){
     nav{
@@ -32,12 +26,7 @@ nav{
     margin: $margin;
     width: 50%;
     padding-top: 8%;
-    padding-bottom: 7%;
-    background-color: $offBlack;
-    color: $default;
-    border-radius: 10px;
-    font-size: 1.2em;
-    box-shadow: 0px 0px 6px $offBlack;
+    font-size: 1.5em;
 }
 .typed-cursor {
     color: $blogTheme;
@@ -46,7 +35,7 @@ nav{
 #read-more{
     font-size: 18px;
     margin: $margin;
-    margin-top: 50px;
+    margin-top: 100px;
     display: block;
     border: 1px solid $blogTheme;
     background-color: white;
