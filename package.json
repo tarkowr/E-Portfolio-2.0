@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tarkowr/ePortfolio#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "sass": "^1.15.2"

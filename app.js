@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var axios = require('axios');
 
 var urls = {
     "linkedin":"https://www.linkedin.com/in/richie-tarkowski-273238155",
@@ -19,6 +20,7 @@ var urls = {
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
+// View Routing
 app.get('/', function(req, res) {
     res.render('pages/index', {links: urls});
 });
@@ -29,10 +31,6 @@ app.get('/blog', function(req, res){
 
 app.get('/alyssa', function(req, res) {
     res.render('pages/alyssa');
-});
-
-app.get('/alyssa/instagram', function(req, res){
-    res.redirect("https://www.instagram.com/alyssa_tark");
 });
 
 // URL Routing
@@ -54,6 +52,17 @@ app.get('/facebook', function(req, res){
 
 app.get('/instagram', function(req, res){
     res.redirect(urls.instagram);
+});
+
+// API
+app.get('/github/data', function(req, res){
+    axios.get(`https://api.github.com/users/tarkowr/repos`)
+    .then((repos) => {
+        res.status(200).json(repos.data);
+    })
+    .catch((error) => {
+        res.send(error);
+    });
 });
 
 app.use(express.static(__dirname));

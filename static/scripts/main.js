@@ -3,21 +3,33 @@ const maxScroll = 100;
 const scrollBarWidth = 17;
 const numberOfProjectToShow = 2;
 const githubApiUrl = "https://api.github.com/users/tarkowr/repos";
+
+const testEnvironment = {
+    production: false,
+    apiUrl: 'http://localhost:8080'
+}
+
+const environment = {
+    production: true,
+    apiUrl: 'http://richietarkowski.com'
+}
+
 let mobile = false;
 
-window.onload = function() {
+window.addEventListener("load", function() {
     MobileNavBar();
     HandleApiService(DisplayLastUpdatedValues);
-};
+});
 
-//Get GitHub API data from dataService
+// Get GitHub API data from dataService
 async function HandleApiService(callback){
     let data = new Object();
-    data = await ApiService(githubApiUrl);
+    data = await ApiService(testEnvironment);
+
     callback(data);
 }
 
-//Hide or unhide nav bar options when the navbar is in mobile upon icon click
+// Hide or unhide nav bar options when the navbar is in mobile upon icon click
 function MobileNavBar(){
     let links = document.getElementsByClassName('nav-links');
     let navIcon = document.getElementById("nav-bars");
@@ -50,7 +62,7 @@ function MobileNavBar(){
     });
 }
 
-//Display GitHub API values
+// Display GitHub API values
 function DisplayLastUpdatedValues(data){
     const eportfolioDate = document.getElementById("eportfolio-date");
     const cit228Date = document.getElementById("cit228-date");
@@ -58,11 +70,11 @@ function DisplayLastUpdatedValues(data){
     const cit255Date = document.getElementById("cit255-date");
     const pycsv = document.getElementById("pycsv-date");
 
-    eportfolioDate.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "ePortfolio");
-    cit228Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "PHP-Discussion-Forum");
-    cit195Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "Despair");
-    cit255Date.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "Stock-Insight");
-    pycsv.innerHTML = GetDateFromGithubApi(ConvertJsonToObject(data), "PyCsv");
+    eportfolioDate.innerHTML = GetDateFromGithubApi(data, "ePortfolio");
+    cit228Date.innerHTML = GetDateFromGithubApi(data, "PHP-Discussion-Forum");
+    cit195Date.innerHTML = GetDateFromGithubApi(data, "Despair");
+    cit255Date.innerHTML = GetDateFromGithubApi(data, "Stock-Insight");
+    pycsv.innerHTML = GetDateFromGithubApi(data, "PyCsv");
 }
 
 

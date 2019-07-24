@@ -1,27 +1,21 @@
-//Load in github json file via web api
-function ApiService(url){
+// Load in github json file via web api
+function ApiService(environment){
     const Http = new XMLHttpRequest();
-    Http.open("GET", url);
+    Http.open("GET", environment.apiUrl + '/github/data');
+    Http.setRequestHeader("Content-type", "application/json");
     Http.send();
+
     return new Promise((resolve, reject) => {
         Http.onreadystatechange=(e)=>{
             if(Http.readyState === 4 && Http.status === 200) {
                 resolve(Http.responseText);
             }
-            else if(Http.status >= 400){
-                reject("Could not retrieve data from GitHub");
-            }
         }
     });
 }
 
-//Convert a json string to a javascript object
-function ConvertJsonToObject(json){
-    return JSON.parse(json);
-}
-
-//Parse GitHub object for last updated date
-//Return a custom formatted date
+// Parse GitHub object for last updated date
+// Return a custom formatted date
 function GetDateFromGithubApi(obj, name){
     let repo = ReturnElementByName(obj, name);
     let repoLastUpdated = new Date(repo.updated_at);
@@ -32,16 +26,18 @@ function GetDateFromGithubApi(obj, name){
     return FormatDateString(date, month, year);
 }
 
-//Find an element by name property
+// Find an element by name property
 function ReturnElementByName(obj, name){
-    let el = obj.find(function(element) {
+    let json = JSON.parse(obj);
+
+    let el = json.find(function(element) {
         return element.name == name;
     });
 
     return el;
 }
 
-//Custom format date strings
+// Custom format date strings
 function FormatDateString(date, month, year){
     return  (month + 1) + "-" + date + "-" + year;
 }
