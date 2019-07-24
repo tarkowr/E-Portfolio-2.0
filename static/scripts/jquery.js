@@ -1,22 +1,22 @@
 $(function() {
-    let nav = $("#navigation");
-    let filter = $("#filter");
+    let nav = $('#navigation');
+    let filter = $('#filter');
 
     //If JS is enabled, display elements that use JS
-    nav.removeClass("disabled");
-    filter.removeClass("disabled");
+    nav.removeClass('disabled');
+    filter.removeClass('disabled');
 
     //Check if window is scrolled past a certain point and handle navbar classes
     let ToggleNavBar = function(){
         let scroll = $(window).scrollTop();
         if(!($(window).innerWidth() + scrollBarWidth <= maxSmallScreen)){
             if (scroll > maxScroll) {
-                nav.addClass("scrolled-navigation");
-                nav.removeClass("default-navigation");
+                nav.addClass('scrolled-navigation');
+                nav.removeClass('default-navigation');
             }
             else{
-                nav.addClass("default-navigation");
-                nav.removeClass("scrolled-navigation");
+                nav.addClass('default-navigation');
+                nav.removeClass('scrolled-navigation');
             }
         }
     }
@@ -24,7 +24,7 @@ $(function() {
     //Check window width on page load to determine navbar class
     if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) 
     { 
-        nav.addClass("scrolled-navigation");
+        nav.addClass('scrolled-navigation');
     }
 
     ToggleNavBar();
@@ -40,7 +40,7 @@ $(function() {
         
         if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { 
             $('#navigation a').css('display', 'none');
-            nav.addClass("scrolled-navigation");
+            nav.addClass('scrolled-navigation');
         }
         else{
             $('#navigation a').css('display', 'inline-block');

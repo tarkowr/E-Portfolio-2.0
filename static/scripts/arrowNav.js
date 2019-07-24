@@ -3,17 +3,17 @@ $(function() {
     let s1, s2, s3, s4, s5, scroll = 0;
     let sprints = [s1, s2, s3, s4, s5];
     let sprintIds = [
-        document.getElementById("s1-target").id,
-        document.getElementById("s2-target").id,
-        document.getElementById("s3-target").id,
-        document.getElementById("s4-target").id,
-        document.getElementById("s5-target").id
+        document.getElementById('s1-target').id,
+        document.getElementById('s2-target').id,
+        document.getElementById('s3-target').id,
+        document.getElementById('s4-target').id,
+        document.getElementById('s5-target').id
     ];
     let up = $('#top-arrow');
-    let down = $("#bottom-arrow");
+    let down = $('#bottom-arrow');
 
     // Set initial href for down arrow
-    down.attr('href',"#"+sprintIds[0].toString());
+    down.attr('href','#'+sprintIds[0].toString());
 
     // Get current page scroll
     scroll = $(window).scrollTop();
@@ -39,11 +39,11 @@ $(function() {
 
     // Get sprint Y positions
     function getSprintY(){
-        s1 = document.getElementById("sprint-one").getBoundingClientRect().top + window.scrollY - offset;
-        s2 = document.getElementById("sprint-two").getBoundingClientRect().top + window.scrollY - offset;
-        s3 = document.getElementById("sprint-three").getBoundingClientRect().top + window.scrollY - offset;
-        s4 = document.getElementById("sprint-four").getBoundingClientRect().top + window.scrollY - offset;
-        s5 = document.getElementById("sprint-five").getBoundingClientRect().top + window.scrollY - offset;
+        s1 = document.getElementById('sprint-one').getBoundingClientRect().top + window.scrollY - offset;
+        s2 = document.getElementById('sprint-two').getBoundingClientRect().top + window.scrollY - offset;
+        s3 = document.getElementById('sprint-three').getBoundingClientRect().top + window.scrollY - offset;
+        s4 = document.getElementById('sprint-four').getBoundingClientRect().top + window.scrollY - offset;
+        s5 = document.getElementById('sprint-five').getBoundingClientRect().top + window.scrollY - offset;
         sprints = [s1, s2, s3, s4, s5];
     }
 
@@ -53,11 +53,11 @@ $(function() {
         curr = curr.replace('#','');
         for(let i=1; i < sprints.length; i++){
             if(scroll>sprints[i-1] && scroll<sprints[i]){
-                down.attr('href',"#"+sprintIds[i].toString());
+                down.attr('href','#'+sprintIds[i].toString());
                 return;
             }
             else if(scroll<sprints[0]){
-                down.attr('href',"#"+sprintIds[0].toString());
+                down.attr('href','#'+sprintIds[0].toString());
                 return;
             }
         }
@@ -67,13 +67,13 @@ $(function() {
     function setUpArrow(){
         for(let i=1; i < sprints.length; i++){
             if(scroll>sprints[i-1]+offset && scroll<sprints[i]+offset){
-                up.attr('href',"#"+sprintIds[i-1].toString());
+                up.attr('href','#'+sprintIds[i-1].toString());
             }
             else if(scroll>sprints[sprints.length-1]+offset){
-                up.attr('href',"#"+sprintIds[sprints.length-1].toString());
+                up.attr('href','#'+sprintIds[sprints.length-1].toString());
             }
             else if(scroll<sprints[0]+offset){
-                up.attr('href',"#");
+                up.attr('href','#');
             }
         }
     }

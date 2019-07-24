@@ -2,7 +2,7 @@ const maxSmallScreen = 1024;
 const maxScroll = 100;
 const scrollBarWidth = 17;
 const numberOfProjectToShow = 2;
-const githubApiUrl = "https://api.github.com/users/tarkowr/repos";
+const githubApiUrl = 'https://api.github.com/users/tarkowr/repos';
 
 const testEnvironment = {
     production: false,
@@ -11,12 +11,21 @@ const testEnvironment = {
 
 const environment = {
     production: true,
-    apiUrl: 'http://richietarkowski.com'
+    apiUrl: 'https://richietarkowski.com'
 }
 
 let mobile = false;
 
-window.addEventListener("load", function() {
+// Name:Id dictionary
+let Repos = { 
+    'ePortfolio':'eportfolio-date', 
+    'PHP-Discussion-Forum':'cit228-date',
+    'Despair':'cit195-date',
+    'Stock-Insight':'cit255-date',
+    'PyCsv':'pycsv-date'
+ }
+
+window.addEventListener('load', function() {
     MobileNavBar();
     HandleApiService(DisplayLastUpdatedValues);
 });
@@ -24,7 +33,7 @@ window.addEventListener("load", function() {
 // Get GitHub API data from dataService
 async function HandleApiService(callback){
     let data = new Object();
-    data = await ApiService(testEnvironment);
+    data = await ApiService(environment);
 
     callback(data);
 }
@@ -32,28 +41,28 @@ async function HandleApiService(callback){
 // Hide or unhide nav bar options when the navbar is in mobile upon icon click
 function MobileNavBar(){
     let links = document.getElementsByClassName('nav-links');
-    let navIcon = document.getElementById("nav-bars");
+    let navIcon = document.getElementById('nav-bars');
 
     let toggleNavLinks = function(){
-        if(links[0].style.display == "inline-block"){
+        if(links[0].style.display == 'inline-block'){
             for(let i = 0; i < links.length; i++){
-                links[i].style.display = "none";
+                links[i].style.display = 'none';
             }
         }
         else{
             for(let i = 0; i < links.length; i++){
-                links[i].style.display = "inline-block";
+                links[i].style.display = 'inline-block';
             }
         }
     };
 
-    navIcon.addEventListener("click", function(){
+    navIcon.addEventListener('click', function(){
         mobile = true;
         toggleNavLinks();
     });
 
     Array.prototype.forEach.call(links, function(elem){
-        elem.addEventListener("click", function(){
+        elem.addEventListener('click', function(){
             if(mobile){
                 mobile = false;
                 toggleNavLinks();
@@ -64,17 +73,9 @@ function MobileNavBar(){
 
 // Display GitHub API values
 function DisplayLastUpdatedValues(data){
-    const eportfolioDate = document.getElementById("eportfolio-date");
-    const cit228Date = document.getElementById("cit228-date");
-    const cit195Date = document.getElementById("cit195-date");
-    const cit255Date = document.getElementById("cit255-date");
-    const pycsv = document.getElementById("pycsv-date");
-
-    eportfolioDate.innerHTML = GetDateFromGithubApi(data, "ePortfolio");
-    cit228Date.innerHTML = GetDateFromGithubApi(data, "PHP-Discussion-Forum");
-    cit195Date.innerHTML = GetDateFromGithubApi(data, "Despair");
-    cit255Date.innerHTML = GetDateFromGithubApi(data, "Stock-Insight");
-    pycsv.innerHTML = GetDateFromGithubApi(data, "PyCsv");
+    for (var key in Repos) {
+        document.getElementById(Repos[key]).innerHTML = GetDateFromGithubApi(data, key);
+    }
 }
 
 

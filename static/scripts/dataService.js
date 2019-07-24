@@ -1,8 +1,8 @@
 // Load in github json file via web api
 function ApiService(environment){
     const Http = new XMLHttpRequest();
-    Http.open("GET", environment.apiUrl + '/github/data');
-    Http.setRequestHeader("Content-type", "application/json");
+    Http.open('GET', environment.apiUrl + '/github/data');
+    Http.setRequestHeader('Content-type', 'application/json');
     Http.send();
 
     return new Promise((resolve, reject) => {
@@ -39,5 +39,5 @@ function ReturnElementByName(obj, name){
 
 // Custom format date strings
 function FormatDateString(date, month, year){
-    return  (month + 1) + "-" + date + "-" + year;
+    return  (month + 1) + '-' + date + '-' + year;
 }

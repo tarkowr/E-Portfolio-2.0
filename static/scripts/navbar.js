@@ -11,14 +11,14 @@ let navIcon = document.getElementById("nav-bar");
 let navbar = document.getElementById("navbar");
 let navbarClickedHeight = CalculateNavbarHeight();
 
-window.onload = function() {
+window.addEventListener("load", function() {
     // Get user screen width and guess which device they are using
     if (window.innerWidth + scrollBarWidth <= maxSmallScreen){
         currentState = AppState.MOBILE;
     }
 
     SetupMobileNavBar();
-};
+});
 
 // On screen resize, check if the user is switching between desktop and mobile and handle if true
 window.onresize = function(){
