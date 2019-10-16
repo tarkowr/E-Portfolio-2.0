@@ -7,11 +7,14 @@ app.controller('projects', function ($scope){
         value: 'all',
         label: 'Display All'
     }, {
+        value: 'angular',
+        label: 'Angular'
+    }, {
         value: 'api',
         label: 'API'
     }, {
-        value: 'angular',
-        label: 'Angular 7'
+        value: 'asp.net',
+        label: 'ASP.NET'
     }, {
         value: 'c#',
         label: 'C#'
@@ -61,7 +64,7 @@ app.controller('projects', function ($scope){
 
 //Recompile element(s) on a webpage
 function compile(element){
-    var el = angular.element(element);    
+    let el = angular.element(element);    
     $scope = el.scope();
     $injector = el.injector();
     $injector.invoke(function($compile){

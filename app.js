@@ -33,6 +33,10 @@ app.get('/alyssa', function(req, res) {
     res.render('pages/alyssa')
 })
 
+app.get('/alyssa/exam', function(req, res) {
+    res.render('pages/exam_calculator')
+})
+
 // URL Routing
 app.get('/github', function(req, res){
     res.redirect(urls.github)
