@@ -25,6 +25,12 @@ app.get('/', function(req, res) {
     res.render('pages/index', {links: urls})
 })
 
+app.get('/app.js', function(req, res) {
+    res.status(404).render('pages/404', 
+        { title: "404", msg:'File not Found', desc: 'The page you are looking for does not exist or is temporarily unavailable.' }
+    )
+})
+
 app.get('/blog', function(req, res){
     res.render('pages/blog', {links: urls})
 })
