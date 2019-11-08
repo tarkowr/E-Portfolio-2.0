@@ -1,5 +1,5 @@
 $(function() {
-    let offset = 72;
+    let offset = 80;
     let s1, s2, s3, s4, s5, scroll = 0;
     let sprints = [s1, s2, s3, s4, s5];
     let sprintIds = [

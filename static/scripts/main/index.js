@@ -27,6 +27,7 @@ let Repos = {
 
 window.addEventListener('load', function() {
     MobileNavBar();
+    PopulateTechnologies();
     HandleApiService(DisplayLastUpdatedValues);
 });
 
@@ -36,6 +37,23 @@ async function HandleApiService(callback){
     data = await ApiService(environment);
 
     callback(data);
+}
+
+function PopulateTechnologies(){
+    let tech_list = ["C#", "Java", "Python", "WPF", "ASP.NET", "Django", "HTML/CSS", "JavaScript", "Angular",
+        "Bootstrap", "SQL", "Git", "Selenium", "PHP", "NodeJS", "Android", "Salesforce", "SOQL"];
+
+    let target = document.getElementById("tech-list");
+    let rootItem = document.getElementById("tech-item-node");
+    
+    for(let i=0; i < tech_list.length; i++){
+        let clone = rootItem.cloneNode();
+        clone.id="tech-item-" + i;
+        clone.innerHTML = tech_list[i];
+        target.appendChild(clone);
+    }
+
+    target.removeChild(rootItem);
 }
 
 // Hide or unhide nav bar options when the navbar is in mobile upon icon click

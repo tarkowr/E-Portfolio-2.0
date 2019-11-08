@@ -9,23 +9,29 @@
     <title>Richie Tarkowski | Software Developer</title>
 
     <% include ../partials/header %>
+    
+    <!--Angular.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
 <body>
     <nav>   
         <% include ../partials/navbar %>
 
-        <div id="nav-personal">
-            <p>
-                <div id="name"> RICHIE TARKOWSKI </div>
-            </p>
+        <div id="landing">
+            <div id="nav-personal">
+                <p>
+                    <div id="name"> RICHIE TARKOWSKI </div>
+                </p>
+            </div>
+            <div id="nav-title">
+                &mdash; Studying <span id="full-degree">Computer Information Systems</span><span id="abbr-degree">CIS</span> at FSU &mdash;
+            </div>
+            <div id="read-more">
+                <a href="#about-me"><button class="styled-btn">READ MORE</button></a>
+            </div>
         </div>
-        <div id="nav-title">
-            &mdash; <span id="full-degree">Computer Information Systems</span><span id="abbr-degree">CIS</span> Major at FSU &mdash;
-        </div>
-        <div id="read-more">
-            <a href="#about-me"><button class="styled-btn">CONTINUE</button></a>
-        </div>
+
     </nav>
 
     <main>
@@ -33,12 +39,20 @@
             <div id="links-head">&mdash; About Me &mdash;</div>
             <div id="intro">
                 <div id="info">
-                    <div>My name is Richie Tarkowski, and I am studying Computer Information Systems at Ferris State University. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS to design and develop applications that will solve business problems. I have experience in building .NET applications with C#, WPF, and ASP.NET, working with SQL and document databases, using Git and GitHub for version control, developing responsive and mobile websites with various front-end frameworks, and writing server-side scripts. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes.</div>
+                    <div>My name is Richie Tarkowski, and I am studying Computer Information Systems at Ferris State University. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I also enjoy developing web applications. I've built websites with frameworks such as Angular, ASP.NET MVC, and Django and written server-side scripts with NodeJS and PHP. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes. <br><br>
+
+                    Listed below are several technologies that I have experience with: <br><br>
+
+                    <div id="tech-list">
+                        <div id="tech-item-node" class="tech-item"></div>
+                    </div>
+                    
+                    </div>
                 </div>
             </div>
 
-            <div class="resume">
-                <a href="../../static/media/Tarkowski_Resume.pdf" target="_blank"><button id="resume-download" class="styled-btn">View My Resume</button></a>
+            <div class="resume disabled">
+                <a target="_blank"><button id="resume-download" class="styled-btn">View My Resume</button></a><!--href="../../static/media/Tarkowski_Resume.pdf"-->
             </div>
         </section>
 
@@ -213,6 +227,10 @@
         <% include ../partials/footer %> 
     </footer>
 
-    <% include ../partials/jsIncludes %> 
+    <!--Site JavaScript-->
+    <script src="/static/scripts/main/controller.js"></script>
+    <script src="/static/scripts/main/dataService.js"></script>
+    <script src="/static/scripts/main/index.js"></script>
+    <script src="/static/scripts/main/navbar.js"></script>
 </body>
 </html>
