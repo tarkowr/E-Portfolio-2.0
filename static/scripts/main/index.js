@@ -35,23 +35,28 @@ window.addEventListener('load', function() {
 async function HandleApiService(callback){
     let data = new Object();
     data = await ApiService(environment);
-
     callback(data);
 }
 
+// Add formatted technology list items to the about me container
 function PopulateTechnologies(){
     let tech_list = ["C#", "Java", "Python", "WPF", "ASP.NET", "Django", "HTML/CSS", "JavaScript", "Angular",
         "Bootstrap", "SQL", "Git", "Selenium", "PHP", "NodeJS", "Android", "Salesforce", "SOQL"];
 
     let target = document.getElementById("tech-list");
     let rootItem = document.getElementById("tech-item-node");
-    
-    for(let i=0; i < tech_list.length; i++){
+    let index = 0;
+
+    tech_list.forEach(function(item){
         let clone = rootItem.cloneNode();
-        clone.id="tech-item-" + i;
-        clone.innerHTML = tech_list[i];
+        clone.id="tech-item-" + index;
+        clone.innerHTML = item;
+        if(index < tech_list.length - 1){
+            clone.innerHTML += " <small>•</small> ";
+        }
         target.appendChild(clone);
-    }
+        index++;
+    })
 
     target.removeChild(rootItem);
 }

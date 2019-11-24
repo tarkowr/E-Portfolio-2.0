@@ -172,23 +172,42 @@ nav {
     display: inline-block;
   }
 }
-#read-more {
+#splash-links {
   margin: 0 auto;
   margin-top: 70px;
   width: 100%;
   text-align: center;
 }
 
-#read-more > a > button {
-  background: transparent;
+.splash-link {
+  color: white;
+  font-size: 1.8em;
+  background: #4286f4;
+  padding: 10px 15px;
+  margin-right: -3px;
   border: 1px solid white;
-  font-family: "Muli", sans-serif;
-  transition: background-color 0.4s;
+  margin-left: -2px;
 }
 
-#read-more > a > button:hover {
-  background: white;
+.splash-link:hover {
+  background-color: white;
   color: #282828;
+}
+
+.link-github {
+  background-color: #282828;
+}
+
+.link-linkedin {
+  background-color: #0073b1;
+}
+
+.link-mail {
+  background-color: #eb4034;
+}
+
+.link-sf {
+  background-color: #00a1e0;
 }
 
 /*About Me*/
@@ -228,15 +247,6 @@ nav {
   color: #4286f4;
 }
 
-#resume {
-  margin: 0 auto;
-}
-
-#resume-download {
-  border-radius: 30px;
-  width: 200px;
-}
-
 #tech-list {
   margin: 0 auto;
   background: white;
@@ -246,7 +256,7 @@ nav {
 }
 
 .tech-item {
-  padding: 10px;
+  padding: 10px 3px;
   display: inline-block;
   font-weight: bold;
 }
@@ -434,6 +444,25 @@ nav {
 
 .proj-desc > span {
   font-weight: bold;
+}
+
+.proj-btn {
+  background-color: #282828;
+  color: white;
+  border-radius: 5px;
+  padding: 0px 15px;
+  border: none;
+  font-size: 1em;
+  font-family: "Muli", sans-serif !important;
+  font-weight: 200;
+  border: 1px solid #282828;
+  margin-right: 10px;
+}
+
+.proj-btn:hover {
+  background-color: white;
+  color: #282828;
+  border: 1px solid #282828;
 }
 
 /*Footer*/

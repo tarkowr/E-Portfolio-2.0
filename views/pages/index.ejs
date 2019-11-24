@@ -27,8 +27,11 @@
             <div id="nav-title">
                 &mdash; Studying <span id="full-degree">Computer Information Systems</span><span id="abbr-degree">CIS</span> at FSU &mdash;
             </div>
-            <div id="read-more">
-                <a href="#about-me"><button class="styled-btn">READ MORE</button></a>
+            <div id="splash-links">
+                <a class="splash-link link-linkedin" target="_blank" href="<%= links.linkedin %>"><i class="fa fa-linkedin"> </i></a>
+                <a class="splash-link link-github" target="_blank" href="<%= links.github %>"><i class="fa fa-github"> </i></a>
+                <a class="splash-link link-sf" target="_blank" href="<%= links.trailhead %>"><i class="fa fa-cloud"> </i></a>
+                <a class="splash-link link-mail" target="_blank" href="mailto:tarkowr@gmail.com"><i class="fa fa-envelope-o"> </i></a>
             </div>
         </div>
 
@@ -41,18 +44,13 @@
                 <div id="info">
                     <div>My name is Richie Tarkowski, and I am studying Computer Information Systems at Ferris State University. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I also enjoy developing web applications. I've built websites with frameworks such as Angular, ASP.NET MVC, and Django and written server-side scripts with NodeJS and PHP. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes. <br><br>
 
-                    Listed below are several technologies that I have experience with: <br><br>
+                        Listed below are several technologies that I have experience with: <br><br>
 
-                    <div id="tech-list">
-                        <div id="tech-item-node" class="tech-item"></div>
-                    </div>
-                    
+                        <div id="tech-list">
+                            <div id="tech-item-node" class="tech-item"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="resume disabled">
-                <a target="_blank"><button id="resume-download" class="styled-btn">View My Resume</button></a><!--href="../../static/media/Tarkowski_Resume.pdf"-->
             </div>
         </section>
 
@@ -149,7 +147,7 @@
                     <span>Technologies Used:</span> C# <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="cit195-date"> </label>
                     <br><br>
-                    <a target="_blank" href="<%= links.despair %>">GitHub</a>
+                    <a target="_blank" href="<%= links.despair %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
                 </div>
             </div>
 
@@ -159,11 +157,11 @@
                 </div>
                 <hr><br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Wrote a simple, modular Python class that allows users to work with CSV files in Python. <br><br>
+                    <span>Overview:</span> Wrote a simple Python class that allows users to work with CSV files in Python. <br><br>
                     <span>Technologies Used:</span> Python <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="pycsv-date"> </label>
                     <br><br>
-                    <a target="_blank" href="<%= links.pycsv %>">GitHub</a>
+                    <a target="_blank" href="<%= links.pycsv %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
                 </div>
             </div>
 
@@ -177,7 +175,7 @@
                     <span>Technologies Used:</span> PHP, SQL, HTML5, CSS <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="cit228-date"> </label>
                     <br><br>
-                    <a target="_blank" href="<%= links.phpDiscussion %>">GitHub</a>
+                    <a target="_blank" href="<%= links.phpDiscussion %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
                 </div>
             </div>
 
@@ -191,7 +189,7 @@
                     <span>Technologies Used:</span> Windows Presentation Foundation (WPF), C#, MongoDB, Web API <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="cit255-date"> </label>
                     <br><br>
-                    <a target="_blank" href="<%= links.stockInsight %>">GitHub</a>
+                    <a target="_blank" href="<%= links.stockInsight %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
                 </div>
             </div>
 
@@ -201,9 +199,10 @@
                 </div>
                 <hr><br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app. <a target="_blank" href="<%= links.chatversitySite %>">Visit the static site.</a> <br><br>
+                    <span>Overview:</span> Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app. <br><br>
                     <span>Technologies Used:</span> Angular 7, HTML5, CSS, Bootstrap, NodeJS, Okta, Pusher Chatkit <br><br>
-                    <a target="_blank" href="<%= links.chatversityApp %>">Visit the Web App!</a>
+                    <a target="_blank" href="<%= links.chatversity %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
+                    <a target="_blank" href="<%= links.chatversityApp %>">Web App</a> | <a target="_blank" href="<%= links.chatversitySite %>">Static Site</a>
                 </div>
             </div>
 
@@ -217,7 +216,7 @@
                     <span>Technologies Used:</span> HTML5, CSS, JavaScript, NodeJS <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="eportfolio-date"> </label>
                     <br><br>
-                    <a target="_blank" href="<%= links.eportfolio %>">GitHub</a>
+                    <a target="_blank" href="<%= links.eportfolio %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
                 </div>
             </div>
         </section>
