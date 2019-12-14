@@ -15,19 +15,26 @@
 </head>
 
 <body>
-    <nav>   
-        <% include ../partials/navbar %>
+    <nav class="m-auto w-100 h-100 bg-offBlack">   
+       
+        <!--Navbar-->
+        <div id="navigation" class="pos-fixed w-100 text-center navigation default-navigation">
+            <i class="fa fa-bars" id="nav-bars"> </i>
+            <a href="#about-me" class="nav-links">About Me</a>
+            <a href="#links-top" class="nav-links">Connect</a>
+            <a href="#projects-top" class="nav-links">Projects</a>
+        </div>
 
         <div id="landing">
-            <div id="nav-personal">
+            <div id="nav-personal" class="text-center display-inline-block w-100">
                 <p>
-                    <div id="name"> RICHIE TARKOWSKI </div>
+                    <div id="name" class="color-white"> RICHIE TARKOWSKI </div>
                 </p>
             </div>
-            <div id="nav-title">
+            <div id="nav-title" class="w-100 text-center color-white">
                 &mdash; Studying <span id="full-degree">Computer Information Systems</span><span id="abbr-degree">CIS</span> at FSU &mdash;
             </div>
-            <div id="splash-links">
+            <div id="splash-links" class="m-auto text-center w-100">
                 <a class="splash-link link-linkedin" target="_blank" href="<%= links.linkedin %>"><i class="fa fa-linkedin"> </i></a>
                 <a class="splash-link link-github" target="_blank" href="<%= links.github %>"><i class="fa fa-github"> </i></a>
                 <a class="splash-link link-sf" target="_blank" href="<%= links.trailhead %>"><i class="fa fa-cloud"> </i></a>
@@ -38,15 +45,15 @@
     </nav>
 
     <main>
-        <section class="about-me" id="about-me">
-            <div id="links-head">&mdash; About Me &mdash;</div>
-            <div id="intro">
-                <div id="info">
+        <section class="about-me" id="about-me" class="text-center">
+            <div id="links-head" class="text-center">&mdash; About Me &mdash;</div>
+            <div id="intro" class="m-auto">
+                <div id="info" class="text-justify color-offblack">
                     <div>My name is Richie Tarkowski, and I am studying Computer Information Systems at Ferris State University. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I also enjoy developing web applications. I've built websites with frameworks such as Angular, ASP.NET MVC, and Django and written server-side scripts with NodeJS and PHP. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes. <br><br>
 
                         Listed below are several technologies that I have experience with: <br><br>
 
-                        <div id="tech-list">
+                        <div id="tech-list" class="m-auto bg-white">
                             <div id="tech-item-node" class="tech-item"></div>
                         </div>
                     </div>
@@ -54,8 +61,8 @@
             </div>
         </section>
 
-        <section class="container" id="links-top">
-            <div id="links-head">&mdash; Connect &mdash;</div>
+        <section class="container" id="links-top" class="w-100 bg-white">
+            <div id="links-head" class="text-center color-offblack">&mdash; Connect &mdash;</div>
             <section class="card">
                 <div class="card-image" id="card-github">
                     <a target="_blank" href="<%= links.github %>"><div class="hover-effect">
@@ -105,10 +112,10 @@
             </section>
         </section>
 
-        <section class="projects" id="projects-top" ng-controller="projects">
-            <div id="projects-header">&mdash; Projects &mdash;</div>
-            <div id="filter" class="disabled">
-                <select ng-model="selected_type"  ng-change="ProjectFilter()">
+        <section class="projects" id="projects-top" class="w-100" ng-controller="projects">
+            <div id="projects-header" class="color-white">&mdash; Projects &mdash;</div>
+            <div id="filter" class="display-none text-left m-auto">
+                <select class="color-offblack" ng-model="selected_type"  ng-change="ProjectFilter()">
                     <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
                 </select>
             </div>
@@ -135,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="proj disabled" data-tags="c#">
+            <div class="proj display-none" data-tags="c#">
                 <div class="proj-head off-black">
                     Despair
                 </div>
@@ -222,7 +229,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-white color-offblack">
         <% include ../partials/footer %> 
     </footer>
 

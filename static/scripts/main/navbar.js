@@ -3,7 +3,7 @@ $(function() {
     let filter = $('#filter');
 
     // If JS is enabled, display the project filter
-    filter.removeClass('disabled');
+    filter.removeClass('display-none');
 
     // Check if window is scrolled past a certain point and handle navbar classes
     let ToggleNavBar = function(){

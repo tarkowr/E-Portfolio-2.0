@@ -1,4 +1,4 @@
-/*Page Defaults and Custom Styles*/
+/*Page Defaults*/
 html, body{
     width: 100%;
     height: 100%;
@@ -13,22 +13,112 @@ a{
     color: $offBlack;
     text-decoration: none;
 }
+button{
+    font-size: 1.1em;
+}
+
+/*Text Alignment*/
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-justify{
+    text-align: justify;
+}
+
+/*Font*/
+.font-default{
+    font-family: $defaultFont;
+}
+
+/*Position*/
+.pos-fixed{
+    position: fixed;
+}
+
+/*Display*/
+.display-inline{
+    display: inline;
+}
+.display-block{
+    display: block;
+}
+.display-inline-block{
+    display: inline-block;
+}
+.display-none{
+    display: none !important;
+}
+
+/*Width and Height*/
+.w-100{
+    width: 100%;
+}
+.h-100{
+    height: 100%;
+}
+
+/*Margin*/
+.m-auto{
+    margin: 0 auto;
+}
+
+/*Color*/
+.color-offblack{
+    color: $offBlack;
+}
+.color-white{
+    color: white;
+}
+.color-primary{
+    color: $primary;
+}
+
+/*Background Color*/
+.bg-offBlack{
+    background: $offBlack;
+}
+.bg-white{
+    background: white;
+}
+.bg-balance{
+    background: $balance;
+}
+
+/*Button*/
+.btn{
+    margin: 0 auto;
+    width: 180px;
+    height: 60px;
+    font-size: 1.1em;
+}
 .styled-btn{
-    margin: $margin;
+    @extend .btn;
     background-color: $balance;
     border: 1px solid $balance;
     color: $default;
-    font-size: 1.1em;
-    width: 180px;
-    height: 60px;
 }
 .styled-btn:hover{
     background-color: $balanceHover;
     border: 1px solid $balanceHover;
 }
-button{
-    font-size: 1.1em;
+
+/*MIXINS*/
+@mixin custom-size($width, $height) {
+    width: $width;
+    height: $height;
 }
-.disabled{
-    display: none !important;
+@mixin custom-width($width) {
+    width: $width;
+}
+@mixin custom-height($height) {
+    height: $height;
+}
+@mixin custom-bg($bg) {
+    background: $bg;
+}
+@mixin custom-color($color){
+    color: $color;
 }

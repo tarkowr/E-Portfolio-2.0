@@ -1,4 +1,4 @@
-/*Page Defaults and Custom Styles*/
+/*Page Defaults*/
 html, body {
   width: 100%;
   height: 100%;
@@ -15,14 +15,102 @@ a {
   text-decoration: none;
 }
 
-.styled-btn {
+button {
+  font-size: 1.1em;
+}
+
+/*Text Alignment*/
+.text-center, footer, #navigation a, i {
+  text-align: center;
+}
+
+.text-left, .proj {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/*Font*/
+.font-default {
+  font-family: "Muli", sans-serif;
+}
+
+/*Position*/
+.pos-fixed {
+  position: fixed;
+}
+
+/*Display*/
+.display-inline {
+  display: inline;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline-block, .proj-desc, .proj, .card, .nav-links {
+  display: inline-block;
+}
+
+.display-none {
+  display: none !important;
+}
+
+/*Width and Height*/
+.w-100, .proj-desc, .card-button, .card-desc, .card-image {
+  width: 100%;
+}
+
+.h-100, .hover-effect {
+  height: 100%;
+}
+
+/*Margin*/
+.m-auto, .proj, .card-desc, .card-image, .card, #navigation a, i {
   margin: 0 auto;
+}
+
+/*Color*/
+.color-offblack, footer a, .proj-desc, .card-desc, .scrolled-navigation > a {
+  color: #282828;
+}
+
+.color-white, .proj-btn:hover, .proj-btn, .card-link, .hover-effect:hover, .splash-link, .default-navigation > a {
+  color: white;
+}
+
+.color-primary, footer a:hover, .proj-desc > a, .card-desc > p > a {
+  color: #4286f4;
+}
+
+/*Background Color*/
+.bg-offBlack, .proj-btn, .projects, .link-github {
+  background: #282828;
+}
+
+.bg-white, .proj-btn:hover, .proj, .card {
+  background: white;
+}
+
+.bg-balance, .card-link {
+  background: #678;
+}
+
+/*Button*/
+.btn, .styled-btn {
+  margin: 0 auto;
+  width: 180px;
+  height: 60px;
+  font-size: 1.1em;
+}
+
+.styled-btn {
   background-color: #678;
   border: 1px solid #678;
   color: white;
-  font-size: 1.1em;
-  width: 180px;
-  height: 60px;
 }
 
 .styled-btn:hover {
@@ -30,34 +118,15 @@ a {
   border: 1px solid rgba(102, 119, 136, 0.85);
 }
 
-button {
-  font-size: 1.1em;
-}
-
-.disabled {
-  display: none !important;
-}
-
-/*Header*/
-nav {
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  background: #282828;
-}
-
+/*MIXINS*/
 @media (max-width: 1024px) {
   nav {
     background-attachment: scroll;
   }
 }
 /*Nav Bar*/
-#navigation {
-  position: fixed;
-  width: 100%;
-  text-align: center;
+.navigation {
   z-index: 2;
-  font-family: "Muli", sans-serif;
   transition: padding-top 0.5s;
   transition-timing-function: ease;
 }
@@ -72,8 +141,6 @@ nav {
 }
 
 #navigation a, i {
-  text-align: center;
-  margin: 0 auto;
   padding: 15px 0;
   font-size: 17px;
 }
@@ -86,7 +153,6 @@ nav {
 }
 
 .default-navigation > a {
-  color: white;
   transition: background-color 0.5s;
 }
 
@@ -95,6 +161,11 @@ nav {
 }
 
 @media (max-width: 1024px) {
+  #navigation {
+    transition: height 0.5s;
+    transition-timing-function: ease;
+  }
+
   .nav-links {
     display: none;
     width: 100%;
@@ -103,6 +174,7 @@ nav {
   #navigation > a {
     text-align: left;
     padding: 15px;
+    color: #282828;
   }
 
   #nav-bars {
@@ -119,35 +191,24 @@ nav {
   border-bottom: 1px solid #282828;
 }
 
-.scrolled-navigation > a {
-  color: #282828;
-}
-
 .scrolled-navigation > a:hover {
   background-color: #f9f9f9;
 }
 
 /*Top of Page*/
 #nav-personal {
-  text-align: center;
-  display: inline-block;
   padding-top: 16%;
-  width: 100%;
 }
 
 #name {
   font-size: 3em;
   letter-spacing: 8px;
   font-weight: 600;
-  color: white;
 }
 
 #nav-title {
-  width: 100%;
-  text-align: center;
   font-size: 1.2em;
   font-weight: 400;
-  color: white;
   padding-top: 20px;
 }
 
@@ -173,16 +234,11 @@ nav {
   }
 }
 #splash-links {
-  margin: 0 auto;
   margin-top: 70px;
-  width: 100%;
-  text-align: center;
 }
 
 .splash-link {
-  color: white;
   font-size: 1.8em;
-  background: #4286f4;
   padding: 10px 15px;
   margin-right: -3px;
   border: 1px solid white;
@@ -194,43 +250,34 @@ nav {
   color: #282828;
 }
 
-.link-github {
-  background-color: #282828;
-}
-
 .link-linkedin {
-  background-color: #0073b1;
+  background: #0073b1;
 }
 
 .link-mail {
-  background-color: #eb4034;
+  background: #eb4034;
 }
 
 .link-sf {
-  background-color: #00a1e0;
+  background: #00a1e0;
 }
 
 /*About Me*/
 .about-me {
-  background-color: #eee;
-  text-align: center;
+  background: #eee;
   padding: 75px 0;
   margin-top: 0;
 }
 
 #intro {
-  background-color: transparent;
   padding: 40px;
   width: 60%;
-  margin: auto;
   margin-bottom: 40px;
   font-size: 1.2em;
 }
 
 #info {
-  text-align: justify;
   line-height: 1.4em;
-  color: #282828;
 }
 
 @media (max-width: 1024px) {
@@ -243,13 +290,7 @@ nav {
     text-align: left;
   }
 }
-.about-me label {
-  color: #4286f4;
-}
-
 #tech-list {
-  margin: 0 auto;
-  background: white;
   border: 1px solid #D3D3D3;
   padding-left: 10px;
   border-radius: 5px;
@@ -263,39 +304,30 @@ nav {
 
 /*Links*/
 .container {
-  width: 100%;
-  background-color: white;
   text-align: center;
   padding: 50px 0;
   padding-bottom: 150px;
 }
 
 #links-head {
-  text-align: center;
-  color: #282828;
   font-size: 2.5em;
   margin: 30px auto 40px auto;
 }
 
 .card {
   width: 25%;
-  background-color: white;
-  margin: 0 auto;
   margin: auto 40px;
-  display: inline-block;
   vertical-align: top;
 }
 
 .hover-effect {
-  height: 100%;
   color: transparent;
   border-radius: 20px;
 }
 
 .hover-effect:hover {
   background: rgba(0, 0, 0, 0.6);
-  color: white;
-  transition: background 1s, color 1s;
+  transition: background-color 1s, color 1s;
 }
 
 .hover-effect > span {
@@ -306,8 +338,6 @@ nav {
 }
 
 .card-image {
-  margin: 0 auto;
-  width: 100%;
   max-width: 380px;
   height: 250px;
   border: 1px solid #eee;
@@ -332,17 +362,10 @@ nav {
 }
 
 .card-desc {
-  margin: 0 auto;
-  width: 100%;
   max-width: 380px;
-  color: #282828;
   margin-top: 30px;
   margin-bottom: 30px;
   font-size: 1.1em;
-}
-
-.card-desc > p > a {
-  color: #4286f4;
 }
 
 .card-desc > p > a:hover {
@@ -350,7 +373,6 @@ nav {
 }
 
 .card-button {
-  width: 100%;
   margin-bottom: 50px;
 }
 
@@ -361,15 +383,13 @@ nav {
 
 .card-link {
   width: 140px;
-  color: white;
-  background-color: #678;
-  border: 1px solid #678;
   height: 40px;
+  border: 1px solid #678;
   border-radius: 40px;
 }
 
 .card-link:hover {
-  background-color: rgba(102, 119, 136, 0.85);
+  background: rgba(102, 119, 136, 0.85);
   border: 1px solid rgba(102, 119, 136, 0.85);
 }
 
@@ -381,31 +401,25 @@ nav {
 }
 /*Projects*/
 .projects {
-  background-color: #282828;
-  width: 100%;
   text-align: center;
   padding: 50px 0;
   padding-bottom: 160px;
 }
 
 #projects-header {
-  color: white;
   font-size: 2.5em;
   margin: 30px auto 40px auto;
 }
 
 #filter {
-  text-align: left;
-  margin: 0 auto;
   width: 80%;
   padding: 0, 0, 0, 30px;
 }
 
 #filter > select {
+  background: #eee;
   margin-left: -30px;
   margin-bottom: 20px;
-  background-color: #eee;
-  color: #282828;
   border: 1px solid #678;
   border-radius: 10px;
   padding: 10px;
@@ -413,12 +427,8 @@ nav {
 }
 
 .proj {
-  display: inline-block;
-  text-align: left;
   width: 80%;
-  background-color: white;
   padding: 30px;
-  margin: 0 auto;
   margin-bottom: 30px;
 }
 
@@ -427,14 +437,10 @@ nav {
 }
 
 .proj-desc {
-  width: 100%;
-  display: inline-block;
-  color: #282828;
   font-size: 1.1em;
 }
 
 .proj-desc > a {
-  color: #4286f4;
   text-decoration: none;
 }
 
@@ -447,8 +453,6 @@ nav {
 }
 
 .proj-btn {
-  background-color: #282828;
-  color: white;
   border-radius: 5px;
   padding: 0px 15px;
   border: none;
@@ -460,22 +464,13 @@ nav {
 }
 
 .proj-btn:hover {
-  background-color: white;
-  color: #282828;
   border: 1px solid #282828;
 }
 
 /*Footer*/
 footer {
-  background-color: white;
-  text-align: center;
   font-size: 1.5em;
   padding: 50px 0;
-  color: #282828;
-}
-
-#footer-email a {
-  color: #4286f4;
 }
 
 #footer-email a:hover {
@@ -484,12 +479,10 @@ footer {
 }
 
 footer a {
-  color: #282828;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #4286f4;
   text-decoration: underline;
 }
 

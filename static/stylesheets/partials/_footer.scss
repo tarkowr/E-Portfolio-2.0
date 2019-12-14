@@ -1,24 +1,19 @@
 /*Footer*/
 footer{
-    background-color: $default;
-    text-align: center;
+    @extend .text-center;
     font-size: 1.5em;
     padding: 50px 0;
-    color: $offBlack;
-}
-#footer-email a{
-    color: $primary;
 }
 #footer-email a:hover{
     color: $balance;
     text-decoration: none;
 }
 footer a{
-    color: $offBlack;
+    @extend .color-offblack;
     text-decoration: none;
 }
 footer a:hover{
-    color: $primary;
+    @extend .color-primary;
     text-decoration: underline;
 }
 #footer-icons{

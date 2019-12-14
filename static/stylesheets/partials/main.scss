@@ -1,13 +1,6 @@
 @import "./_variables.scss";
 @import "./_styles";
 
-/*Header*/
-nav{
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background: $offBlack;
-}
 @media (max-width: $breakpoint){
     nav{
         background-attachment: scroll;
@@ -15,25 +8,22 @@ nav{
 }
 
 /*Nav Bar*/
-#navigation{
-    position: fixed;
-    width: 100%;
-    text-align: center;
+.navigation{
     z-index: 2;
-    font-family: $defaultFont;
     transition: padding-top .5s;
     transition-timing-function: ease;
 }
 .nav-links{
-    width: 200px;
-    display: inline-block;       
+    @include custom-width(200px);
+    @extend .display-inline-block;  
+    display: inline-block; 
 }
 #nav-bars{
     display: none;
 }
 #navigation a, i{
-    text-align: center;
-    margin: $margin;
+    @extend .text-center;
+    @extend .m-auto;
     padding: 15px 0;
     font-size: 17px;
 }
@@ -44,7 +34,7 @@ nav{
     border-bottom: 1px solid transparent;
 }
 .default-navigation > a{
-    color: $default;
+    @extend .color-white;
     transition: background-color .5s;
 }
 .default-navigation > a:hover{
@@ -52,6 +42,10 @@ nav{
 }
 
 @media (max-width: $breakpoint){
+    #navigation{
+        transition: height .5s;
+        transition-timing-function: ease;
+    }
     .nav-links{
         display: none;
         width: 100%;
@@ -59,6 +53,7 @@ nav{
     #navigation > a{
         text-align: left;
         padding: 15px;
+        color: $offBlack;
     }
     #nav-bars{
         text-align: left;
@@ -74,7 +69,7 @@ nav{
     border-bottom: 1px solid $offBlack;
 }
 .scrolled-navigation > a{
-    color: $offBlack;
+    @extend .color-offblack;
 }
 .scrolled-navigation >a:hover{
     background-color: #f9f9f9;
@@ -82,24 +77,17 @@ nav{
 
 /*Top of Page*/
 #nav-personal{
-    text-align: center;
-    display: inline-block;
     padding-top: 16%;
-    width: 100%;
 }
 #name{
     font-size: 3em;
     letter-spacing: 8px;
     font-weight: 600;
-    color: $default;
 }
 
 #nav-title{
-    width:100%;
-    text-align: center;
     font-size: 1.2em;
     font-weight: 400;
-    color: $default;
     padding-top: 20px;
 }
 #full-degree{
@@ -120,15 +108,11 @@ nav{
     }
 }
 #splash-links{
-    margin: $margin;
     margin-top: 70px;
-    width: 100%;
-    text-align: center;
 }
 .splash-link{
-    color: white;
+    @extend .color-white;
     font-size: 1.8em;
-    background: #4286f4;
     padding: 10px 15px;
     margin-right: -3px;
     border: 1px solid white;
@@ -139,37 +123,32 @@ nav{
     color: $offBlack;
 }
 .link-github{
-    background-color: $offBlack;
+    @extend .bg-offBlack;
 }
 .link-linkedin{
-    background-color: #0073b1;
+    @include custom-bg(#0073b1);
 }
 .link-mail{
-    background-color: #eb4034;
+    @include custom-bg(#eb4034);
 }
 .link-sf{
-    background-color: #00a1e0;
+    @include custom-bg(#00a1e0);
 }
 
 /*About Me*/
 .about-me{
-    background-color: $light;
-    text-align: center;
+    @include custom-bg($light);
     padding: 75px 0;
     margin-top: 0;
 }
 #intro{
-    background-color: transparent;
     padding: 40px;
     width: 60%;
-    margin: auto;
     margin-bottom: 40px;
     font-size: 1.2em;
 }
 #info{
-    text-align: justify;  
     line-height: 1.4em;
-    color: $offBlack; 
 }
 @media (max-width: $breakpoint){
     #intro{
@@ -180,12 +159,7 @@ nav{
         text-align: left;
     }
 }
-.about-me label{
-    color: $primary;
-}
 #tech-list{
-    margin: 0 auto;
-    background: white;
     border: 1px solid #D3D3D3;
     padding-left: 10px;
     border-radius: 5px;
@@ -198,35 +172,31 @@ nav{
 
 /*Links*/
 .container{
-    width: 100%;
-    background-color: $default;
     text-align: center;
     padding: 50px 0;
     padding-bottom: 150px;
 }
 #links-head{
-    text-align: center;
-    color: $offBlack;
     font-size: 2.5em;
     margin: 30px auto 40px auto;    
 }
 .card{
+    @extend .bg-white;
+    @extend .m-auto;
+    @extend .display-inline-block;
     width: 25%;
-    background-color: $default;
-    margin: $margin;
     margin: auto 40px;
-    display: inline-block;
     vertical-align: top;
 }
 .hover-effect{
-    height: 100%;
-    color: transparent;
+    @extend .h-100;
+    @include custom-color(transparent);
     border-radius: 20px;
 }
 .hover-effect:hover{
+    @extend .color-white;
     background: rgba(0, 0, 0, .6);
-    color: $default;
-    transition: background 1s, color 1s;
+    transition: background-color 1s, color 1s;
 }
 .hover-effect > span{
     font-size: 2em;
@@ -235,8 +205,8 @@ nav{
     top: 40%;
 }
 .card-image{
-    margin: $margin;
-    width: 100%;
+    @extend .m-auto;
+    @extend .w-100;
     max-width: 380px;
     height: 250px;
     border: 1px solid $light;
@@ -257,22 +227,22 @@ nav{
     background-size: cover;
 }
 .card-desc{
-    margin: $margin;
-    width: 100%;
+    @extend .m-auto;
+    @extend .w-100;
+    @extend .color-offblack;
     max-width: 380px;
-    color: $offBlack;  
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 1.1em;
 }
 .card-desc > p > a{
-    color: $primary;
+    @extend .color-primary;
 }
 .card-desc > p > a:hover{
     text-decoration: underline;
 }
 .card-button{
-    width: 100%;
+    @extend .w-100;
     margin-bottom: 50px;
 }
 .card-button > a > button > i{
@@ -280,15 +250,14 @@ nav{
     padding: 0;
 }
 .card-link{
-    width: 140px;
-    color: $default;
-    background-color: $balance;
+    @include custom-size(140px, 40px);
+    @extend .color-white;
+    @extend .bg-balance;
     border: 1px solid $balance;
-    height: 40px;
     border-radius: 40px;
 }
 .card-link:hover{
-    background-color: $balanceHover;
+    @include custom-bg($balanceHover);
     border: 1px solid $balanceHover;
 }
 
@@ -301,53 +270,48 @@ nav{
 
 /*Projects*/
 .projects{
-    background-color: $offBlack;
-    width: 100%;
+    @extend .bg-offBlack;
     text-align: center;
     padding: 50px 0;
     padding-bottom: 160px;    
 }
 #projects-header{
-    color: $default;
     font-size: 2.5em;
     margin: 30px auto 40px auto;
 }
 #filter{
-    text-align: left;
-    margin: $margin;
     width: 80%;
     padding: 0, 0, 0, 30px;
 }
 #filter > select{
+    @include custom-bg($light);
     margin-left: -30px;
     margin-bottom: 20px;
-    background-color: $light;
-    color: $offBlack;
     border: 1px solid $balance;
     border-radius: 10px;
     padding: 10px;
     font-size: 1.1em;
 }
 .proj{
-    display: inline-block;
-    text-align: left;
-    width: 80%;
-    background-color: $default;
+    @include custom-width(80%);
+    @extend .display-inline-block;
+    @extend .text-left;
+    @extend .bg-white;
+    @extend .m-auto;
     padding: 30px;
-    margin: $margin;
     margin-bottom: 30px;
 }
 .proj-head{
     font-size: 1.8em;
 }
 .proj-desc{
-    width: 100%;  
-    display: inline-block; 
-    color: $offBlack;
+    @extend .w-100;
+    @extend .display-inline-block;
+    @extend .color-offblack;
     font-size: 1.1em;
 }
 .proj-desc > a{
-    color: $primary;
+    @extend .color-primary;
     text-decoration: none;    
 }
 .proj-desc > a:hover{
@@ -357,8 +321,8 @@ nav{
     font-weight: bold;
 }
 .proj-btn{
-    background-color: $offBlack;
-    color: white;
+    @extend .bg-offBlack;
+    @extend .color-white;
     border-radius: 5px;
     padding: 0px 15px;
     border: none;
@@ -369,8 +333,8 @@ nav{
     margin-right: 10px;
 }
 .proj-btn:hover{
-    background-color: white;
-    color: $offBlack;
+    @extend .bg-white;
+    @extend .color-white;
     border: 1px solid $offBlack;
 }
 

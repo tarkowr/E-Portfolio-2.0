@@ -1,51 +1,74 @@
 @import "./_variables.scss";
-@import "./_styles";
+@import "./_styles.scss";
 
 /*NavBar*/
-nav{
-    margin: auto;
-    width: 100%;
-    height: 100%;
+#navbar{
+    @include custom-height(75px);
+    z-index: 2;
+    font-family: $defaultFont;
+    font-size: 1.2em;
+    border-bottom: 2px solid $blogTheme;
 }
-@media (max-width : $breakpoint){
-    nav{
-        background: none;
+.link{
+    @include custom-color($fadedBlack);
+    @include custom-width(auto);
+    @extend .display-inline-block;
+    margin: 20px 0px 20px 30px;
+    text-decoration: none;
+    padding: 5px;
+}
+.home{
+    color: white !important;
+}
+#navbar > i{
+    @extend .pos-fixed;
+    display: none;
+    top: 15px;
+    right: 15px;
+    border: 1px solid rgba(255,255,255,.75);
+    color: rgba(255,255,255,.75);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+@media (max-width: $breakpoint){
+    #navbar{
+        transition: height .5s;
+        transition-timing-function: ease;
+    }
+    .link{
+        display: none;
+        width: 80%;
+        margin: 5px 10px;
+        margin-top: 0px;
+    }
+    .home{
+        margin: 20px 0px 20px 10px;
+        display: block;
+        transition: margin 1s;
+    }
+    #navbar > i{
+        display: block;
     }
 }
-
-@import "./navbar.scss";
+#navbar > a:hover{
+    @extend .color-white;
+}
+#navbar > i:hover{
+    @extend .color-white;
+    border: 1px solid $default;
+}
 
 #title{
-    text-align: center;
-    display: inline-block;
     margin-top: 14%;
-    width: 100%;
     font-size: 2em;
 }
 #title-container{
-    margin: $margin;
-    width: 50%;
+    @include custom-width(50%);
     padding-top: 8%;
     font-size: 1.5em;
 }
 .typed-cursor {
-    color: $blogTheme;
-}
-
-#read-more{
-    font-size: 18px;
-    margin: $margin;
-    margin-top: 100px;
-    display: block;
-    border: 1px solid $blogTheme;
-    background-color: white;
-    color: $blogTheme;
-}
-
-#read-more:hover{
-    background-color: $blogTheme;
-    color: $default;
-    transition: background-color .5s, color .5s;
+    @include custom-color($blogTheme);
 }
 
 @media (min-width : 481px) and (max-width: $breakpoint){
@@ -66,51 +89,40 @@ nav{
     #title-container{
         width: 80%;
     }
-    #read-more{
-        width: 140px;
-        height: 45px;
-    }
 }
 
 #nav-arrows{
-    position: fixed;
     bottom: 30px;
     right: 30px;
     font-size: 1.3em;
-    background-color: $offBlack;
     border: 2px solid $blogTheme;
 }
 #nav-arrows > a{
-    display: block;
-    color: $default;
+    @extend .display-block;
+    @extend .color-white;
     padding: 5px 10px 5px 10px;
 }
 #nav-arrows > a:hover{
-    background-color: $blogTheme;
+    @include custom-bg($blogTheme);
 }
 
 /*Blogs*/
 main{
-    background-color: $offBlack;
-    width: 100%;
     padding-top: 75px;
     padding-bottom: 200px;
 }
 .blog-top{
-    width: 100%;
-    text-align: center;
+    @extend .text-center;
     font-size: 3em;
-    color: $default;
     margin-bottom: 100px;
 }
 .blog-post{
-    width: 60%;
-    margin: $margin;
-    color: white;
+    @include custom-width(60%);
+    @extend .m-auto;
+    @extend .text-center;
+    @extend .bg-white;
+    @extend .color-offblack;
     font-size: 1.2em;
-    text-align: center;
-    background-color: $default;
-    color: $offBlack;
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
@@ -122,25 +134,24 @@ main{
     border: 2px solid $blogTheme;
     transition: border .5s;
 }
-
 .blog-header{
     font-size: 2em;
     padding: 5px;
     border-bottom: 1px solid rgba(0,0,0,.75);
 }
 .blog-header span{
-    color: $blogTheme;
+    @include custom-color($blogTheme);
 }
 .blog-content{
-    text-align: justify;
+    @extend .text-justify;
     padding: 10px;
 }
 .blog-footer{
+    @include custom-color($balance);
     font-size: 0.8em;
-    color: $balance;
 }
 .blog-line{
-    width: 60%;
+    @include custom-width(60%);
 }
 
 @media (max-width : $mobileBreakpoint){

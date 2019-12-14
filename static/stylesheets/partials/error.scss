@@ -3,13 +3,10 @@
 
 /*Error Pages*/
 .error-body{
-    background-color: $offBlack;
+    @extend .bg-offBlack;
 }
 .error{
-    margin: 0 auto;
-    text-align: center;
-    width: 60%;
-    position: fixed;
+    @include custom-width(60%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,31 +20,31 @@
     }
 }
 .error-title{
+    @extend .color-white;
+    @extend .w-100;
     font-weight: bold;
     font-size: 7em;
-    color: $default;
     margin-bottom: 5%;
-    width: 100%;
 }
 .error-msg{
+    @include custom-color($light);
+    @extend .w-100;
     font-size: 1.4em;
-    color: $light;
     margin-bottom: 3%;
-    width: 100%;
 }
 .error-desc{
-    color: $light;
+    @include custom-color($light);
+    @extend .w-100;
     margin-bottom: 5%;
-    width: 100%;
 }
 #error-btn{
-    background-color: $primary;
+    @include custom-bg($primary);
+    @include custom-height(50px);
     border: 1px solid $primary;
     font-family: $defaultFont;
     border-radius: 30px;
-    height: 50px;
 }
 #error-btn:hover{
-    background-color: $balance;
+    @include custom-bg($balance);
     border: 1px solid $balance;
 }

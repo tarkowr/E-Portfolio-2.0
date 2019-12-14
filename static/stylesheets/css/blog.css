@@ -1,4 +1,4 @@
-/*Page Defaults and Custom Styles*/
+/*Page Defaults*/
 html, body {
   width: 100%;
   height: 100%;
@@ -15,14 +15,102 @@ a {
   text-decoration: none;
 }
 
-.styled-btn {
+button {
+  font-size: 1.1em;
+}
+
+/*Text Alignment*/
+.text-center, footer, .blog-post, .blog-top {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify, .blog-content {
+  text-align: justify;
+}
+
+/*Font*/
+.font-default {
+  font-family: "Muli", sans-serif;
+}
+
+/*Position*/
+.pos-fixed, #navbar > i {
+  position: fixed;
+}
+
+/*Display*/
+.display-inline {
+  display: inline;
+}
+
+.display-block, #nav-arrows > a {
+  display: block;
+}
+
+.display-inline-block, .link {
+  display: inline-block;
+}
+
+.display-none {
+  display: none !important;
+}
+
+/*Width and Height*/
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+/*Margin*/
+.m-auto, .blog-post {
   margin: 0 auto;
+}
+
+/*Color*/
+.color-offblack, footer a, .blog-post {
+  color: #282828;
+}
+
+.color-white, #nav-arrows > a, #navbar > i:hover, #navbar > a:hover {
+  color: white;
+}
+
+.color-primary, footer a:hover {
+  color: #4286f4;
+}
+
+/*Background Color*/
+.bg-offBlack {
+  background: #282828;
+}
+
+.bg-white, .blog-post {
+  background: white;
+}
+
+.bg-balance {
+  background: #678;
+}
+
+/*Button*/
+.btn, .styled-btn {
+  margin: 0 auto;
+  width: 180px;
+  height: 60px;
+  font-size: 1.1em;
+}
+
+.styled-btn {
   background-color: #678;
   border: 1px solid #678;
   color: white;
-  font-size: 1.1em;
-  width: 180px;
-  height: 60px;
 }
 
 .styled-btn:hover {
@@ -30,60 +118,36 @@ a {
   border: 1px solid rgba(102, 119, 136, 0.85);
 }
 
-button {
-  font-size: 1.1em;
-}
-
-.disabled {
-  display: none !important;
-}
-
+/*MIXINS*/
 /*NavBar*/
-nav {
-  margin: auto;
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 1024px) {
-  nav {
-    background: none;
-  }
-}
 #navbar {
-  width: 100%;
   height: 75px;
-  position: fixed;
-  color: white;
   z-index: 2;
   font-family: "Muli", sans-serif;
   font-size: 1.2em;
-  background-color: #282828;
   border-bottom: 2px solid #f4425f;
 }
 
 .link {
-  margin: 20px 0px 20px 30px;
-  display: inline-block;
-  text-decoration: none;
-  padding: 5px;
   color: rgba(255, 255, 255, 0.5);
   width: auto;
+  margin: 20px 0px 20px 30px;
+  text-decoration: none;
+  padding: 5px;
 }
 
 .home {
-  color: white;
+  color: white !important;
 }
 
 #navbar > i {
-  position: fixed;
+  display: none;
   top: 15px;
   right: 15px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   color: rgba(255, 255, 255, 0.75);
   padding: 8px 12px;
   border-radius: 8px;
-  display: none;
 }
 
 @media (max-width: 1024px) {
@@ -109,25 +173,16 @@ nav {
     display: block;
   }
 }
-#navbar > a:hover {
-  color: white;
-}
-
 #navbar > i:hover {
-  color: white;
   border: 1px solid white;
 }
 
 #title {
-  text-align: center;
-  display: inline-block;
   margin-top: 14%;
-  width: 100%;
   font-size: 2em;
 }
 
 #title-container {
-  margin: 0 auto;
   width: 50%;
   padding-top: 8%;
   font-size: 1.5em;
@@ -135,22 +190,6 @@ nav {
 
 .typed-cursor {
   color: #f4425f;
-}
-
-#read-more {
-  font-size: 18px;
-  margin: 0 auto;
-  margin-top: 100px;
-  display: block;
-  border: 1px solid #f4425f;
-  background-color: white;
-  color: #f4425f;
-}
-
-#read-more:hover {
-  background-color: #f4425f;
-  color: white;
-  transition: background-color 0.5s, color 0.5s;
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -172,55 +211,36 @@ nav {
   #title-container {
     width: 80%;
   }
-
-  #read-more {
-    width: 140px;
-    height: 45px;
-  }
 }
 #nav-arrows {
-  position: fixed;
   bottom: 30px;
   right: 30px;
   font-size: 1.3em;
-  background-color: #282828;
   border: 2px solid #f4425f;
 }
 
 #nav-arrows > a {
-  display: block;
-  color: white;
   padding: 5px 10px 5px 10px;
 }
 
 #nav-arrows > a:hover {
-  background-color: #f4425f;
+  background: #f4425f;
 }
 
 /*Blogs*/
 main {
-  background-color: #282828;
-  width: 100%;
   padding-top: 75px;
   padding-bottom: 200px;
 }
 
 .blog-top {
-  width: 100%;
-  text-align: center;
   font-size: 3em;
-  color: white;
   margin-bottom: 100px;
 }
 
 .blog-post {
   width: 60%;
-  margin: 0 auto;
-  color: white;
   font-size: 1.2em;
-  text-align: center;
-  background-color: white;
-  color: #282828;
   margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 10px;
@@ -245,13 +265,12 @@ main {
 }
 
 .blog-content {
-  text-align: justify;
   padding: 10px;
 }
 
 .blog-footer {
-  font-size: 0.8em;
   color: #678;
+  font-size: 0.8em;
 }
 
 .blog-line {
@@ -270,15 +289,8 @@ main {
 }
 /*Footer*/
 footer {
-  background-color: white;
-  text-align: center;
   font-size: 1.5em;
   padding: 50px 0;
-  color: #282828;
-}
-
-#footer-email a {
-  color: #4286f4;
 }
 
 #footer-email a:hover {
@@ -287,12 +299,10 @@ footer {
 }
 
 footer a {
-  color: #282828;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #4286f4;
   text-decoration: underline;
 }
 

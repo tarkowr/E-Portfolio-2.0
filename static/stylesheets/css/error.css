@@ -1,4 +1,4 @@
-/*Page Defaults and Custom Styles*/
+/*Page Defaults*/
 html, body {
   width: 100%;
   height: 100%;
@@ -15,14 +15,102 @@ a {
   text-decoration: none;
 }
 
-.styled-btn {
+button {
+  font-size: 1.1em;
+}
+
+/*Text Alignment*/
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/*Font*/
+.font-default {
+  font-family: "Muli", sans-serif;
+}
+
+/*Position*/
+.pos-fixed {
+  position: fixed;
+}
+
+/*Display*/
+.display-inline {
+  display: inline;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-none {
+  display: none !important;
+}
+
+/*Width and Height*/
+.w-100, .error-desc, .error-msg, .error-title {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+/*Margin*/
+.m-auto {
   margin: 0 auto;
+}
+
+/*Color*/
+.color-offblack {
+  color: #282828;
+}
+
+.color-white, .error-title {
+  color: white;
+}
+
+.color-primary {
+  color: #4286f4;
+}
+
+/*Background Color*/
+.bg-offBlack, .error-body {
+  background: #282828;
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-balance {
+  background: #678;
+}
+
+/*Button*/
+.btn, .styled-btn {
+  margin: 0 auto;
+  width: 180px;
+  height: 60px;
+  font-size: 1.1em;
+}
+
+.styled-btn {
   background-color: #678;
   border: 1px solid #678;
   color: white;
-  font-size: 1.1em;
-  width: 180px;
-  height: 60px;
 }
 
 .styled-btn:hover {
@@ -30,24 +118,10 @@ a {
   border: 1px solid rgba(102, 119, 136, 0.85);
 }
 
-button {
-  font-size: 1.1em;
-}
-
-.disabled {
-  display: none !important;
-}
-
+/*MIXINS*/
 /*Error Pages*/
-.error-body {
-  background-color: #282828;
-}
-
 .error {
-  margin: 0 auto;
-  text-align: center;
   width: 60%;
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -64,34 +138,30 @@ button {
 .error-title {
   font-weight: bold;
   font-size: 7em;
-  color: white;
   margin-bottom: 5%;
-  width: 100%;
 }
 
 .error-msg {
-  font-size: 1.4em;
   color: #eee;
+  font-size: 1.4em;
   margin-bottom: 3%;
-  width: 100%;
 }
 
 .error-desc {
   color: #eee;
   margin-bottom: 5%;
-  width: 100%;
 }
 
 #error-btn {
-  background-color: #4286f4;
+  background: #4286f4;
+  height: 50px;
   border: 1px solid #4286f4;
   font-family: "Muli", sans-serif;
   border-radius: 30px;
-  height: 50px;
 }
 
 #error-btn:hover {
-  background-color: #678;
+  background: #678;
   border: 1px solid #678;
 }
 
