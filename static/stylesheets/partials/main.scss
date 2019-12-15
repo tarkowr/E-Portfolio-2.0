@@ -80,35 +80,31 @@
     padding-top: 16%;
 }
 #name{
-    font-size: 3em;
+    @extend .font-bubble;
+    font-size: 5em;
     letter-spacing: 8px;
-    font-weight: 600;
+    word-wrap: wrap;
 }
 
 #nav-title{
-    font-size: 1.2em;
-    font-weight: 400;
-    padding-top: 20px;
+    @extend .font-default;
+    font-size: 1.4em;
+    padding-top: 10px;
 }
-#full-degree{
-    display: inline-block;
-}
-#abbr-degree{
-    display: none;
+.typed-cursor {
+    @include custom-color($primary);
 }
 @media (max-width: $breakpoint){
     #name{
-        font-size: 2.5em;
+        font-size: 3em;
     }
-    #full-degree{
-        display: none;
-    }
-    #abbr-degree{
-        display: inline-block;
+    #nav-title{
+        font-size: 1.2em;
+        padding-top: 25px;
     }
 }
 #splash-links{
-    margin-top: 70px;
+    margin-top: 80px;
 }
 .splash-link{
     @extend .color-white;
@@ -137,7 +133,7 @@
 
 /*About Me*/
 .about-me{
-    @include custom-bg($light);
+    @include custom-bg($extra-light);
     padding: 75px 0;
     margin-top: 0;
 }
@@ -334,7 +330,7 @@
 }
 .proj-btn:hover{
     @extend .bg-white;
-    @extend .color-white;
+    @extend .color-offblack;
     border: 1px solid $offBlack;
 }
 

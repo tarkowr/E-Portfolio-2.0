@@ -33,8 +33,12 @@ button {
 }
 
 /*Font*/
-.font-default {
+.font-default, #nav-title {
   font-family: "Muli", sans-serif;
+}
+
+.font-bubble, #name {
+  font-family: "Staatliches", "Muli", sans-serif;
 }
 
 /*Position*/
@@ -74,11 +78,11 @@ button {
 }
 
 /*Color*/
-.color-offblack, footer a, .proj-desc, .card-desc, .scrolled-navigation > a {
+.color-offblack, footer a, .proj-btn:hover, .proj-desc, .card-desc, .scrolled-navigation > a {
   color: #282828;
 }
 
-.color-white, .proj-btn:hover, .proj-btn, .card-link, .hover-effect:hover, .splash-link, .default-navigation > a {
+.color-white, .proj-btn, .card-link, .hover-effect:hover, .splash-link, .default-navigation > a {
   color: white;
 }
 
@@ -201,40 +205,32 @@ button {
 }
 
 #name {
-  font-size: 3em;
+  font-size: 5em;
   letter-spacing: 8px;
-  font-weight: 600;
+  word-wrap: wrap;
 }
 
 #nav-title {
-  font-size: 1.2em;
-  font-weight: 400;
-  padding-top: 20px;
+  font-size: 1.4em;
+  padding-top: 10px;
 }
 
-#full-degree {
-  display: inline-block;
-}
-
-#abbr-degree {
-  display: none;
+.typed-cursor {
+  color: #4286f4;
 }
 
 @media (max-width: 1024px) {
   #name {
-    font-size: 2.5em;
+    font-size: 3em;
   }
 
-  #full-degree {
-    display: none;
-  }
-
-  #abbr-degree {
-    display: inline-block;
+  #nav-title {
+    font-size: 1.2em;
+    padding-top: 25px;
   }
 }
 #splash-links {
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 .splash-link {
@@ -264,7 +260,7 @@ button {
 
 /*About Me*/
 .about-me {
-  background: #eee;
+  background: #fafafa;
   padding: 75px 0;
   margin-top: 0;
 }

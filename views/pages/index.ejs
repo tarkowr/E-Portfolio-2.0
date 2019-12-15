@@ -15,8 +15,7 @@
 </head>
 
 <body>
-    <nav class="m-auto w-100 h-100 bg-offBlack">   
-       
+    <nav class="m-auto w-100 h-100 bg-offBlack"> 
         <!--Navbar-->
         <div id="navigation" class="pos-fixed w-100 text-center navigation default-navigation">
             <i class="fa fa-bars" id="nav-bars"> </i>
@@ -27,12 +26,12 @@
 
         <div id="landing">
             <div id="nav-personal" class="text-center display-inline-block w-100">
-                <p>
-                    <div id="name" class="color-white"> RICHIE TARKOWSKI </div>
-                </p>
+                <div id="name" class="color-white"> RICHIE TARKOWSKI </div>
             </div>
             <div id="nav-title" class="w-100 text-center color-white">
-                &mdash; Studying <span id="full-degree">Computer Information Systems</span><span id="abbr-degree">CIS</span> at FSU &mdash;
+                <p class="m-auto">
+                    <span id="typed"></span> <br>
+                </p>
             </div>
             <div id="splash-links" class="m-auto text-center w-100">
                 <a class="splash-link link-linkedin" target="_blank" href="<%= links.linkedin %>"><i class="fa fa-linkedin"> </i></a>
@@ -41,7 +40,6 @@
                 <a class="splash-link link-mail" target="_blank" href="mailto:tarkowr@gmail.com"><i class="fa fa-envelope-o"> </i></a>
             </div>
         </div>
-
     </nav>
 
     <main>
@@ -49,7 +47,7 @@
             <div id="links-head" class="text-center">&mdash; About Me &mdash;</div>
             <div id="intro" class="m-auto">
                 <div id="info" class="text-justify color-offblack">
-                    <div>My name is Richie Tarkowski, and I am studying Computer Information Systems at Ferris State University. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I also enjoy developing web applications. I've built websites with frameworks such as Angular, ASP.NET MVC, and Django and written server-side scripts with NodeJS and PHP. Additionally, I have automated test cases with Selenium Web-Driver, Java, and JavaScript frameworks. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes. <br><br>
+                    <div>My name is Richie Tarkowski, and I am a third-year student at Ferris State University. I am pursuing a degree in Computer Information Systems with a minor in Information Security and Intelligence. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS and ISIN to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I've also built websites with frameworks such as Angular, ASP.NET MVC, and Django and written server-side scripts with NodeJS and PHP. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes. <br><br>
 
                         Listed below are several technologies that I have experience with: <br><br>
 
@@ -115,11 +113,11 @@
         <section class="projects" id="projects-top" class="w-100" ng-controller="projects">
             <div id="projects-header" class="color-white">&mdash; Projects &mdash;</div>
             <div id="filter" class="display-none text-left m-auto">
-                <select class="color-offblack" ng-model="selected_type"  ng-change="ProjectFilter()">
+                <select class="color-offblack" ng-model="selected_type" ng-change="ProjectFilter()">
                     <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
                 </select>
             </div>
-            <div class="proj" id="hagerty" data-tags="js,sql,node">
+            <div class="proj" id="hagerty" data-tags="JavaScript,SQL,NodeJS">
                 <div class="proj-head off-black">
                     Test Automation
                 </div>
@@ -130,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="asp.net,c#,html/css,js,sql">
+            <div class="proj" data-tags="ASP.NET,C#,HTML/CSS,JavaScript,SQL">
                 <div class="proj-head off-black">
                     Pollertron
                 </div>
@@ -142,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="proj display-none" data-tags="c#">
+            <div class="proj display-none" data-tags="C#">
                 <div class="proj-head off-black">
                     Despair
                 </div>
@@ -158,7 +156,7 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="python">
+            <div class="proj display-none" data-tags="Python">
                 <div class="proj-head off-black">
                     PyCsv
                 </div>
@@ -172,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="php,sql,html/css">
+            <div class="proj display-none" data-tags="PHP,SQL,HTML/CSS">
                 <div class="proj-head off-black">
                     March Madness Discussion Forum
                 </div>
@@ -186,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="api,c#">
+            <div class="proj" data-tags="API,C#">
                 <div class="proj-head off-black">
                     Stock Insight
                 </div>
@@ -200,7 +198,7 @@
                 </div>
             </div>
 
-            <div class="proj" data-tags="angular,node,api,html/css">
+            <div class="proj" data-tags="Angular,NodeJS,API,HTML/CSS">
                 <div class="proj-head off-black">
                     Chatversity
                 </div>
@@ -209,11 +207,11 @@
                     <span>Overview:</span> Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app. <br><br>
                     <span>Technologies Used:</span> Angular 7, HTML5, CSS, Bootstrap, NodeJS, Okta, Pusher Chatkit <br><br>
                     <a target="_blank" href="<%= links.chatversity %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
-                    <a target="_blank" href="<%= links.chatversityApp %>">Web App</a> | <a target="_blank" href="<%= links.chatversitySite %>">Static Site</a>
+                    <!--<a target="_blank" href="<%= links.chatversityApp %>">Web App</a> | <a target="_blank" href="<%= links.chatversitySite %>">Static Site</a>-->
                 </div>
             </div>
 
-            <div class="proj" data-tags="html/css,js,api,node">
+            <div class="proj" data-tags="HTML/CSS,JavaScript,API,NodeJS">
                 <div class="proj-head off-black">
                     E-Portfolio Website
                 </div>
@@ -234,6 +232,18 @@
     </footer>
 
     <!--Site JavaScript-->
+    <script>
+        let typed=new Typed('#typed', {
+            strings: ["Studying Computer Information Systems", "Software Engineer Intern at Hagerty"],
+            typeSpeed: 15,
+            startDelay: 0,
+            autoInsertCss: true,
+            fadeOut: false,
+            backDelay: 2500,
+            loop: true
+        });
+    </script>
+
     <script src="/static/scripts/main/controller.js"></script>
     <script src="/static/scripts/main/dataService.js"></script>
     <script src="/static/scripts/main/index.js"></script>

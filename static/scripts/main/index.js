@@ -18,7 +18,7 @@ let mobile = false;
 
 // Name:Id dictionary
 let Repos = { 
-    'ePortfolio':'eportfolio-date', 
+    'ePortfolio2.0':'eportfolio-date', 
     'PHP-Discussion-Forum':'cit228-date',
     'Despair':'cit195-date',
     'Stock-Insight':'cit255-date',
@@ -40,8 +40,8 @@ async function HandleApiService(callback){
 
 // Add formatted technology list items to the about me container
 function PopulateTechnologies(){
-    let tech_list = ["C#", "Java", "Python", "WPF", "ASP.NET", "Django", "HTML/CSS", "JavaScript", "Angular",
-        "Bootstrap", "SQL", "Git", "Selenium", "PHP", "NodeJS", "Android", "Salesforce", "SOQL"];
+    let tech_list = ["C#", "Java", "Python", "Angular", "ASP.NET", "Django", "PHP", "NodeJS", "HTML/CSS", "JavaScript", 
+    "Bootstrap", "SQL", "Git", "WPF", "Android", "Salesforce", "SOQL"];
 
     let target = document.getElementById("tech-list");
     let rootItem = document.getElementById("tech-item-node");

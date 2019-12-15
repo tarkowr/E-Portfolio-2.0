@@ -6,37 +6,13 @@ app.controller('projects', function ($scope){
     [{
         value: 'all',
         label: 'Display All'
-    }, {
-        value: 'angular',
-        label: 'Angular'
-    }, {
-        value: 'api',
-        label: 'API'
-    }, {
-        value: 'asp.net',
-        label: 'ASP.NET'
-    }, {
-        value: 'c#',
-        label: 'C#'
-    }, {
-        value: 'html/css',
-        label: 'HTML/CSS'
-    }, {
-        value: 'js',
-        label: 'JavaScript'
-    },{
-        value: 'node',
-        label: 'NodeJS'
-    }, {
-        value: 'php',
-        label: 'PHP'
-    },{
-        value: 'python',
-        label: 'Python'
-    }, {
-        value: 'sql',
-        label: 'SQL'
     }];  
+
+    let projects_list = getProjects();
+
+    projects_list.forEach(function(proj){
+        $scope.types.push(proj);
+    });
 
     $scope.selected_type = $scope.types[0].value;
 
@@ -62,7 +38,50 @@ app.controller('projects', function ($scope){
     }
 });
 
-//Recompile element(s) on a webpage
+// Get all project technologies by data tags in HTML
+function getProjects(){
+    let projects = $(".proj");
+    let projects_list = [];
+
+    projects.each(function(index){
+        if(projects[index].offsetParent !== null){ // Ensure project is not disabled
+            tags = parseComma(projects[index].dataset.tags); // Gets tags as array
+    
+            tags.forEach(function(tag){
+                if(!inList(tag, projects_list)){ // Ensure tag is not already in list
+                    projects_list.push({
+                        value: tag,
+                        label: tag
+                    });
+                }
+            });
+        }
+    });
+
+    projects_list.sort((a, b) => (a.value > b.value) ? 1 : -1) // Custom sort the array
+
+    return projects_list;
+}
+
+// Check if the data tag is already in the project tech list
+function inList(tag, list){
+    isInList = false;
+    list.forEach(function(set){
+        if(set.value === tag){
+            isInList = true;
+            return;
+        }
+    });
+
+    return isInList;
+}
+
+// Split comma delimited string 
+function parseComma(str){
+    return str.split(",");
+}
+
+// Recompile element(s) on a webpage
 function compile(element){
     let el = angular.element(element);    
     $scope = el.scope();
