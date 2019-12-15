@@ -22,6 +22,7 @@ let Repos = {
     'PHP-Discussion-Forum':'cit228-date',
     'Despair':'cit195-date',
     'Stock-Insight':'cit255-date',
+    'Utility-App':'utility-app-date',
     'PyCsv':'pycsv-date'
  }
 
