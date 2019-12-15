@@ -34,10 +34,14 @@
                 </p>
             </div>
             <div id="splash-links" class="m-auto text-center w-100">
-                <a class="splash-link link-linkedin" target="_blank" href="<%= links.linkedin %>"><i class="fa fa-linkedin"> </i></a>
-                <a class="splash-link link-github" target="_blank" href="<%= links.github %>"><i class="fa fa-github"> </i></a>
-                <a class="splash-link link-sf" target="_blank" href="<%= links.trailhead %>"><i class="fa fa-cloud"> </i></a>
-                <a class="splash-link link-mail" target="_blank" href="mailto:tarkowr@gmail.com"><i class="fa fa-envelope-o"> </i></a>
+                <a id="link-linkedin" class="splash-link link-linkedin" target="_blank" href="<%= links.linkedin %>"><i class="fa fa-linkedin"> </i></a>
+                <a id="link-github" class="splash-link link-github" target="_blank" href="<%= links.github %>"><i class="fa fa-github"> </i></a>
+                <a id="link-sf" class="splash-link link-sf" target="_blank" href="<%= links.trailhead %>"><i class="fa fa-cloud"> </i></a>
+                <a id="link-mail" class="splash-link link-mail" target="_blank" href="mailto:tarkowr@gmail.com"><i class="fa fa-envelope-o"> </i></a>
+            </div>
+
+            <div id="splash-link-title" class="m-auto text-center w-100">
+                
             </div>
         </div>
     </nav>
@@ -47,15 +51,13 @@
             <div id="links-head" class="text-center">&mdash; About Me &mdash;</div>
             <div id="intro" class="m-auto">
                 <div id="info" class="text-justify color-offblack">
-                    <div>My name is Richie Tarkowski, and I am a third-year student at Ferris State University. I am pursuing a degree in Computer Information Systems with a minor in Information Security and Intelligence. I currently work at Hagerty as a Software Engineering Intern. Post-education, my goal is to apply my knowledge of CIS and ISIN to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I've also built websites with frameworks such as Angular, ASP.NET MVC, and Django and written server-side scripts with NodeJS and PHP. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes. <br><br>
-
-                        Listed below are several technologies that I have experience with: <br><br>
-
-                        <div id="tech-list" class="m-auto bg-white">
-                            <div id="tech-item-node" class="tech-item"></div>
-                        </div>
+                    <div>My name is Richie Tarkowski, and I am a third-year student at Ferris State University. I am pursuing a degree in Computer Information Systems with a minor in Information Security and Intelligence. I currently work at Hagerty as a Software Engineer Intern. Post-education, my goal is to apply my knowledge of CIS and ISIN to design and develop applications. I have experience in Python, Java, and C# from my classes at Ferris and projects of my own. I've also built websites with several frameworks including Angular, ASP.NET MVC, and Django, and written server-side scripts with NodeJS and PHP. In my free time, I enjoy reading, exercising, investing, and learning about technologies that are not covered in my CIS classes.
                     </div>
                 </div>
+            </div>
+
+            <div class="text-center m-auto resume">
+                <a href="../../static/media/Tarkowski_Resume.pdf" target="_blank"><button class="styled-btn">View Resume</button></a>
             </div>
         </section>
 
@@ -73,7 +75,7 @@
                 </div>
 
                 <div class="card-button">
-                    <a target="_blank" href="<%= links.github %>"> <button class="card-link">GitHub <i class="fa fa-chevron-circle-right"></i></button></a>
+                    <a target="_blank" href="<%= links.github %>"> <button class="card-link">GitHub &nbsp; <i class="fa fa-chevron-circle-right"></i></button></a>
                 </div>
             </section>
 
@@ -89,7 +91,7 @@
                 </div>
 
                 <div class="card-button">
-                    <a target="_blank" href="<%= links.trailhead %>"> <button class="card-link">Trailhead <i class="fa fa-chevron-circle-right"></i></button> </a>
+                    <a target="_blank" href="<%= links.trailhead %>"> <button class="card-link">Trailhead &nbsp; <i class="fa fa-chevron-circle-right"></i></button> </a>
                 </div>
             </section>
 
@@ -105,7 +107,7 @@
                 </div>
 
                 <div class="card-button">
-                    <a target="_blank" href="<%= links.linkedin %>"> <button class="card-link">LinkedIn <i class="fa fa-chevron-circle-right"></i></button> </a>
+                    <a target="_blank" href="<%= links.linkedin %>"> <button class="card-link">LinkedIn &nbsp; <i class="fa fa-chevron-circle-right"></i></button> </a>
                 </div>
             </section>
         </section>
@@ -113,7 +115,7 @@
         <section class="projects" id="projects-top" class="w-100" ng-controller="projects">
             <div id="projects-header" class="color-white">&mdash; Projects &mdash;</div>
             <div id="filter" class="display-none text-left m-auto">
-                <select class="color-offblack" ng-model="selected_type" ng-change="ProjectFilter()">
+                <select class="bg-white color-offblack" ng-model="selected_type" ng-change="ProjectFilter()">
                     <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
                 </select>
             </div>
@@ -122,23 +124,37 @@
                 <div class="proj-head off-black">
                     Chatversity
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app. <br><br>
-                    <span>Technologies Used:</span> Angular 7, HTML5, CSS, Bootstrap, NodeJS, Okta, Pusher Chatkit <br><br>
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">Angular 7</span>
+                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">Bootstrap</span>
+                        <span class="proj-tech">NodeJS</span>
+                        <span class="proj-tech">Okta</span>
+                        <span class="proj-tech">Pusher Chatkit</span>
+                    </div>
+                    <br>
+                    Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app. <br><br>
                     <a target="_blank" href="<%= links.chatversity %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
                     <!--<a target="_blank" href="<%= links.chatversityApp %>">Web App</a> | <a target="_blank" href="<%= links.chatversitySite %>">Static Site</a>-->
-                </div>
+                </div></div>
             </div>
 
             <div class="proj" id="hagerty" data-tags="JavaScript,SQL,NodeJS">
                 <div class="proj-head off-black">
                     Test Automation
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Responsible for designing, building, and managing a test automation application at Hagerty to ensure that Salesforce apps and web processes were fully functional in multiple environments. <br><br>
-                    <span>Technologies Used:</span> NightwatchJS, Typescript, SQL, NodeJS
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">NighwatchJS</span>
+                        <span class="proj-tech">Typescript</span>
+                        <span class="proj-tech">SQL</span>
+                        <span class="proj-tech">NodeJS</span>
+                    </div>
+                    <br>
+                    Responsible for designing, building, and managing a test automation application at Hagerty to ensure that Salesforce apps and web processes were fully functional in multiple environments. <br><br>
                 </div>
             </div>
 
@@ -146,11 +162,24 @@
                 <div class="proj-head off-black">
                     Pollertron
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Built a data validation tool at Hagerty to check if the data in Salesforce matched the data in a SQL database.
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">ASP.NET MVC</span>
+                        <span class="proj-tech">C#</span>
+                        <span class="proj-tech">JavaScript</span>
+                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">D3.js</span>
+                        <span class="proj-tech">Bootstrap</span>
+                        <span class="proj-tech">Material Design Lite</span>
+                        <span class="proj-tech">RivetsJS</span>
+                        <span class="proj-tech">Solr</span>
+                        <span class="proj-tech">SQL</span>
+                        <span class="proj-tech">SOQL</span>
+                    </div>
+                    <br>
+                    Built a data validation tool at Hagerty to check if the data in Salesforce matches the data in a SQL database. Designed the frontend views and backend solutions.
                     <br><br>
-                    <span>Technologies Used:</span> ASP.NET MVC, C#, JavaScript, HTML/CSS, D3.js, Bootstrap, Material Design Lite, RivetsJS, Solr, SQL, SOQL <br><br>
                 </div>
             </div>
 
@@ -158,12 +187,15 @@
                 <div class="proj-head off-black">
                     Despair
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Developed a Text-Based Quest Game using programming concepts
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">C#</span>
+                    </div>
+                    <br>
+                    Developed a Text-Based Quest Game using programming concepts
                     such as: Polymorphism, Inheritance, Encapsulation, Interfaces, and Events. This application adheres to the MVC Design Pattern and the Dependicy Injection Principle.
                     <br><br>
-                    <span>Technologies Used:</span> C# <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="cit195-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.despair %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
@@ -174,10 +206,13 @@
                 <div class="proj-head off-black">
                     PyCsv
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Wrote a simple Python class that allows users to work with CSV files in Python. <br><br>
-                    <span>Technologies Used:</span> Python <br><br>
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">Python</span>
+                    </div>
+                    <br>
+                    Wrote a simple Python class that allows users to work with CSV files in Python. <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="pycsv-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.pycsv %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
@@ -188,10 +223,15 @@
                 <div class="proj-head off-black">
                     March Madness Discussion Forum
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
-                    <span>Technologies Used:</span> PHP, SQL, HTML5, CSS <br><br>
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">PHP</span>
+                        <span class="proj-tech">SQL</span>
+                        <span class="proj-tech">HTML5/CSS</span>
+                    </div>
+                    <br>
+                    Created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="cit228-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.phpDiscussion %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
@@ -202,10 +242,16 @@
                 <div class="proj-head off-black">
                     Stock Insight
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Developed a simple, responsive WPF stock application that includes persistence and real-time stock data. <br><br>
-                    <span>Technologies Used:</span> Windows Presentation Foundation (WPF), C#, MongoDB, Web API <br><br>
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">Windows Presentation Foundation</span>
+                        <span class="proj-tech">C#</span>
+                        <span class="proj-tech">MongoDB</span>
+                        <span class="proj-tech">Web API</span>
+                    </div>
+                    <br>
+                    Developed a simple, responsive WPF stock application that includes persistence and real-time stock data. <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="cit255-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.stockInsight %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
@@ -216,10 +262,15 @@
                 <div class="proj-head off-black">
                     Utility
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API. <br><br>
-                    <span>Technologies Used:</span> Android, Java, Web API <br><br>
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">Android</span>
+                        <span class="proj-tech">Java</span>
+                        <span class="proj-tech">Web API</span>
+                    </div>
+                    <br>
+                    Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API. <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="utility-app-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.utility %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
@@ -231,10 +282,15 @@
                 <div class="proj-head off-black">
                     E-Portfolio Website
                 </div>
-                <hr><br>
+                <br>
                 <div class="proj-desc">
-                    <span>Overview:</span> Built this website from scratch using several web technologies. <br><br>
-                    <span>Technologies Used:</span> HTML5, CSS, JavaScript, NodeJS <br><br>
+                    <div class="proj-tech-list">
+                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">JavaScript</span>
+                        <span class="proj-tech">NodeJS</span>
+                    </div>
+                    <br>
+                    Built this website from scratch using several web technologies. <br><br>
                     <span class="last-updated">Last Updated:</span> <label id="eportfolio-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.eportfolio %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>

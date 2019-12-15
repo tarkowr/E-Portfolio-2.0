@@ -28,6 +28,10 @@ button {
   text-align: left;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -37,7 +41,7 @@ button {
   font-family: "Muli", sans-serif;
 }
 
-.font-bubble, #name {
+.font-bubble, .proj-btn, .proj-tech, .card-link, .resume > a > button, #splash-link-title, #name {
   font-family: "Staatliches", "Muli", sans-serif;
 }
 
@@ -55,7 +59,7 @@ button {
   display: block;
 }
 
-.display-inline-block, .proj-desc, .proj, .card, .nav-links {
+.display-inline-block, .proj-desc, .proj-tech, .proj, .card, .nav-links {
   display: inline-block;
 }
 
@@ -78,11 +82,11 @@ button {
 }
 
 /*Color*/
-.color-offblack, footer a, .proj-btn:hover, .proj-desc, .card-desc, .scrolled-navigation > a {
+.color-offblack, footer a, .proj-btn, .card-desc, .scrolled-navigation > a {
   color: #282828;
 }
 
-.color-white, .proj-btn, .card-link, .hover-effect:hover, .splash-link, .default-navigation > a {
+.color-white, .proj-desc, .proj, .card-link, .hover-effect:hover, #splash-link-title, .splash-link, .default-navigation > a {
   color: white;
 }
 
@@ -91,11 +95,15 @@ button {
 }
 
 /*Background Color*/
-.bg-offBlack, .proj-btn, .projects, .link-github {
+.bg-offBlack, .link-github {
   background: #282828;
 }
 
-.bg-white, .proj-btn:hover, .proj, .card {
+.bg-darkTheme, .projects {
+  background: #22262a;
+}
+
+.bg-white, .proj-btn:hover, .card {
   background: white;
 }
 
@@ -109,6 +117,7 @@ button {
   width: 180px;
   height: 60px;
   font-size: 1.1em;
+  border-radius: 50px;
 }
 
 .styled-btn {
@@ -250,12 +259,29 @@ button {
   background: #0073b1;
 }
 
+.link-linkedin:hover {
+  color: #0073b1;
+}
+
 .link-mail {
   background: #eb4034;
 }
 
+.link-mail:hover {
+  color: #eb4034;
+}
+
 .link-sf {
   background: #00a1e0;
+}
+
+.link-sf:hover {
+  color: #00a1e0;
+}
+
+#splash-link-title {
+  padding-top: 10px;
+  font-size: 1.2em;
 }
 
 /*About Me*/
@@ -267,6 +293,7 @@ button {
 
 #intro {
   padding: 40px;
+  padding-top: 0px;
   width: 60%;
   margin-bottom: 40px;
   font-size: 1.2em;
@@ -286,16 +313,9 @@ button {
     text-align: left;
   }
 }
-#tech-list {
-  border: 1px solid #D3D3D3;
-  padding-left: 10px;
-  border-radius: 5px;
-}
-
-.tech-item {
-  padding: 10px 3px;
-  display: inline-block;
-  font-weight: bold;
+.resume > a > button {
+  width: 200px;
+  font-size: 1.2em;
 }
 
 /*Links*/
@@ -380,6 +400,7 @@ button {
 .card-link {
   width: 140px;
   height: 40px;
+  font-size: 1.2em;
   border: 1px solid #678;
   border-radius: 40px;
 }
@@ -408,32 +429,54 @@ button {
 }
 
 #filter {
-  width: 80%;
+  width: 60%;
   padding: 0, 0, 0, 30px;
 }
 
 #filter > select {
-  background: #eee;
   margin-left: -30px;
   margin-bottom: 20px;
-  border: 1px solid #678;
+  border: 1px solid white;
   border-radius: 10px;
   padding: 10px;
   font-size: 1.1em;
 }
 
 .proj {
-  width: 80%;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px black;
+  border: 2px solid black;
   padding: 30px;
   margin-bottom: 30px;
+  border-radius: 3px;
+  transition: box-shadow 0.3s;
 }
 
+.proj:hover {
+  box-shadow: 0px 0px 10px black;
+}
+
+@media (max-width: 1024px) {
+  .proj {
+    width: 80%;
+  }
+}
 .proj-head {
   font-size: 1.8em;
 }
 
-.proj-desc {
-  font-size: 1.1em;
+.proj-tech-list {
+  margin-top: 0px;
+}
+
+.proj-tech {
+  background: #394048;
+  margin-top: 5px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border: 2px solid black;
 }
 
 .proj-desc > a {
@@ -449,18 +492,13 @@ button {
 }
 
 .proj-btn {
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 1em;
+  letter-spacing: 1px;
   border-radius: 5px;
   padding: 0px 15px;
-  border: none;
-  font-size: 1em;
-  font-family: "Muli", sans-serif !important;
-  font-weight: 200;
-  border: 1px solid #282828;
   margin-right: 10px;
-}
-
-.proj-btn:hover {
-  border: 1px solid #282828;
+  border: none;
 }
 
 /*Footer*/

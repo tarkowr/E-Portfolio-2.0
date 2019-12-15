@@ -28,38 +28,42 @@ let Repos = {
 
 window.addEventListener('load', function() {
     MobileNavBar();
-    PopulateTechnologies();
+    HandleLinkHover();
     HandleApiService(DisplayLastUpdatedValues);
 });
+
+// Display link label on hover
+function HandleLinkHover(){
+    let links = [
+        {key:"GitHub", value:document.getElementById("link-github")}, 
+        {key:"Email", value:document.getElementById("link-mail")},
+        {key:"Salesforce Trailhead", value:document.getElementById("link-sf")},
+        {key:"LinkedIn", value:document.getElementById("link-linkedin")}
+    ];
+
+    links.forEach(function(link){
+        setLinkHoverEventListener(link.value, link.key);
+    });
+}
+
+// Attach on mouseover and mouseout events to links
+function setLinkHoverEventListener(el, text){
+    let label = document.getElementById("splash-link-title");
+
+    el.addEventListener("mouseover", function(){
+        label.innerHTML = text;
+    });
+
+    el.addEventListener("mouseout", function(){
+        label.innerHTML = "";
+    });
+}
 
 // Get GitHub API data from dataService
 async function HandleApiService(callback){
     let data = new Object();
     data = await ApiService(environment);
     callback(data);
-}
-
-// Add formatted technology list items to the about me container
-function PopulateTechnologies(){
-    let tech_list = ["C#", "Java", "Python", "Angular", "ASP.NET", "Django", "PHP", "NodeJS", "HTML/CSS", "JavaScript", 
-    "Bootstrap", "SQL", "Git", "WPF", "Android", "Salesforce", "SOQL"];
-
-    let target = document.getElementById("tech-list");
-    let rootItem = document.getElementById("tech-item-node");
-    let index = 0;
-
-    tech_list.forEach(function(item){
-        let clone = rootItem.cloneNode();
-        clone.id="tech-item-" + index;
-        clone.innerHTML = item;
-        if(index < tech_list.length - 1){
-            clone.innerHTML += " <small>•</small> ";
-        }
-        target.appendChild(clone);
-        index++;
-    })
-
-    target.removeChild(rootItem);
 }
 
 // Hide or unhide nav bar options when the navbar is in mobile upon icon click

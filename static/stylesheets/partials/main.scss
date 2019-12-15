@@ -124,11 +124,26 @@
 .link-linkedin{
     @include custom-bg(#0073b1);
 }
+.link-linkedin:hover{
+    @include custom-color(#0073b1);
+}
 .link-mail{
     @include custom-bg(#eb4034);
 }
+.link-mail:hover{
+    @include custom-color(#eb4034);
+}
 .link-sf{
     @include custom-bg(#00a1e0);
+}
+.link-sf:hover{
+    @include custom-color(#00a1e0);
+}
+#splash-link-title{
+    @extend .font-bubble;
+    @extend .color-white;
+    padding-top: 10px;
+    font-size: 1.2em;
 }
 
 /*About Me*/
@@ -139,6 +154,7 @@
 }
 #intro{
     padding: 40px;
+    padding-top: 0px;
     width: 60%;
     margin-bottom: 40px;
     font-size: 1.2em;
@@ -155,15 +171,10 @@
         text-align: left;
     }
 }
-#tech-list{
-    border: 1px solid #D3D3D3;
-    padding-left: 10px;
-    border-radius: 5px;
-}
-.tech-item{
-    padding: 10px 3px;
-    display: inline-block;
-    font-weight: bold;
+.resume > a > button {
+    @include custom-width(200px);
+    @extend .font-bubble;
+    font-size: 1.2em;
 }
 
 /*Links*/
@@ -249,6 +260,8 @@
     @include custom-size(140px, 40px);
     @extend .color-white;
     @extend .bg-balance;
+    @extend .font-bubble;
+    font-size: 1.2em;
     border: 1px solid $balance;
     border-radius: 40px;
 }
@@ -266,7 +279,7 @@
 
 /*Projects*/
 .projects{
-    @extend .bg-offBlack;
+    @extend .bg-darkTheme;
     text-align: center;
     padding: 50px 0;
     padding-bottom: 160px;    
@@ -276,35 +289,59 @@
     margin: 30px auto 40px auto;
 }
 #filter{
-    width: 80%;
+    width: 60%;
     padding: 0, 0, 0, 30px;
 }
 #filter > select{
-    @include custom-bg($light);
     margin-left: -30px;
     margin-bottom: 20px;
-    border: 1px solid $balance;
+    border: 1px solid white;
     border-radius: 10px;
     padding: 10px;
     font-size: 1.1em;
 }
 .proj{
-    @include custom-width(80%);
+    @include custom-width(60%);
+    @include custom-bg(rgba(0,0,0,.2));
     @extend .display-inline-block;
     @extend .text-left;
-    @extend .bg-white;
+    @extend .color-white;
     @extend .m-auto;
+    box-shadow: 0px 0px 5px black;
+    border: 2px solid black;
     padding: 30px;
     margin-bottom: 30px;
+    border-radius: 3px;
+    transition: box-shadow .3s;
+}
+.proj:hover{
+    box-shadow: 0px 0px 10px black;
+}
+@media (max-width: $breakpoint){
+    .proj{
+        width: 80%;
+    }
 }
 .proj-head{
     font-size: 1.8em;
 }
+.proj-tech-list{
+    margin-top: 0px;
+}
+.proj-tech{
+    @include custom-bg(#394048);
+    @extend .font-bubble;
+    @extend .display-inline-block;
+    margin-top: 5px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border: 2px solid black;
+}
 .proj-desc{
     @extend .w-100;
     @extend .display-inline-block;
-    @extend .color-offblack;
-    font-size: 1.1em;
+    @extend .color-white;
 }
 .proj-desc > a{
     @extend .color-primary;
@@ -317,21 +354,18 @@
     font-weight: bold;
 }
 .proj-btn{
-    @extend .bg-offBlack;
-    @extend .color-white;
+    @include custom-bg(rgba(255,255,255,.85));
+    @extend .color-offblack;
+    @extend .font-bubble;
+    font-size: 1em;
+    letter-spacing: 1px;
     border-radius: 5px;
     padding: 0px 15px;
-    border: none;
-    font-size: 1em;
-    font-family: $defaultFont !important;
-    font-weight: 200;
-    border: 1px solid $offBlack;
     margin-right: 10px;
+    border: none;
 }
 .proj-btn:hover{
     @extend .bg-white;
-    @extend .color-offblack;
-    border: 1px solid $offBlack;
 }
 
 @import "./_footer";
