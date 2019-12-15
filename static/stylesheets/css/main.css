@@ -231,6 +231,7 @@ button {
 @media (max-width: 1024px) {
   #name {
     font-size: 3em;
+    margin-top: 40px;
   }
 
   #nav-title {
@@ -481,6 +482,7 @@ button {
 
 .proj-desc > a {
   text-decoration: none;
+  font-weight: 400;
 }
 
 .proj-desc > a:hover {
