@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 
 <head>
     <base href="/">
@@ -9,9 +9,7 @@
     <title>Richie Tarkowski | Software Developer</title>
 
     <% include ../partials/header %>
-    
-    <!--Angular.js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 </head>
 
 <body>
@@ -40,9 +38,7 @@
                 <a id="link-mail" class="splash-link link-mail" target="_blank" href="mailto:tarkowr@gmail.com"><i class="fa fa-envelope-o"> </i></a>
             </div>
 
-            <div id="splash-link-title" class="m-auto text-center w-100">
-                
-            </div>
+            <div id="splash-link-title" class="m-auto text-center w-100"></div>
         </div>
     </nav>
 
@@ -57,7 +53,7 @@
             </div>
 
             <div class="text-center m-auto resume">
-                <a href="../../static/media/Tarkowski_Resume.pdf" target="_blank"><button class="styled-btn">View Resume</button></a>
+                <a href="/static/media/Tarkowski_Resume.pdf" target="_blank"><button class="styled-btn">View Resume</button></a>
             </div>
         </section>
 
@@ -112,12 +108,10 @@
             </section>
         </section>
 
-        <section class="projects" id="projects-top" class="w-100" ng-controller="projects">
+        <section class="projects" id="projects-top" class="w-100">
             <div id="projects-header" class="color-white">&mdash; Projects &mdash;</div>
             <div id="filter" class="display-none text-left m-auto">
-                <select class="bg-white color-offblack" ng-model="selected_type" ng-change="ProjectFilter()">
-                    <option ng-repeat="type in types" value="{{ type.value }}">{{type.label}}</option>
-                </select>
+                <select id="select-filter" class="bg-white color-offblack"></select>
             </div>
 
             <div class="proj" data-tags="Angular,NodeJS,API,HTML/CSS">
@@ -128,7 +122,8 @@
                 <div class="proj-desc">
                     <div class="proj-tech-list">
                         <span class="proj-tech">Angular 7</span>
-                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">HTML5</span>
+                        <span class="proj-tech">CSS</span>
                         <span class="proj-tech">Bootstrap</span>
                         <span class="proj-tech">NodeJS</span>
                         <span class="proj-tech">Okta</span>
@@ -141,7 +136,7 @@
                 </div></div>
             </div>
 
-            <div class="proj" id="hagerty" data-tags="JavaScript,SQL,NodeJS">
+            <div class="proj" data-tags="JavaScript,SQL,NodeJS">
                 <div class="proj-head off-black">
                     Test Automation
                 </div>
@@ -168,7 +163,8 @@
                         <span class="proj-tech">ASP.NET MVC</span>
                         <span class="proj-tech">C#</span>
                         <span class="proj-tech">JavaScript</span>
-                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">HTML5</span>
+                        <span class="proj-tech">CSS</span>
                         <span class="proj-tech">D3.js</span>
                         <span class="proj-tech">Bootstrap</span>
                         <span class="proj-tech">Material Design Lite</span>
@@ -183,7 +179,7 @@
                 </div>
             </div>
 
-            <div class="proj display-none" data-tags="C#">
+            <div class="proj permanent-display-none" data-tags="C#">
                 <div class="proj-head off-black">
                     Despair
                 </div>
@@ -202,7 +198,7 @@
                 </div>
             </div>
 
-            <div class="proj display-none" data-tags="Python">
+            <div class="proj permanent-display-none" data-tags="Python">
                 <div class="proj-head off-black">
                     PyCsv
                 </div>
@@ -219,7 +215,7 @@
                 </div>
             </div>
 
-            <div class="proj display-none" data-tags="PHP,SQL,HTML/CSS">
+            <div class="proj permanent-display-none" data-tags="PHP,SQL,HTML/CSS">
                 <div class="proj-head off-black">
                     March Madness Discussion Forum
                 </div>
@@ -228,7 +224,8 @@
                     <div class="proj-tech-list">
                         <span class="proj-tech">PHP</span>
                         <span class="proj-tech">SQL</span>
-                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">HTML5</span>
+                        <span class="proj-tech">CSS</span>
                     </div>
                     <br>
                     Created a Discussion Forum web application that features user authentication and the ability to add, edit, delete, view, and like posts. <br><br>
@@ -274,7 +271,7 @@
                     <span class="last-updated">Last Updated:</span> <label id="utility-app-date"> </label>
                     <br><br>
                     <a target="_blank" href="<%= links.utility %>"><button class="proj-btn">GitHub <i class="fa fa-code"></i></button></a>
-                    <a target="_blank" href="#">Download</a>
+                    <a target="_blank" href="<%= links.utilityPlayStore %>">Download</a>
                 </div>
             </div>
 
@@ -285,7 +282,8 @@
                 <br>
                 <div class="proj-desc">
                     <div class="proj-tech-list">
-                        <span class="proj-tech">HTML5/CSS</span>
+                        <span class="proj-tech">HTML5</span>
+                        <span class="proj-tech">CSS</span>
                         <span class="proj-tech">JavaScript</span>
                         <span class="proj-tech">NodeJS</span>
                     </div>
@@ -316,7 +314,7 @@
         });
     </script>
 
-    <script src="/static/scripts/main/controller.js"></script>
+    <script src="/static/scripts/main/projectFilter.js"></script>
     <script src="/static/scripts/main/dataService.js"></script>
     <script src="/static/scripts/main/index.js"></script>
     <script src="/static/scripts/main/navbar.js"></script>

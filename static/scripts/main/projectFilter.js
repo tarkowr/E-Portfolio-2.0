@@ -1,42 +1,58 @@
-var app = angular.module('myApp', []);
+window.addEventListener('load', function() {
+    let projects = document.getElementsByClassName('proj');
+    let selectFilter = document.getElementById("select-filter");
 
-app.controller('projects', function ($scope){
-    $scope.projects = angular.element(document.getElementsByClassName('proj'));
-    $scope.types = 
-    [{
+    let types = [{
         value: 'all',
         label: 'Display All'
     }];  
-
+    
     let projects_list = getProjects();
-
-    projects_list.forEach(function(proj){
-        $scope.types.push(proj);
+    
+    projects_list.forEach(function(proj){ 
+        types.push(proj);
     });
-
-    $scope.selected_type = $scope.types[0].value;
-
-    $scope.ProjectFilter = function() {
-        angular.forEach($scope.projects, function(value, key) {
-            let dataTags = value.attributes['data-tags'].value.split(',');
-            if($scope.selected_type === 'all'){
-                angular.element(value.removeAttribute('ng-hide'));
-                angular.element(value.setAttribute('ng-show', 'true'));
+    
+    createSelectList(selectFilter, types);
+    
+    let selected_type = types[0].value;
+    
+    let handleFilter = function() {
+        selected_type = types[selectFilter.selectedIndex].value;
+    
+        Array.prototype.forEach.call(projects, function(el) {
+            const DISPLAY_CLASS = 'display-none';
+            let dataTags = parseComma(el.attributes['data-tags'].value);
+    
+            if(selected_type === types[0].value){
+                el.classList.remove(DISPLAY_CLASS);
             }
             else{
-                if(dataTags.includes($scope.selected_type)){
-                    angular.element(value.removeAttribute('ng-hide'));
-                    angular.element(value.setAttribute('ng-show', 'true'));
+                if(dataTags.includes(selected_type)){
+                    el.classList.remove(DISPLAY_CLASS);
                 }
                 else{
-                    angular.element(value.removeAttribute('ng-show'));
-                    angular.element(value.setAttribute('ng-hide', 'true'));
+                    el.classList.add(DISPLAY_CLASS);
                 }
             }
         });
-        compile($scope.projects);
     }
+    
+    selectFilter.addEventListener("change", function(){
+        handleFilter();
+    });
 });
+
+// Populate select list with technology list
+function createSelectList(select, options){
+    for(let i=0; i<options.length; i++){
+        let option = options[i];
+        let el = document.createElement("option");
+        el.textContent = option.label;
+        el.value = option.value;
+        select.appendChild(el);
+    }
+}
 
 // Get all project technologies by data tags in HTML
 function getProjects(){
@@ -79,14 +95,4 @@ function inList(tag, list){
 // Split comma delimited string 
 function parseComma(str){
     return str.split(",");
-}
-
-// Recompile element(s) on a webpage
-function compile(element){
-    let el = angular.element(element);    
-    $scope = el.scope();
-    $injector = el.injector();
-    $injector.invoke(function($compile){
-        $compile(el)($scope)
-    });
 }

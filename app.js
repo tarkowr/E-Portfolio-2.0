@@ -12,6 +12,7 @@ var urls = {
     "despair":"https://github.com/tarkowr/Despair",
     "stockInsight":"https://github.com/tarkowr/Stock-Insight",
     "utility":"https://github.com/tarkowr/Utility-App",
+    "utilityPlayStore":"https://play.google.com/store/apps/details?id=com.rt.utility",
     "pycsv":"https://github.com/tarkowr/PyCsv",
     "eportfolio":"https://github.com/tarkowr/ePortfolio",
     "chatversity": "https://github.com/tarkowr/Chatversity_App",

@@ -82,7 +82,7 @@
 #name{
     @extend .font-bubble;
     font-size: 5em;
-    letter-spacing: 8px;
+    letter-spacing: 4px;
     word-wrap: wrap;
 }
 
@@ -290,7 +290,7 @@
     margin: 30px auto 40px auto;
 }
 #filter{
-    width: 60%;
+    @include custom-width(60%);
     padding: 0, 0, 0, 30px;
 }
 #filter > select{
@@ -319,6 +319,9 @@
     box-shadow: 0px 0px 10px black;
 }
 @media (max-width: $breakpoint){
+    #filter{
+        width: 80%;
+    }
     .proj{
         width: 80%;
     }

@@ -67,6 +67,10 @@ button {
   display: none !important;
 }
 
+.permanent-display-none {
+  display: none !important;
+}
+
 /*Width and Height*/
 .w-100, .proj-desc, .card-button, .card-desc, .card-image {
   width: 100%;
@@ -215,7 +219,7 @@ button {
 
 #name {
   font-size: 5em;
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   word-wrap: wrap;
 }
 
@@ -459,6 +463,10 @@ button {
 }
 
 @media (max-width: 1024px) {
+  #filter {
+    width: 80%;
+  }
+
   .proj {
     width: 80%;
   }
