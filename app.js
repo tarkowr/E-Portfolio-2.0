@@ -11,6 +11,7 @@ var urls = {
     "phpDiscussion":"https://github.com/tarkowr/PHP-Discussion-Forum",
     "despair":"https://github.com/tarkowr/Despair",
     "stockInsight":"https://github.com/tarkowr/Stock-Insight",
+    "stockInsightDemo":"https://www.youtube.com/watch?v=sv_gQ37-n-w&feature=youtu.be",
     "utility":"https://github.com/tarkowr/Utility-App",
     "utilityPlayStore":"https://play.google.com/store/apps/details?id=com.rt.utility",
     "pycsv":"https://github.com/tarkowr/PyCsv",
