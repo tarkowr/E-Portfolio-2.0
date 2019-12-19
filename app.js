@@ -17,6 +17,7 @@ var urls = {
     "pycsv":"https://github.com/tarkowr/PyCsv",
     "eportfolio":"https://github.com/tarkowr/ePortfolio",
     "chatversity": "https://github.com/tarkowr/Chatversity_App",
+    "chatversityDemo": "https://www.youtube.com/watch?v=M9QC3khGWIA",
     "chatversityApp":"https://www.chatversity.app",
     "chatversitySite":"https://chatversityapp.com"
 }
