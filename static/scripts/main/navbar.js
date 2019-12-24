@@ -1,4 +1,7 @@
 $(function() {
+    const DEFAULT_NAV = 'default-navigation';
+    const SCROLLED_NAV = 'scrolled-navigation';
+    
     let nav = $('#navigation');
     let filter = $('#filter');
 
@@ -10,12 +13,12 @@ $(function() {
         let scroll = $(window).scrollTop();
         if(!($(window).innerWidth() + scrollBarWidth <= maxSmallScreen)){
             if (scroll > maxScroll) {
-                nav.addClass('scrolled-navigation');
-                nav.removeClass('default-navigation');
+                nav.addClass(SCROLLED_NAV);
+                nav.removeClass(DEFAULT_NAV);
             }
             else{
-                nav.addClass('default-navigation');
-                nav.removeClass('scrolled-navigation');
+                nav.addClass(DEFAULT_NAV);
+                nav.removeClass(SCROLLED_NAV);
             }
         }
     }
@@ -23,7 +26,7 @@ $(function() {
     // Check window width on page load to determine navbar class
     if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) 
     { 
-        nav.addClass('scrolled-navigation');
+        nav.addClass(SCROLLED_NAV);
     }
 
     ToggleNavBar();
@@ -39,7 +42,7 @@ $(function() {
         
         if ($(window).innerWidth() + scrollBarWidth <= maxSmallScreen) { 
             $('#navigation a').css('display', 'none');
-            nav.addClass('scrolled-navigation');
+            nav.addClass(SCROLLED_NAV);
         }
         else{
             $('#navigation a').css('display', 'inline-block');

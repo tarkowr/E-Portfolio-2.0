@@ -1,16 +1,11 @@
-// Load in github json file via web api
+// Load in github json file via the github web api
 function ApiService(environment){
-    const Http = new XMLHttpRequest();
-    Http.open('GET', environment.apiUrl + '/github/data');
-    Http.setRequestHeader('Content-type', 'application/json');
-    Http.send();
+    const ROUTE = '/github/data';
+    const URL = environment.apiUrl + ROUTE;
 
-    return new Promise((resolve, reject) => {
-        Http.onreadystatechange=(e)=>{
-            if(Http.readyState === 4 && Http.status === 200) {
-                resolve(Http.responseText);
-            }
-        }
+    return fetch(URL)
+    .then(response => {
+        return response.json();
     });
 }
 
@@ -27,9 +22,7 @@ function GetDateFromGithubApi(obj, name){
 }
 
 // Find an element by name property
-function ReturnElementByName(obj, name){
-    let json = JSON.parse(obj);
-
+function ReturnElementByName(json, name){
     let el = json.find(function(element) {
         return element.name == name;
     });

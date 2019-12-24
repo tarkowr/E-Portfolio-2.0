@@ -224,25 +224,16 @@ button {
 }
 
 #nav-title {
+  width: auto;
   font-size: 1.4em;
-  padding-top: 10px;
+  height: auto;
+  padding: 10px;
 }
 
 .typed-cursor {
   color: #4286f4;
 }
 
-@media (max-width: 1024px) {
-  #name {
-    font-size: 3.5em;
-    margin-top: 40px;
-  }
-
-  #nav-title {
-    font-size: 1.2em;
-    padding-top: 25px;
-  }
-}
 #splash-links {
   margin-top: 80px;
 }
@@ -289,6 +280,21 @@ button {
   font-size: 1.2em;
 }
 
+@media (max-width: 1024px) {
+  #name {
+    font-size: 3.5em;
+    margin-top: 40px;
+  }
+
+  #nav-title {
+    font-size: 1em;
+    padding-top: 25px;
+  }
+
+  #splash-links {
+    margin-top: 40px;
+  }
+}
 /*About Me*/
 .about-me {
   background: #fafafa;

@@ -60,26 +60,30 @@ function setLinkHoverEventListener(el, text){
 }
 
 // Get GitHub API data from dataService
-async function HandleApiService(callback){
-    let data = new Object();
-    data = await ApiService(environment);
-    callback(data);
+function HandleApiService(callback){
+    ApiService(environment)
+    .then(data => {
+        callback(data);
+    });
 }
 
 // Hide or unhide nav bar options when the navbar is in mobile upon icon click
 function MobileNavBar(){
+    const INLINE_BLOCK = "inline-block";
+    const NONE = 'none';
+
     let links = document.getElementsByClassName('nav-links');
     let navIcon = document.getElementById('nav-bars');
 
     let toggleNavLinks = function(){
-        if(links[0].style.display == 'inline-block'){
+        if(links[0].style.display === INLINE_BLOCK){
             for(let i = 0; i < links.length; i++){
-                links[i].style.display = 'none';
+                links[i].style.display = NONE;
             }
         }
         else{
             for(let i = 0; i < links.length; i++){
-                links[i].style.display = 'inline-block';
+                links[i].style.display = INLINE_BLOCK;
             }
         }
     };
@@ -101,7 +105,7 @@ function MobileNavBar(){
 
 // Display GitHub API values
 function DisplayLastUpdatedValues(data){
-    for (var key in Repos) {
+    for (let key in Repos) {
         document.getElementById(Repos[key]).innerHTML = GetDateFromGithubApi(data, key);
     }
 }

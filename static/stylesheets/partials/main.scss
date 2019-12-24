@@ -87,22 +87,14 @@
 }
 
 #nav-title{
+    @include custom-width(auto);
     @extend .font-default;
     font-size: 1.4em;
-    padding-top: 10px;
+    height: auto;
+    padding: 10px;
 }
 .typed-cursor {
     @include custom-color($primary);
-}
-@media (max-width: $breakpoint){
-    #name{
-        font-size: 3.5em;
-        margin-top: 40px;
-    }
-    #nav-title{
-        font-size: 1.2em;
-        padding-top: 25px;
-    }
 }
 #splash-links{
     margin-top: 80px;
@@ -145,6 +137,19 @@
     @extend .color-white;
     padding-top: 10px;
     font-size: 1.2em;
+}
+@media (max-width: $breakpoint){
+    #name{
+        font-size: 3.5em;
+        margin-top: 40px;
+    }
+    #nav-title{
+        font-size: 1em;
+        padding-top: 25px;
+    }
+    #splash-links{
+        margin-top: 40px;
+    }
 }
 
 /*About Me*/
