@@ -19,7 +19,9 @@ var urls = {
     "chatversity": "https://github.com/tarkowr/Chatversity_App",
     "chatversityDemo": "https://www.youtube.com/watch?v=M9QC3khGWIA",
     "chatversityApp":"https://www.chatversity.app",
-    "chatversitySite":"https://chatversityapp.com"
+    "chatversitySite":"https://chatversityapp.com",
+    "jsGames":"https://games-js.firebaseapp.com/",
+    "jsGames2":"https://js-gms.firebaseapp.com/"
 }
 
 // Set the view engine to ejs
@@ -67,6 +69,18 @@ app.get('/facebook', function(req, res){
 
 app.get('/instagram', function(req, res){
     res.redirect(urls.instagram)
+})
+
+app.get('/js', function(req, res){
+    res.redirect(urls.jsGames)
+})
+
+app.get('/games', function(req, res){
+    res.redirect(urls.jsGames2);
+})
+
+app.get('/utility', function(req, res){
+    res.redirect(urls.utilityPlayStore);
 })
 
 // GitHub API

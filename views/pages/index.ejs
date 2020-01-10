@@ -16,7 +16,7 @@
     <nav class="m-auto w-100 h-100 bg-offBlack"> 
         <!--Navbar-->
         <div id="navigation" class="pos-fixed w-100 text-center navigation default-navigation">
-            <i class="fa fa-bars" id="nav-bars"> </i>
+            <i class="fa fa-bars display-none" id="nav-bars"> </i>
             <a href="#about-me" class="nav-links">About Me</a>
             <a href="#links-top" class="nav-links">Connect</a>
             <a href="#projects-top" class="nav-links">Projects</a>
@@ -28,6 +28,7 @@
             </div>
             <div id="nav-title" class="w-100 text-center color-white">
                 <p class="m-auto">
+                    <span id="no-js-typed">Studying Information Systems</span>
                     <span id="typed"></span> <br>
                 </p>
             </div>
@@ -114,7 +115,7 @@
                 <select id="select-filter" class="bg-white color-offblack"></select>
             </div>
 
-            <div class="proj" data-tags="Angular,NodeJS,API,HTML/CSS">
+            <div class="proj" data-tags="Angular,NodeJS,API,HTML/CSS,JavaScript">
                 <div class="proj-head off-black">
                     Chatversity
                 </div>
@@ -124,6 +125,7 @@
                         <span class="proj-tech">Angular 7</span>
                         <span class="proj-tech">HTML5</span>
                         <span class="proj-tech">CSS</span>
+                        <span class="proj-tech">TypeScript</span>
                         <span class="proj-tech">Bootstrap</span>
                         <span class="proj-tech">NodeJS</span>
                         <span class="proj-tech">Okta</span>
@@ -243,7 +245,7 @@
                 <br>
                 <div class="proj-desc">
                     <div class="proj-tech-list">
-                        <span class="proj-tech">Windows Presentation Foundation</span>
+                        <span class="proj-tech">WPF</span>
                         <span class="proj-tech">C#</span>
                         <span class="proj-tech">MongoDB</span>
                         <span class="proj-tech">Web API</span>
@@ -305,6 +307,8 @@
 
     <!--Site JavaScript-->
     <script>
+        $("#no-js-typed").addClass('display-none');
+
         let typed=new Typed('#typed', {
             strings: ["Studying Information Systems", "Hagerty Software Engineer Intern"],
             typeSpeed: 15,
