@@ -29,7 +29,8 @@ app.set('view engine', 'ejs')
 
 // View Routing
 app.get('/', function(req, res) {
-    res.render('pages/index', {links: urls})
+    let context = { links: urls };
+    res.render('pages/index', context)
 })
 
 app.get('/app.js', function(req, res) {
@@ -48,6 +49,10 @@ app.get('/alyssa', function(req, res) {
 
 app.get('/alyssa/exam', function(req, res) {
     res.render('pages/exam_calculator')
+})
+
+app.get('/alyssa/blog', function(req, res) {
+    res.render('pages/blog', {links: urls})
 })
 
 // URL Routing
@@ -110,6 +115,7 @@ app.use(function(req, res) {
     )
 })
 
-app.listen(8080, function(){
-    console.log('Listening on port 8080!')
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, function(){
+    console.log(`Listening on port ${PORT}`)
 })
