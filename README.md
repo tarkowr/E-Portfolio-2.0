@@ -2,8 +2,7 @@
 
 **[Visit my website!](https://richietarkowski.com)**
 
-**Special thanks to Noah Osterhout for hosting this website!**
-Visit Noah's [GitHub](https://github.com/NoahFlowa).
+**Hosted on Google Cloud!**
 
 ## What I Learned
 
@@ -13,6 +12,7 @@ Visit Noah's [GitHub](https://github.com/NoahFlowa).
 * Handling Requests in NodeJS
 * HTML Templating in Embedded JavaScript (.ejs)
 * Custom Error Pages
+* Google Cloud Web App Deployment
 
 ## Installation
 

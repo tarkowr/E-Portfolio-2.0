@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var axios = require('axios')
+const blogPosts = require('./blog.json')
 
 var urls = {
     "linkedin":"https://www.linkedin.com/in/richie-tarkowski-273238155",
@@ -40,7 +41,12 @@ app.get('/app.js', function(req, res) {
 })
 
 app.get('/blog', function(req, res){
-    res.render('pages/blog', {links: urls})
+    res.render('pages/blog', {links: urls, posts: blogPosts.main})
+})
+
+app.get('/blog/data/:query', function (req, res){
+    var query = req.params.query;
+    res.status(200).json(blogPosts[query])
 })
 
 app.get('/alyssa', function(req, res) {
@@ -52,7 +58,7 @@ app.get('/alyssa/exam', function(req, res) {
 })
 
 app.get('/alyssa/blog', function(req, res) {
-    res.render('pages/blog', {links: urls})
+    res.render('pages/blog', {links: urls, posts: blogPosts.alyssa})
 })
 
 // URL Routing
