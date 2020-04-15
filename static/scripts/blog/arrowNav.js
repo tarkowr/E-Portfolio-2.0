@@ -23,9 +23,7 @@ $(function() {
     .then(data => {
         blogData = data;
 
-        if (data.length){
-            setup();
-        }
+        if (data.length){ setup(); }
     });
 
     // Configure arrow buttons

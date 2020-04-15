@@ -1,6 +1,9 @@
 var express = require('express')
 var app = express()
 var axios = require('axios')
+var cookieParser = require('cookie-parser')
+var cryptoJS = require('crypto-js')
+var uuid = require('uuid')
 const blogPosts = require('./blog.json')
 
 var urls = {
@@ -27,14 +30,29 @@ var urls = {
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs')
+app.use(cookieParser())
 
 // View Routing
 app.get('/', function(req, res) {
-    let context = { links: urls };
+    let context = { links: urls }
+    let cookieName = 'visitor'
+    const cookie = req.cookies[cookieName]
+
+    if (cookie === undefined){
+        let options = {
+            httpOnly: true,
+            secure: true
+        }
+
+        let visitorID = uuid.v4();
+        let ciphertext = cryptoJS.AES.encrypt(visitorID, "rt_dev_611203")
+        res.cookie(cookieName, ciphertext.toString(), options)
+    }
+
     res.render('pages/index', context)
 })
 
-app.get('/app.js', function(req, res) {
+app.get('/server.js', function(req, res) {
     res.status(404).render('pages/404', 
         { title: "404", msg:'File not Found', desc: 'The page you are looking for does not exist or is temporarily unavailable.' }
     )
@@ -42,11 +60,6 @@ app.get('/app.js', function(req, res) {
 
 app.get('/blog', function(req, res){
     res.render('pages/blog', {links: urls, posts: blogPosts.main})
-})
-
-app.get('/blog/data/:query', function (req, res){
-    var query = req.params.query;
-    res.status(200).json(blogPosts[query])
 })
 
 app.get('/alyssa', function(req, res) {
@@ -87,11 +100,11 @@ app.get('/js', function(req, res){
 })
 
 app.get('/games', function(req, res){
-    res.redirect(urls.jsGames2);
+    res.redirect(urls.jsGames2)
 })
 
 app.get('/utility', function(req, res){
-    res.redirect(urls.utilityPlayStore);
+    res.redirect(urls.utilityPlayStore)
 })
 
 // GitHub API
@@ -103,6 +116,18 @@ app.get('/github/data', function(req, res){
     .catch((error) => {
         res.send(error)
     })
+})
+
+// Get Blog Data
+app.get('/blog/data/:query', function (req, res){
+    var query = req.params.query;
+
+    if (blogPosts[query]){
+        res.status(200).json(blogPosts[query])
+    }
+    else{
+        res.send({})
+    }
 })
 
 app.use(express.static(__dirname))
