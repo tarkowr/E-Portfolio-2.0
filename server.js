@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser')
 var cryptoJS = require('crypto-js')
 var uuid = require('uuid')
 const blogPosts = require('./blog.json')
+const config = require('./config.json')
 
 var urls = {
     "linkedin":"https://www.linkedin.com/in/richie-tarkowski-273238155",
@@ -34,25 +35,26 @@ app.use(cookieParser())
 
 // View Routing
 app.get('/', function(req, res) {
-    let context = { links: urls }
-    let cookieName = 'visitor'
+    const context = { links: urls }
+    const cookieName = 'visitor'
     const cookie = req.cookies[cookieName]
+    const key = config.cryptoKey.toString()
 
     if (cookie === undefined){
         let options = {
             httpOnly: true,
-            secure: true
+            secure: true   // enable for prod
         }
 
         let visitorID = uuid.v4();
-        let ciphertext = cryptoJS.AES.encrypt(visitorID, "rt_dev_611203")
-        res.cookie(cookieName, ciphertext.toString(), options)
+        let ciphertext = (cryptoJS.AES.encrypt(visitorID, key)).toString()
+        res.cookie(cookieName, ciphertext, options)
     }
 
     res.render('pages/index', context)
 })
 
-app.get('/server.js', function(req, res) {
+app.get(['/server.js', '/config.json'], function(req, res) {
     res.status(404).render('pages/404', 
         { title: "404", msg:'File not Found', desc: 'The page you are looking for does not exist or is temporarily unavailable.' }
     )
@@ -120,7 +122,7 @@ app.get('/github/data', function(req, res){
 
 // Get Blog Data
 app.get('/blog/data/:query', function (req, res){
-    var query = req.params.query;
+    let query = req.params.query
 
     if (blogPosts[query]){
         res.status(200).json(blogPosts[query])

@@ -264,3 +264,4 @@ __pycache__/
 .well-known/
 
 exam_calculator.ejs
+config.json
