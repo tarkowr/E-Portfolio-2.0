@@ -32,6 +32,8 @@ var urls = {
 // Set the view engine to ejs
 app.set('view engine', 'ejs')
 app.use(cookieParser())
+app.use(express.static(__dirname + '/static'))
+
 
 // View Routing
 app.get('/', function(req, res) {
@@ -54,26 +56,8 @@ app.get('/', function(req, res) {
     res.render('pages/index', context)
 })
 
-app.get(['/server.js', '/config.json'], function(req, res) {
-    res.status(404).render('pages/404', 
-        { title: "404", msg:'File not Found', desc: 'The page you are looking for does not exist or is temporarily unavailable.' }
-    )
-})
-
 app.get('/blog', function(req, res){
     res.render('pages/blog', {links: urls, posts: blogPosts.main})
-})
-
-app.get('/alyssa', function(req, res) {
-    res.render('pages/alyssa')
-})
-
-app.get('/alyssa/exam', function(req, res) {
-    res.render('pages/exam_calculator')
-})
-
-app.get('/alyssa/blog', function(req, res) {
-    res.render('pages/blog', {links: urls, posts: blogPosts.alyssa})
 })
 
 // URL Routing
@@ -132,20 +116,28 @@ app.get('/blog/data/:query', function (req, res){
     }
 })
 
-app.use(express.static(__dirname))
-
 // Handle 404 Error
 app.use(function(req, res) {
-    res.status(404).render('pages/404', 
-        { title: "404", msg:'File not Found', desc: 'The page you are looking for does not exist or is temporarily unavailable.' }
-    )
+    const context = {
+        title: "404",
+        msg:'File not Found', 
+        desc: 'The page you are looking for does not exist or is temporarily unavailable.',
+        redirectUrl: "/",
+        redirectMessage: "Home Page"
+    }
+    res.status(404).render('pages/error', context)
 })
 
 // Handle 500 Error
 app.use(function(req, res) {
-    res.status(500).render('pages/500', 
-        { title: "500", msg:'Internal Server Error', desc: 'Could not load the requested page. Please try again later.' }
-    )
+    const context = {
+        title: "500",
+        msg:'Internal Server Error',
+        desc: 'Could not load the requested page. Please try again later.',
+        redirectUrl: req.url,
+        redirectMessage: "Reload"
+    }
+    res.status(500).render('pages/error', context)
 })
 
 const PORT = process.env.PORT || 8080;

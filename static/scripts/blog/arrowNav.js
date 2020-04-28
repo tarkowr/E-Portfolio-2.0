@@ -17,9 +17,7 @@ $(function() {
     }
 
     // Get blog data from server
-    let blogName = (window.location.href.includes('alyssa')) ? 'alyssa' : 'main';
-
-    BlogDataService(environment, blogName)
+    BlogDataService(environment, 'main')
     .then(data => {
         blogData = data;
 
