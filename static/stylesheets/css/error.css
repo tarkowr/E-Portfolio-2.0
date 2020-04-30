@@ -28,6 +28,10 @@ button {
   text-align: left;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -35,6 +39,10 @@ button {
 /*Font*/
 .font-default {
   font-family: "Muli", sans-serif;
+}
+
+.font-bubble {
+  font-family: "Staatliches", "Muli", sans-serif;
 }
 
 /*Position*/
@@ -59,8 +67,12 @@ button {
   display: none !important;
 }
 
+.permanent-display-none {
+  display: none !important;
+}
+
 /*Width and Height*/
-.w-100, .error-desc, .error-msg, .error-title {
+.w-100, .error-title, .error-msg, .error-desc {
   width: 100%;
 }
 
@@ -91,6 +103,10 @@ button {
   background: #282828;
 }
 
+.bg-darkTheme {
+  background: #22262a;
+}
+
 .bg-white {
   background: white;
 }
@@ -105,6 +121,7 @@ button {
   width: 180px;
   height: 60px;
   font-size: 1.1em;
+  border-radius: 50px;
 }
 
 .styled-btn {
@@ -124,7 +141,8 @@ button {
   width: 60%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding: 50px 5px;
 }
 
@@ -132,9 +150,11 @@ button {
   .error {
     width: 100%;
     top: 20%;
-    transform: translate(-50%, -20%);
+    -webkit-transform: translate(-50%, -20%);
+            transform: translate(-50%, -20%);
   }
 }
+
 .error-title {
   font-weight: bold;
   font-size: 7em;
@@ -164,5 +184,4 @@ button {
   background: #678;
   border: 1px solid #678;
 }
-
 /*# sourceMappingURL=error.css.map */

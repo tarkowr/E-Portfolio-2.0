@@ -20,12 +20,16 @@ button {
 }
 
 /*Text Alignment*/
-.text-center, footer, .blog-post, .blog-top {
+.text-center, .blog-top, .blog-post, footer {
   text-align: center;
 }
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-justify, .blog-content {
@@ -35,6 +39,10 @@ button {
 /*Font*/
 .font-default {
   font-family: "Muli", sans-serif;
+}
+
+.font-bubble {
+  font-family: "Staatliches", "Muli", sans-serif;
 }
 
 /*Position*/
@@ -59,6 +67,10 @@ button {
   display: none !important;
 }
 
+.permanent-display-none {
+  display: none !important;
+}
+
 /*Width and Height*/
 .w-100 {
   width: 100%;
@@ -74,11 +86,11 @@ button {
 }
 
 /*Color*/
-.color-offblack, footer a, .blog-post {
+.color-offblack, .blog-post, footer a {
   color: #282828;
 }
 
-.color-white, #nav-arrows > a, #navbar > i:hover, #navbar > a:hover {
+.color-white, #navbar > a:hover, #navbar > i:hover, #nav-arrows > a {
   color: white;
 }
 
@@ -89,6 +101,10 @@ button {
 /*Background Color*/
 .bg-offBlack {
   background: #282828;
+}
+
+.bg-darkTheme {
+  background: #22262a;
 }
 
 .bg-white, .blog-post {
@@ -105,6 +121,7 @@ button {
   width: 180px;
   height: 60px;
   font-size: 1.1em;
+  border-radius: 50px;
 }
 
 .styled-btn {
@@ -152,27 +169,28 @@ button {
 
 @media (max-width: 1024px) {
   #navbar {
-    transition: height 0.5s;
-    transition-timing-function: ease;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
   }
-
   .link {
     display: none;
     width: 80%;
     margin: 5px 10px;
     margin-top: 0px;
   }
-
   .home {
     margin: 20px 0px 20px 10px;
     display: block;
+    -webkit-transition: margin 1s;
     transition: margin 1s;
   }
-
   #navbar > i {
     display: block;
   }
 }
+
 #navbar > i:hover {
   border: 1px solid white;
 }
@@ -197,21 +215,21 @@ button {
     margin-top: 25%;
     font-size: 1.5em;
   }
-
   #title-container {
     width: 80%;
   }
 }
+
 @media (max-width: 480px) {
   #title {
     margin-top: 60%;
     font-size: 1.2em;
   }
-
   #title-container {
     width: 80%;
   }
 }
+
 #nav-arrows {
   bottom: 30px;
   right: 30px;
@@ -251,7 +269,8 @@ main {
 
 .blog-post:hover {
   border: 2px solid #f4425f;
-  transition: border 0.5s;
+  -webkit-transition: border .5s;
+  transition: border .5s;
 }
 
 .blog-header {
@@ -282,11 +301,13 @@ main {
     text-align: left;
   }
 }
+
 @media (max-width: 1024px) {
   .blog-post {
     width: 85%;
   }
 }
+
 /*Footer*/
 footer {
   font-size: 1.5em;
@@ -313,5 +334,4 @@ footer a:hover {
 .footer-icon {
   margin: 0 5px;
 }
-
 /*# sourceMappingURL=blog.css.map */
