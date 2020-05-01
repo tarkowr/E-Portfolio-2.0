@@ -173,7 +173,7 @@ button {
 }
 
 #error-btn {
-  background: #4286f4;
+  background-color: #4286f4;
   height: 50px;
   border: 1px solid #4286f4;
   font-family: "Muli", sans-serif;
@@ -181,7 +181,7 @@ button {
 }
 
 #error-btn:hover {
-  background: #678;
+  background-color: #678;
   border: 1px solid #678;
 }
 /*# sourceMappingURL=error.css.map */

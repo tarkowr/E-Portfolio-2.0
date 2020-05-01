@@ -35,11 +35,11 @@ window.onresize = function(){
         currentState = AppState.DESKTOP;
     }
 
-    //User in Mobile
+    // User in Mobile
     else{
-        //User was in Desktop
+        // User was in Desktop
         if(currentState == AppState.DESKTOP){
-            //Apply navbar styles for Mobile
+            // Apply navbar styles for Mobile
             for(let i = 1; i < links.length; i++){
                 links[i].style.display = "none";
             }
@@ -48,10 +48,10 @@ window.onresize = function(){
     }
 }
 
-//Hide or unhide nav bar options when the navbar is in mobile upon icon click
+// Hide or unhide nav bar options when the navbar is in mobile upon icon click
 function SetupMobileNavBar(){
     let toggleLinks = function(){
-        //Check if navbar items are displayed and hide them if true
+        // Check if navbar items are displayed and hide them if true
         if(DisplayTypes.includes(links[1].style.display)){
             for(let i = 1; i < links.length; i++){
                 links[i].style.display = "none";
@@ -59,7 +59,7 @@ function SetupMobileNavBar(){
             navbar.style.height = NavbarDefaultHeight;
         }
 
-        //Display each navbar item
+        // Display each navbar item
         else{
             navbar.style.height = navbarClickedHeight;
 

@@ -14,8 +14,8 @@
     transition-timing-function: ease;
 }
 .nav-links{
-    @include custom-width(200px);
-    @extend .display-inline-block;  
+    @extend .display-inline-block; 
+    width: 200px; 
     display: inline-block; 
 }
 #nav-bars{
@@ -87,14 +87,14 @@
 }
 
 #nav-title{
-    @include custom-width(auto);
     @extend .font-default;
+    width: auto;
     font-size: 1.4em;
     height: auto;
     padding: 10px;
 }
 .typed-cursor {
-    @include custom-color($primary);
+    color: $primary;
 }
 #splash-links{
     margin-top: 80px;
@@ -115,22 +115,22 @@
     @extend .bg-offBlack;
 }
 .link-linkedin{
-    @include custom-bg(#0073b1);
+    background-color: #0073b1;
 }
 .link-linkedin:hover{
-    @include custom-color(#0073b1);
+    color: #0073b1;
 }
 .link-mail{
-    @include custom-bg(#eb4034);
+    background-color: #eb4034;
 }
 .link-mail:hover{
-    @include custom-color(#eb4034);
+    color: #eb4034;
 }
 .link-sf{
-    @include custom-bg(#00a1e0);
+    background-color: #00a1e0;
 }
 .link-sf:hover{
-    @include custom-color(#00a1e0);
+    color: #00a1e0;
 }
 #splash-link-title{
     @extend .font-bubble;
@@ -154,34 +154,60 @@
 
 /*About Me*/
 .about-me{
-    @include custom-bg($extra-light);
+    background-color: $extra-light;
     padding: 75px 0;
     margin-top: 0;
-    height: auto;
+    display: flex;
+}
+.about-left{
+    flex: 6;
+}
+.about-right{
+    flex: 4;
+    align-self: center;
+}
+.about-content{
+    padding-left: 10%;
 }
 #intro{
-    padding: 40px;
-    padding-top: 0px;
-    width: 60%;
+    width: calc(100%-80px);
+    padding: 0px;
     margin-bottom: 40px;
     font-size: 1.2em;
 }
 #info{
     line-height: 1.4em;
 }
+.resume > a > button {
+    @extend .font-bubble;
+    width: 200px;
+    font-size: 1.2em;
+}
+.profile-img{
+    height: 475px;
+    border-radius: 20px;
+}
+
 @media (max-width: $breakpoint){
+    .about-content{
+        padding-left: 0px;
+    }
+    .about-right{
+        display: none;
+        flex: 0;
+    }
     #intro{
-        width: 80%;
-        padding: 20px;
+        padding: 40px;
     }
     #info{
         text-align: left;
     }
 }
-.resume > a > button {
-    @include custom-width(200px);
-    @extend .font-bubble;
-    font-size: 1.2em;
+
+@media (max-width: $mobileBreakpoint){
+    #intro{
+        padding: 20px;
+    }
 }
 
 /*Links*/
@@ -204,7 +230,7 @@
 }
 .hover-effect{
     @extend .h-100;
-    @include custom-color(transparent);
+    color: transparent;
     border-radius: 20px;
 }
 .hover-effect:hover{
@@ -273,7 +299,7 @@
     border-radius: 40px;
 }
 .card-link:hover{
-    @include custom-bg($balanceHover);
+    background-color: $balanceHover;
     border: 1px solid $balanceHover;
 }
 
@@ -296,7 +322,7 @@
     margin: 30px auto 40px auto;
 }
 #filter{
-    @include custom-width(60%);
+    width: 60%;
     padding: 0, 0, 0, 30px;
 }
 #filter > select{
@@ -308,12 +334,12 @@
     font-size: 1.1em;
 }
 .proj{
-    @include custom-width(60%);
-    @include custom-bg(rgba(0,0,0,.2));
     @extend .display-inline-block;
     @extend .text-left;
     @extend .color-white;
     @extend .m-auto;
+    width: 60%;
+    background-color: rgba(0,0,0,.2);
     box-shadow: 0px 0px 5px black;
     border: 2px solid black;
     padding: 30px;
@@ -339,9 +365,9 @@
     margin-top: 0px;
 }
 .proj-tech{
-    @include custom-bg(#394048);
     @extend .font-bubble;
     @extend .display-inline-block;
+    background-color: #394048;
     margin-top: 5px;
     font-size: 1em;
     letter-spacing: 1px;
@@ -365,9 +391,9 @@
     font-weight: bold;
 }
 .proj-btn{
-    @include custom-bg(rgba(255,255,255,.85));
     @extend .color-offblack;
     @extend .font-bubble;
+    background-color: rgba(255,255,255,.85);
     font-size: 1em;
     letter-spacing: 1px;
     border-radius: 5px;

@@ -123,15 +123,3 @@ button{
     width: $width;
     height: $height;
 }
-@mixin custom-width($width) {
-    width: $width;
-}
-@mixin custom-height($height) {
-    height: $height;
-}
-@mixin custom-bg($bg) {
-    background: $bg;
-}
-@mixin custom-color($color){
-    color: $color;
-}

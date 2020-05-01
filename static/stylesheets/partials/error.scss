@@ -6,7 +6,7 @@
     @extend .bg-offBlack;
 }
 .error{
-    @include custom-width(60%);
+    width: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -27,24 +27,24 @@
     margin-bottom: 5%;
 }
 .error-msg{
-    @include custom-color($light);
     @extend .w-100;
+    color: $light;
     font-size: 1.4em;
     margin-bottom: 3%;
 }
 .error-desc{
-    @include custom-color($light);
     @extend .w-100;
+    color: $light;
     margin-bottom: 5%;
 }
 #error-btn{
-    @include custom-bg($primary);
-    @include custom-height(50px);
+    background-color: $primary;
+    height: 50px;
     border: 1px solid $primary;
     font-family: $defaultFont;
     border-radius: 30px;
 }
 #error-btn:hover{
-    @include custom-bg($balance);
+    background-color: $balance;
     border: 1px solid $balance;
 }

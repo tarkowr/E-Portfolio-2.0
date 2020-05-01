@@ -30,8 +30,8 @@ $(function() {
         down = $('#bottom-arrow');
 
         // Get target element references in the page
-        for(var i=0; i<blogData.length; i++){
-            var id = 's' + (i+1) + '-target';
+        for(let i=0; i<blogData.length; i++){
+            let id = 's' + (i+1) + '-target';
             sprintIds.push(document.getElementById(id).id);
         }
     
@@ -63,8 +63,8 @@ $(function() {
 
     // Get sprint Y positions
     function getSprintY(){
-        for(var i=0; i<blogData.length; i++){
-            var id = 'post' + (i+1);
+        for(let i=0; i<blogData.length; i++){
+            let id = 'post' + (i+1);
             sprints.push(document.getElementById(id).getBoundingClientRect().top + window.scrollY - offset);
         }
     }

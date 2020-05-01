@@ -3,16 +3,16 @@
 
 /*NavBar*/
 #navbar{
-    @include custom-height(75px);
+    height: 75px;
     z-index: 2;
     font-family: $defaultFont;
     font-size: 1.2em;
     border-bottom: 2px solid $blogTheme;
 }
 .link{
-    @include custom-color($fadedBlack);
-    @include custom-width(auto);
     @extend .display-inline-block;
+    color: $fadedBlack;
+    width: auto;
     margin: 20px 0px 20px 30px;
     text-decoration: none;
     padding: 5px;
@@ -63,12 +63,12 @@
     font-size: 2em;
 }
 #title-container{
-    @include custom-width(50%);
+    width: 50%;
     padding-top: 8%;
     font-size: 1.5em;
 }
 .typed-cursor {
-    @include custom-color($blogTheme);
+    color: $blogTheme;
 }
 
 @media (min-width : 481px) and (max-width: $breakpoint){
@@ -103,7 +103,7 @@
     padding: 5px 10px 5px 10px;
 }
 #nav-arrows > a:hover{
-    @include custom-bg($blogTheme);
+    background-color: $blogTheme;
 }
 
 /*Blogs*/
@@ -117,11 +117,11 @@ main{
     margin-bottom: 100px;
 }
 .blog-post{
-    @include custom-width(60%);
     @extend .m-auto;
     @extend .text-center;
     @extend .bg-white;
     @extend .color-offblack;
+    width: 60%;
     font-size: 1.2em;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -140,18 +140,18 @@ main{
     border-bottom: 1px solid rgba(0,0,0,.75);
 }
 .blog-header span{
-    @include custom-color($blogTheme);
+    color: $blogTheme;
 }
 .blog-content{
     @extend .text-justify;
     padding: 10px;
 }
 .blog-footer{
-    @include custom-color($balance);
+    color: $balance;
     font-size: 0.8em;
 }
 .blog-line{
-    @include custom-width(60%);
+    width: 60%;
 }
 
 @media (max-width : $mobileBreakpoint){

@@ -17,6 +17,7 @@ window.addEventListener('load', function() {
     
     let selected_type = types[0].value;
     
+    // Filter handler upon selecting a filter option
     let handleFilter = function() {
         selected_type = types[selectFilter.selectedIndex].value;
     
