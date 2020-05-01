@@ -155,7 +155,7 @@
 /*About Me*/
 .about-me{
     background-color: $extra-light;
-    padding: 75px 0;
+    padding: 100px 0;
     margin-top: 0;
     display: flex;
 }
@@ -186,6 +186,7 @@
 .profile-img{
     height: 475px;
     border-radius: 20px;
+    box-shadow: 2px 2px 4px #282828;
 }
 
 @media (max-width: $breakpoint){

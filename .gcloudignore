@@ -1,4 +1,5 @@
 .git
 .gitignore
 .well-known
+.vscode
 node_modules

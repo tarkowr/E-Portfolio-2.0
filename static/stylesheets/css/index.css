@@ -301,7 +301,7 @@ button {
 /*About Me*/
 .about-me {
   background-color: #fafafa;
-  padding: 75px 0;
+  padding: 100px 0;
   margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,6 +346,8 @@ button {
 .profile-img {
   height: 475px;
   border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 4px #282828;
+          box-shadow: 2px 2px 4px #282828;
 }
 
 @media (max-width: 1024px) {
