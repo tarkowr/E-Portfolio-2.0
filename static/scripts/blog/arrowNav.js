@@ -34,31 +34,28 @@ $(function() {
             let id = 's' + (i+1) + '-target';
             sprintIds.push(document.getElementById(id).id);
         }
-    
-        // Set initial href for down arrow
-        down.attr('href','#'+sprintIds[0].toString());
-    
-        // Get current page scroll
-        scroll = $(window).scrollTop();
-    
+
         // Get sprint element Y positions
         getSprintY();
-    
-        // Set the href value for arrows based on current location
-        setDownArrow();
-        setUpArrow();
-    
+
         // On window resize get updated sprint Y positions
         $(window).on('resize', function(){
             getSprintY();
         });
-    
-        // On page scroll get user scroll and determine if they scroll up or down. Then update down arrow based on scroll.
-        $(window).scroll(function(){
+
+        // Send to next post on down click
+        down.click(function() {
             scroll = $(window).scrollTop();
-            setDownArrow();
-            setUpArrow();
-        });
+            let target = getDownTarget();
+            sendToTarget(target);
+        })
+
+        // Send to above post on up click
+        up.click(function() {
+            scroll = $(window).scrollTop();
+            let target = getUpTarget();
+            sendToTarget(target);
+        })
     }
 
     // Get sprint Y positions
@@ -69,33 +66,41 @@ $(function() {
         }
     }
 
+    // Relocate the user to the target
+    function sendToTarget(t){
+        if (!t) return;
+ 
+        // Fix to browser not sending the user to target if the target is already the hash
+        if (window.location.hash === '#' + t){
+            window.location.hash = ''
+        }
+        
+        window.location.hash = t;
+    }
+
     // Set the href for the down arrow based on current scroll and sprint Y positions
-    function setDownArrow(){
-        let curr = down.attr('href');
-        curr = curr.replace('#','');
+    function getDownTarget(){
         for(let i=1; i < sprints.length; i++){
             if(scroll>sprints[i-1] && scroll<sprints[i]){
-                down.attr('href','#'+sprintIds[i].toString());
-                return;
+                return sprintIds[i]
             }
             else if(scroll<sprints[0]){
-                down.attr('href','#'+sprintIds[0].toString());
-                return;
+                return sprintIds[0]
             }
         }
     }
 
     // Set the href for the up arrow based on current scroll and sprint Y positions
-    function setUpArrow(){
+    function getUpTarget(){
         for(let i=1; i < sprints.length; i++){
             if(scroll>sprints[i-1]+offset && scroll<sprints[i]+offset){
-                up.attr('href','#'+sprintIds[i-1].toString());
+                return sprintIds[i-1]
             }
             else if(scroll>sprints[sprints.length-1]+offset){
-                up.attr('href','#'+sprintIds[sprints.length-1].toString());
+                return sprintIds[sprints.length-1]
             }
             else if(scroll<sprints[0]+offset){
-                up.attr('href','#');
+                return '';
             }
         }
     }

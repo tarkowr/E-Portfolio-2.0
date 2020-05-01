@@ -21,6 +21,7 @@ var urls = {
     "utility":"https://github.com/tarkowr/Utility-App",
     "utilityPlayStore":"https://play.google.com/store/apps/details?id=com.rt.utility",
     "pycsv":"https://github.com/tarkowr/PyCsv",
+    "pyemail":"https://github.com/tarkowr/PyEmailCollege",
     "eportfolio":"https://github.com/tarkowr/ePortfolio",
     "chatversity": "https://github.com/tarkowr/Chatversity_App",
     "chatversityDemo": "https://www.youtube.com/watch?v=M9QC3khGWIA",
