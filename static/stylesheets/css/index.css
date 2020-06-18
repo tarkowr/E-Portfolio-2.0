@@ -346,8 +346,8 @@ button {
 .profile-img {
   height: 475px;
   border-radius: 20px;
-  -webkit-box-shadow: 2px 2px 4px #282828;
-          box-shadow: 2px 2px 4px #282828;
+  -webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 1024px) {

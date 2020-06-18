@@ -5,7 +5,6 @@ var axios = require('axios')
 var cookieParser = require('cookie-parser')
 var cryptoJS = require('crypto-js')
 var uuid = require('uuid')
-const blogPosts = require('./blog.json')
 const config = require('./config.json')
 
 var urls = {
@@ -21,6 +20,8 @@ var urls = {
     "utilityPlayStore":"https://play.google.com/store/apps/details?id=com.rt.utility",
     "pyemail":"https://github.com/tarkowr/PyEmailCollege",
     "eportfolio":"https://github.com/tarkowr/ePortfolio",
+    "congratsGrads":"https://github.com/tarkowr/Congrats-Grads",
+    "congratsGradsApp":"https://congratsgrads.web.app",
     "chatversity": "https://github.com/tarkowr/Chatversity_App",
     "chatversityDemo": "https://www.youtube.com/watch?v=M9QC3khGWIA",
     "chatversityApp":"https://www.chatversity.app",
@@ -54,10 +55,6 @@ app.get('/', function(req, res) {
     }
 
     res.render('pages/index', context)
-})
-
-app.get('/blog', function(req, res){
-    res.render('pages/blog', {links: urls, posts: blogPosts.main})
 })
 
 // URL Routing
@@ -100,20 +97,8 @@ app.get('/github/data', function(req, res){
         res.status(200).json(repos.data)
     })
     .catch((error) => {
-        res.send(error)
+        res.status(500).send(error)
     })
-})
-
-// Get Blog Data
-app.get('/blog/data/:query', function (req, res){
-    let query = req.params.query
-
-    if (blogPosts[query]){
-        res.status(200).json(blogPosts[query])
-    }
-    else{
-        res.send({})
-    }
 })
 
 // Handle 404 Error
