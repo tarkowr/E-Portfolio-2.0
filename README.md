@@ -7,9 +7,9 @@
 ## What I Learned
 
 * Mobile and Responsive Web Design
-* Sass/Scss
+* Styling with Sass/Scss
 * JavaScript API Calls
 * Handling Requests in NodeJS
-* HTML Templating in Embedded JavaScript (.ejs)
+* HTML Templating in Embedded JavaScript (EJS)
 * Custom Error Pages
 * Google Cloud Web App Deployment
