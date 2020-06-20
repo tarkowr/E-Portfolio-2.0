@@ -61,7 +61,7 @@ function setLinkHoverEventListener(el, text){
 
 // Get GitHub API data from dataService
 function HandleApiService(callback){
-    ApiService(testEnvironment)
+    ApiService(environment)
     .then(data => {
         callback(data);
     });
