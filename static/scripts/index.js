@@ -18,11 +18,12 @@ let mobile = false;
 
 // Name:Id dictionary
 let Repos = { 
-    'ePortfolio2.0':'eportfolio-date', 
+    'E-Portfolio-2.0':'eportfolio-date', 
     'PHP-Discussion-Forum':'cit228-date',
     'Stock-Insight':'cit255-date',
     'Utility-App':'utility-app-date',
-    'PyEmailCollege': 'pyemail-date'
+    'PyEmailCollege':'pyemail-date',
+    'Congrats-Grads': 'congratsgrads-date'
  }
 
 window.addEventListener('load', function() {
@@ -60,7 +61,7 @@ function setLinkHoverEventListener(el, text){
 
 // Get GitHub API data from dataService
 function HandleApiService(callback){
-    ApiService(environment)
+    ApiService(testEnvironment)
     .then(data => {
         callback(data);
     });

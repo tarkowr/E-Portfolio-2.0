@@ -13,6 +13,9 @@ function ApiService(environment){
 // Return a custom formatted date
 function GetDateFromGithubApi(obj, name){
     let repo = ReturnElementByName(obj, name);
+
+    if (!repo) return null;
+
     let repoLastUpdated = new Date(repo.updated_at);
     let date = repoLastUpdated.getDate();
     let month = repoLastUpdated.getMonth();
