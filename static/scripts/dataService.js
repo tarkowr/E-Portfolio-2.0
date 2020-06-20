@@ -14,7 +14,7 @@ function ApiService(environment){
 function GetDateFromGithubApi(obj, name){
     let repo = ReturnElementByName(obj, name);
 
-    if (!repo) return null;
+    if (!repo) return '';
 
     let repoLastUpdated = new Date(repo.updated_at);
     let date = repoLastUpdated.getDate();
